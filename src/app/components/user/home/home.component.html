@@ -1,0 +1,26 @@
+<app-header></app-header>
+<!-- <router-outlet></router-outlet> -->
+
+<div class="container">
+    <div class="intro-section">
+        <h1>Đá núi lửa Hồng Quang</h1>
+        <h3>Liên hệ: <a href="tel:0918 245 977">0918 245 977</a></h3>
+        <p>Chuyên bán và cung cấp về đá núi lửa</p>
+    </div>
+    
+    <!-- Đoạn này có 1 search bar bên trái, 1 combo box bên phải (hiện danh mục sphẩm) -->
+    <carousel >
+        <div  *ngFor="let product of products">
+        <slide (click)="onProductClick(product.id)">
+          <img class="carousel-image twinkle" [src]="product.url" alt="Slide 1" style="cursor: pointer;">
+          <div class="carousel-caption">
+            <h3>{{product.name}}</h3>
+            <p>Giá: {{product.price | number: '.0-0' }} VND</p>
+          </div>
+        </slide>
+    </div>
+      </carousel>
+
+</div>
+<!-- <router-outlet></router-outlet> -->
+<app-footer></app-footer>

@@ -1,0 +1,57 @@
+.about-us {
+    padding: 40px 0;
+    // text-align: center;
+  }
+  
+  .about-us h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white; /* Set the text color to white */
+  }
+  
+  .about-us p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: white; /* Set the text color to white */
+  }
+  .intro-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .intro-heading {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .intro-text {
+    font-size: 40px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .twinkle{
+    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
+}
+@keyframes slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
