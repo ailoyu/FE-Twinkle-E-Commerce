@@ -8,6 +8,66 @@
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
+
+.confirmation-container h1 {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 300px;
+  background-color: rgb(19, 23, 42);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
+}
+
+.product-category {
+  width: 200px;
+  padding: 8px;
+  margin-right: 15px;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+.search-box .form-control {
+  background-color: transparent;
+  color: rgb(255, 0, 128);
+}
+
+.search-box option {
+  font-weight: bold;
+}
+
+.search-box .form-control::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 0, 128);
+  opacity: 1;
+  /* Firefox */
+}
+
+.form-control:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(255, 0, 128);
+}
+
+.form-control::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(255, 0, 128);
+}
+
+.search-box button {
+  padding: 8px 22px;
+  border-radius: 15px;
+}
+
+.text-center button {
+  margin-right: 15px;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
 .product-info {
     display: flex;
     align-items: center;
@@ -137,13 +197,17 @@ td {
 
 .dashboard {
     display: flex;
-  
+    margin-top: 20px;
   
     .dashboard-sidebar {
-      width: 200px;
+      width: 268px;
       background-color: #007bff;
       padding: 20px;
       animation: slide-in 0.5s ease-in-out;
+      height: 868px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      margin-top: 50px;
       }
       
       @keyframes slide-in {
@@ -165,19 +229,22 @@ td {
       }
       
       .dashboard-sidebar ul {
-      list-style: none;
-      padding: 0;
+        list-style: none;
+        padding: 0;
       }
       
       .dashboard-sidebar li {
-      margin-bottom: 10px;
-      color: #fff;
-      cursor: pointer;
-      transition: color 0.3s ease-in-out;
+        margin-bottom: 20px;
+        color: #fff;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+        font-size: 18px;
       }
       
       .dashboard-sidebar li:hover {
-      color: #e3e3e3;
+        color: #e3e3e3;
+        font-size: 20px;
+        font-weight: bold;
       }
       
       a {
@@ -207,3 +274,34 @@ td {
       opacity: 1;
     }
   }
+
+
+// Responsive
+// Mobile & tablet: width < 1024px
+@media only screen and (max-width: 63.9375em) {
+
+}
+
+// Mobile: width < 768px
+@media only screen and (max-width: 46.1875em) {
+
+}
+
+// Table: width >= 768px and width < 1024px
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .dashboard-sidebar {
+    width: 204px!important;
+  }
+
+  .dashboard {
+    height: 77vh;
+  }
+
+  .container {
+    width: 500px;
+  }
+
+  .dashboard-sidebar li:hover { 
+    display: none;
+  }
+}

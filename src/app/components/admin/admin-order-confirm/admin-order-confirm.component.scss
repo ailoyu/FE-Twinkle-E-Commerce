@@ -8,15 +8,23 @@
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
+
+.confirmation-container h1 {
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.confirmation-container p {
+  font-size: 18px;
+  text-align: center;
+}
+
 .product-info {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
-
-
-
-
 
 .product-image {
     width: 100px;
@@ -29,6 +37,7 @@
     color: white;
     margin-right: 10px;
 }
+
 table {
     width: 100%;
     border-radius: 10px;
@@ -74,7 +83,7 @@ td {
 
 .nav-item {
   position: relative;
-  margin-right: 10px;
+  margin-right: 20px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -86,8 +95,9 @@ td {
 .nav-link {
   color: white;
   padding: 10px 15px;
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 0 0;
   background-color: rgb(101, 102, 172);
+  font-size: 16px;
 }
 
 .nav-item.active .nav-link {
@@ -112,6 +122,8 @@ td {
 .nav-link:hover::before {
   background-color: #007bff;
 }
+
+
 
 .buttons-container {
   display: flex;
@@ -164,19 +176,110 @@ td {
   transform: rotate(45deg);
 }
 
+// Edit history components  order-products from customers
+table {
+  width: 90%;
+  border-radius: 15px;
+}
+
+table thead tr div {
+  border-radius: 15px;
+}
+
+table thead tr div::click {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+
+
+.text-start-first {
+  font-size: 18px;
+  width: 30%;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.text-start-second {
+  font-size: 18px;
+  width: 30%;
+  text-align: center;
+}
+
+.text-start-third {
+  font-size: 18px;
+  width: 30%;
+  text-align: right;
+  padding-right: 15px;
+}
+
+table tbody div {
+  margin-top: 20px;
+}
+
+table tbody div h2 {
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+table tbody div p {
+  font-size: 18px;
+  margin-left: 35px;
+}
+
+.buttons-container {
+  margin-right: 20px;
+}
+
+table tbody div span {
+  color: orange;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+tbody h2 {
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+tbody table {
+  width: 95%;
+  margin-left: 25px;
+}
+
+tbody table tr th {
+  padding: 0 20px;
+  font-size: 16px;
+}
+ 
+tr td img {
+  margin-left: 6px;
+}
+
+tfoot tr td h4 {
+  margin: 10px 20px 10px 10px;
+}
+
+
 
 
 
 
 .dashboard {
-    display: flex;
-  
+  display: flex;
+  margin-top: 20px;
   
     .dashboard-sidebar {
-      width: 200px;
+      width: 268px;
       background-color: #007bff;
       padding: 20px;
       animation: slide-in 0.5s ease-in-out;
+      height: 160px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      margin-top: 50px;
       }
       
       @keyframes slide-in {
@@ -198,19 +301,22 @@ td {
       }
       
       .dashboard-sidebar ul {
-      list-style: none;
-      padding: 0;
+        list-style: none;
+        padding: 0;
       }
       
       .dashboard-sidebar li {
-      margin-bottom: 10px;
-      color: #fff;
-      cursor: pointer;
-      transition: color 0.3s ease-in-out;
+        margin-bottom: 20px;
+        color: #fff;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+        font-size: 18px;
       }
       
       .dashboard-sidebar li:hover {
-      color: #e3e3e3;
+        color: #e3e3e3;
+        font-size: 20px;
+        font-weight: bold;
       }
       
       a {
@@ -240,3 +346,44 @@ td {
       opacity: 1;
     }
   }
+
+
+// Responsive
+// Mobile & tablet: width < 1024px
+@media only screen and (max-width: 63.9375em) {
+
+}
+
+// Mobile: width < 768px
+@media only screen and (max-width: 46.1875em) {
+
+}
+
+// Table: width >= 768px and width < 1024px
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .confirmation-container {
+    max-width: 480px;
+  }
+
+  .col-md-11 {
+    width: 98%;
+    margin-left: 1%;
+  }
+  
+  table {
+    width: 98%;
+  }
+
+  .dashboard-sidebar li:hover { 
+    display: none;
+  }
+
+  .nav-item {
+    margin-right: 14px;
+  }
+
+  .nav-link {
+    padding: 12px 10px;
+  }
+
+}

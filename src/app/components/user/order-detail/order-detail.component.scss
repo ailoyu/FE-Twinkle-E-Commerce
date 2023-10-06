@@ -1,6 +1,8 @@
 .container {
     color: white;
+    margin-top: 40px;
 }
+
 .confirmation-container {
     margin: 50px auto;
     padding: 20px;
@@ -8,6 +10,15 @@
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
+
+.confirmation-container h1 {
+  font-family: "Oswald", sans-serif;
+}
+
+.confirmation-container p {
+  font-size: 18px;
+}
+
 .product-info {
     display: flex;
     align-items: center;

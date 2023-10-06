@@ -38,23 +38,27 @@
                         <a href="#" class="register-link">Quên mật khẩu</a>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <select class="form-control access-right"
                     [(ngModel)]="selectedRole">
-                      <option selected disabled>Quyền đăng nhập</option>
-                      <option *ngFor="let role of roles" [ngValue]="role">
+                        <option selected disabled class="default">Quyền đăng nhập</option>
+                        <option *ngFor="let role of roles" [ngValue]="role" class="choice">
                         {{ role.name }}
-                    </option>              
+                        </option>              
                     </select>
-                  </div>
-                  <button type="button" 
+                </div>
+
+                <button type="button" 
                     (click)="login()" [disabled]="isLoading"
                   class="login-button">Đăng nhập
                   <div *ngIf="isLoading" class="loading-circle"></div>
                 </button>
-                  <div class="divider"></div>
-                  <p class="text-center">Bạn chưa đăng ký? <span>
-                    <a routerLink="/register" routerLinkActive="active" class="register-link">Tạo tài khoản</a></span></p>
+                
+                <div class="divider"></div>
+                <p class="text-center">Bạn chưa đăng ký ? <span>
+                    <a routerLink="/register" routerLinkActive="active" class="register-link">Tạo tài khoản</a></span>
+                </p>
         </div>
     </div>   
 </div>

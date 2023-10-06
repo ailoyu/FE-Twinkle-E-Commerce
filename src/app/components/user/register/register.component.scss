@@ -1,6 +1,7 @@
 .container {
     color: white;
     height: 100vh;    
+    margin-top: 60px;
 }
 
 .register-form {
@@ -18,12 +19,26 @@
     /*      color: rgb(233, 66, 178);*/
     color: rgb(105, 244, 181);
     margin-bottom: 20px;
+}
 
+.register-header h2 {
+    font-family: 'Black Ops One', cursive;
 }
 
 .label-text {
     color: rgb(243, 165, 42);
 }
+
+.form-group label {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+
+.password-field label {
+    margin-top: 20px;
+}
+
 
 .form-control {
     background-color: transparent;
@@ -44,12 +59,21 @@
     position: relative;
 }
 
-.password-toggle {
+.password-toggle-first {
     position: absolute;
-    top: 50%;
+    top: 80%;
     right: 10px;
     transform: translateY(-50%);
-    color: rgb(105, 244, 181);
+    color: orange;
+    cursor: pointer;
+}
+
+.password-toggle-second {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: orange;
     cursor: pointer;
 }
 
@@ -58,7 +82,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 30px;
+
 }
 
 /* Màu checkbox khi được chọn */
@@ -84,6 +109,7 @@
     padding: 10px 0;
     margin-top: 20px;
     border: none;
+    font-size: 18px;
 }
 
 .divider {
@@ -95,6 +121,7 @@
 
 .divider-nospace {
     border-top: 1px solid white;
+    margin-bottom: 20px;
 }
 
 .form-control::placeholder {
@@ -154,3 +181,26 @@
       opacity: 1;
     }
   }
+
+
+// Responsive
+// Mobile & tablet: width < 1024px
+@media only screen and (max-width: 63.9375em) {
+
+}
+
+// Mobile: width < 768px
+@media only screen and (max-width: 46.1875em) {
+
+}
+
+// Table: width >= 768px and width < 1024px
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .col-md-6 {
+        width: 90%;
+    }
+    
+    .offset-md-3 {
+        margin-left: 5%;
+    }
+}

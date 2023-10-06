@@ -19,7 +19,7 @@
         </select>
         <button class="btn btn-primary ml-2" (click)="searchProducts()">Tìm kiếm</button>
     </div>
-    <div class="row">        
+    <div class="row twinkle">        
         <div class="col-lg-4 col-md-6" *ngFor="let product of products">
             <div class="product-item" (click)="onProductClick(product.id)" >
                     <!-- <img [hidden]="loading" (load)="onLoad()" [src]="product.url" alt="Product Image" 

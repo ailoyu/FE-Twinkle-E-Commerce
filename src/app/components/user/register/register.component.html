@@ -27,7 +27,7 @@
                         [(ngModel)]="password"
                         name="password"
                         id="password">
-                    <i class="password-toggle fas fa-eye-slash"></i>
+                    <i class="password-toggle-first fas fa-eye-slash"></i>
                     <div class="divider-nospace"></div>
                     <p class="text-danger"
                         *ngIf="password.length < 3 && registerForm.form.touched">
@@ -43,7 +43,7 @@
                         (input)="registerForm.form.markAsTouched(); checkPasswordMatch()"
                         name="retypePassword"
                         class="form-control" id="retype-password">
-                    <i class="password-toggle fas fa-eye-slash"></i>
+                    <i class="password-toggle-second fas fa-eye-slash"></i>
                     <div class="divider-nospace"></div>
                     <p class="text-danger"
                         *ngIf="retypePassword.length < 3 && registerForm.form.touched">
@@ -119,3 +119,6 @@
 </form>
 </div>
 <app-footer></app-footer>
+
+
+

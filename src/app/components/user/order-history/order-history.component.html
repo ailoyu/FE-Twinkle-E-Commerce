@@ -9,23 +9,23 @@
             <thead>
                 <tr (click)="toggleBodyAndFooter(order.id)" style="cursor: pointer;">
                     <div style="background-color: rgb(101, 102, 172);">
-                        <th scope="col" class="text-start">Đơn hàng có Order ID: {{order.id}}</th>
-                        <th scope="col" class="text-start">Ngày đặt hàng: {{order.orderDate}}</th>
-                        <th scope="col" class="text-start">Ngày giao hàng: {{order.shippingDate}}</th>
+                        <th scope="col" class="text-start-first">Đơn hàng có Order ID: {{order.id}}</th>
+                        <th scope="col" class="text-start-second">Ngày đặt hàng: {{order.orderDate}} </th>
+                        <th scope="col" class="text-start-third">Ngày giao hàng: {{order.shippingDate}}</th>
                     </div>
                 </tr>
             </thead>
             <tbody *ngIf="selectedOrder === order.id">
                 <div style="color: white;">
                     <h2>Thông tin người nhận</h2>
-                    <p>Tên người nhận: {{order.fullName}}</p>
-                    <p>Email: {{order.email}}</p>
-                    <p>Số điện thoại: {{order.phoneNumber}}</p>
-                    <p>Địa chỉ: {{order.address}}</p>
-                    <p>Ghi chú: {{order.note}}</p>
-                    <p>Phương thức thanh toán: {{order.paymentMethod}}</p>
-                    <p>Phương thức vận chuyển: {{order.shippingMethod}}</p>
-                    <p>Tình trạng hiện tại: {{order.status}}</p>
+                    <p><span>Tên người nhận:</span> {{order.fullName}}</p>
+                    <p><span>Email:</span> {{order.email}}</p>
+                    <p><span>Số điện thoại:</span> {{order.phoneNumber}}</p>
+                    <p><span>Địa chỉ:</span> {{order.address}}</p>
+                    <p><span>Ghi chú:</span> {{order.note}}</p>
+                    <p><span></span>Phương thức thanh toán: {{order.paymentMethod}}</p>
+                    <p><span>Phương thức vận chuyển:</span> {{order.shippingMethod}}</p>
+                    <p><span>Tình trạng hiện tại:</span> {{order.status}}</p>
                 </div>
                 <hr>
                 <h2>Sản phẩm đã đặt hàng</h2>
@@ -57,8 +57,6 @@
                 </tr>
             </tfoot>
         </table>  
-        
-        
     </div>    
 </div>
 <app-footer></app-footer>

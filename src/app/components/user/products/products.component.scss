@@ -1,140 +1,166 @@
+.container {
+  margin-top: 40px;
+}
+
 .intro-section {
-    text-align: center;
-    color: white;
-    padding: 20px;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.intro-section h1 {
+  font-family: 'Oswald', sans-serif; 
+}
+
+.intro-section p {
+  font-size: 18px;
+  margin-top: 14px;
 }
 
 .search-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 
 .search-input {
-    width: 300px;
-    background-color: rgb(19, 23, 42);
-    margin-right: 10px;
-    border-color: rgba(255, 255, 255, 0.5);
-    color: white;
+  width: 300px;
+  background-color: rgb(19, 23, 42);
+  margin-right: 20px;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 8px;
+  border-radius: 15px;
 }
 
 .product-category {
-    width: 200px;
+  width: 200px;
+  padding: 8px;
+  margin-right: 15px;
+  border-radius: 15px;
 }
 
+button {
+  padding: 8px 22px;
+  border-radius: 15px;
+}
 
 .form-control {
-    background-color: transparent;
-    color: rgb(255, 0, 128);
+  background-color: transparent;
+  color: rgb(255, 0, 128);
 }
 
 .form-control::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(255, 0, 128);
-    opacity: 1;
-    /* Firefox */
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 0, 128);
+  opacity: 1;
+  /* Firefox */
+}
+
+.form-control option {
+  font-weight: bold;
 }
 
 .form-control:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: rgb(255, 0, 128);
-
+  /* Internet Explorer 10-11 */
+  color: rgb(255, 0, 128);
 }
 
 .form-control::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: rgb(255, 0, 128);
-
-
+  /* Microsoft Edge */
+  color: rgb(255, 0, 128);
 }
 
 .product-item {
-    background-color: rgb(19, 23, 42);
-    border: 1px solid rgb(35, 39, 61);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
-  }
-  
-  @keyframes slide-in {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  background-color: rgb(19, 23, 42);
+  border: 1px solid rgb(35, 39, 61);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
 
 .product-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .product-name {
-    color: white;
+  color: white;
 }
 
 .product-description {
-    color: rgb(173, 178, 203);
+  color: rgb(173, 178, 203);
 }
 
 .product-warranty {
-    color: rgb(242, 126, 212);
+  color: rgb(242, 126, 212);
 }
 
 .product-price {
-    color: white;
+  color: white;
 }
 
 .product-rating {
-    color: #FFD700;
-    margin-top: 10px;
+  color: #FFD700;
+  margin-top: 10px;
 }
 
 .product-actions {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 
 .space-x {
-    margin: 0 5px;
-    /*margin-top, margin-right, margin-bottom, margin-left*/
+  margin: 0 5px;
+  /*margin-top, margin-right, margin-bottom, margin-left*/
 }
-
 
 .twinkle{
-    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
+  animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
 }
 @keyframes slide-in {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  0% {
+    transform: translateX(-100%);
   }
-  
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  100% {
+    transform: translateX(0);
   }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+// Responsive
+// Mobile & tablet: width < 1024px
+@media only screen and (max-width: 63.9375em) {
+
+}
+
+// Mobile: width < 768px
+@media only screen and (max-width: 46.1875em) {
+
+}
+
+// Table: width >= 768px and width < 1024px
+@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .btn {
+      font-size: 14px;
+    }
+
+    .d-flex {
+      margin-top: 20px;
+    }
+}
