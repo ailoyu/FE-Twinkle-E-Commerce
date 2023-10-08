@@ -183,7 +183,44 @@ border-radius: 30px;
 
 // Mobile: width < 768px
 @media only screen and (max-width: 46.1875em) {
+  .container {
+    margin-top: 10px;
+  }
 
+  .col-md-6 {
+    width: 96%;
+    margin-left: 2%;
+  }
+
+  .product-header {
+    text-align: center;
+  }
+
+  .bank-card {
+    margin-bottom: 20px;
+  }
+
+  .choice-select {
+    width: 75%;
+  }
+
+  .header-container h2 {
+    font-size: 20px;
+    margin-right: 5px
+  }
+
+  table {
+    width: 96%;
+    margin-left: -4%;
+  }
+
+  .mt-3 h4 {
+    margin-top: 40px;
+  }
+
+  .mt-3 .btn-order {
+    width: 100%;
+  }
 }
 
 // Table: width >= 768px and width < 1024px

@@ -206,7 +206,20 @@
 
 // Mobile: width < 768px
 @media only screen and (max-width: 46.1875em) {
+    .container {
+        margin-top: 10px;
+        height: 76vh;
+    }
 
+    .carousel-image {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .carousel-caption {
+        width: 80%;
+        margin-left: 10%;
+    }
 }
 
 // Table: width >= 768px and width < 1024px
@@ -226,3 +239,4 @@
         margin-left: 15%;
     }
 }
+

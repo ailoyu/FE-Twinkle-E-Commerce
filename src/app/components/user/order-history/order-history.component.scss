@@ -174,7 +174,15 @@ td {
 
 // Mobile: width < 768px
 @media only screen and (max-width: 46.1875em) {
+  .confirmation-container
+  {
+    margin: 20px auto;
+  }
 
+  table {
+    width: 96%;
+    margin-left: 2%;
+  }
 }
 
 // Table: width >= 768px and width < 1024px
@@ -188,6 +196,4 @@ td {
     width: 96%;
     margin-left: 2%;
   }
-
-  
 }

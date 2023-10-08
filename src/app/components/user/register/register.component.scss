@@ -191,7 +191,11 @@
 
 // Mobile: width < 768px
 @media only screen and (max-width: 46.1875em) {
-
+    .container {
+        height: 90vh;
+        width: 96%;
+        margin-top: 30px
+    }
 }
 
 // Table: width >= 768px and width < 1024px

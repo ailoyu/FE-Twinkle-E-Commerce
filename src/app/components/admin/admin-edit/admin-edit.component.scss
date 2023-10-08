@@ -111,7 +111,7 @@ a {
     background-color: #007bff;
     padding: 20px;
     animation: slide-in 0.5s ease-in-out;
-    height: 700px;
+    height: 640px;
     margin-top: 94px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -225,13 +225,56 @@ a {
 
 // Mobile: width < 768px
 @media only screen and (max-width: 46.1875em) {
+  .dashboard {
+    height: 104vh;
+    margin-top: 0px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+  }
 
+  .dashboard-sidebar {
+    width: 100% !important;
+    height: 172px !important;
+    position: absolute;
+    top: 0px !important;
+    margin-top: 0px!important;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .dashboard-sidebar ul {
+    text-align: center;
+  }
+
+  .dashboard-sidebar ul li {
+    font-size: 20px !important;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .dashboard-sidebar ul li a {
+    font-size: 18px!important;
+    margin-bottom: 40px!important;
+  }
+
+  .admin-products {
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    width: 96%;
+    z-index: 10;
+  }
 }
 
 // Table: width >= 768px and width < 1024px
 @media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
   .dashboard-sidebar {
     width: 204px!important;
+    height: 612px!important;
   }
 
   .dashboard {
@@ -254,3 +297,5 @@ a {
     display: none;
   }
 }
+
+
