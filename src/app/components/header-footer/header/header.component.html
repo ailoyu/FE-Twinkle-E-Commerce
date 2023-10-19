@@ -33,15 +33,15 @@
                 Về chúng tôi
             </a>
         </li>
-          
-          <li *ngIf="loginResponse$ | async as loginResponse; else loginLink">
+        <ng-container *ngIf="loginResponse$">
+          <li>
               <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-user icon"></i>
-                  {{loginResponse.fullname}}
+                  {{loginResponse?.fullname}}
                 </button>
                 <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
-                  <li *ngIf="loginResponse.role_id === 2" routerLink="/admin/edit-products" routerLinkActive="active">Trang quản trị</li>
+                  <li *ngIf="loginResponse?.role_id === 2" routerLink="/admin/edit-products" routerLinkActive="active">Trang quản trị</li>
                   <li routerLink="/info" routerLinkActive="active">Thông tin tài khoản</li>
                   <li routerLink="/order-history" routerLinkActive="active">Lịch sử đơn hàng</li>
                   <li routerLink="/change-password" routerLinkActive="active">Đổi mật khẩu</li>
@@ -49,14 +49,16 @@
                 </ul>
               </div>
             </li>
-            <ng-template #loginLink>
+          </ng-container>
+          <ng-container *ngIf="!loginResponse$">
+            
               <li class="nav-item">
                 <a class="nav-link" routerLink="/login" routerLinkActive="active">Đăng nhập</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/register" routerLinkActive="active">Đăng ký</a>
               </li>                          
-            </ng-template>
+            </ng-container>
       </ul>
           </div>
       </div>
