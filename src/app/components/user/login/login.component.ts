@@ -92,6 +92,7 @@ export class LoginComponent {
         
         if(this.rememberMe){
           this.tokenService.setToken(token);
+          this.userService.saveUserResponseToLocalStorage(response);
         }
         alert("Đăng nhập thành công");
         this.router.navigate(['/home']);          

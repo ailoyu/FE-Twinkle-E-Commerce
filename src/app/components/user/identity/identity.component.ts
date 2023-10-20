@@ -23,7 +23,7 @@ export class IdentityComponent implements OnInit{
   }
 
   loginResponse$!: Observable<LoginResponse> | null;
-    loginResponse!: LoginResponse | null;
+  loginResponse!: LoginResponse | null;
   
   ngOnInit(): void {
     this.loginResponse$ = this.tokenService.displayUserInformation();
@@ -34,9 +34,8 @@ export class IdentityComponent implements OnInit{
       this.address = this.loginResponse.address;
       this.fullName = this.loginResponse.fullname;
       this.phoneNumber = this.loginResponse.phone_number;
-      // if (!this.loginResponse.avatar.startsWith("http")) {
-      //   this.loginResponse.avatar = `${environment.apiBaseUrl}/products/images/${this.loginResponse.avatar}`;
-      // } 
+      
+      
       debugger
       console.log(this.loginResponse);
     });  
@@ -90,6 +89,8 @@ export class IdentityComponent implements OnInit{
   dateOfBirth!: Date;
 
   
+
+  
   isLoading = false;
 
   updateUser(){
@@ -110,6 +111,16 @@ export class IdentityComponent implements OnInit{
         // Xử lý kết quả trả về khi ĐĂNG KÝ THÀNH CÔNG
         alert("Cập nhật thành công!")
         this.isLoading = false;
+        // Chuyển từ response -> loginResponse
+        this.loginResponse = this.userService.getUserResponseFromLocalStorage();
+
+        // Check if this.loginResponse and response.fullname are defined
+        if (this.loginResponse && response.fullname) {
+          this.loginResponse.fullname = response.fullname;
+
+          // Update the storage with the updated this.loginResponse
+          this.userService.saveUserResponseToLocalStorage(this.loginResponse);
+        }
         location.reload();
       },
       complete: () => {

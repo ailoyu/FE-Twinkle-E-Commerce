@@ -53,13 +53,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     debugger
-    this.loginResponse$ = this.tokenService.displayUserInformation();
+    // this.loginResponse$ = this.tokenService.displayUserInformation();
 
-    this.loginResponse$?.subscribe(response => {
-      this.loginResponse = { ...response };
-      debugger
-    console.log(this.loginResponse);
-    });
+    // this.loginResponse$?.subscribe(response => {
+    //   this.loginResponse = { ...response };
+    //   debugger
+    // console.log(this.loginResponse);
+    // });
+
+
+    this.loginResponse = this.userService.getUserResponseFromLocalStorage();
     
   }
 
@@ -80,9 +83,10 @@ export class HeaderComponent implements OnInit {
   
 
   signOut(){
+  this.userService.removeUserFromLocalStorage();
     this.tokenService.removeToken();
+    this.loginResponse = this.userService.getUserResponseFromLocalStorage();  
     location.reload();
-    
   }
 
   

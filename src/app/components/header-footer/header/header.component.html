@@ -33,12 +33,12 @@
                 Về chúng tôi
             </a>
         </li>
-        <ng-container *ngIf="loginResponse$">
+        <ng-container *ngIf="loginResponse">
           <li>
               <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-user icon"></i>
-                  {{loginResponse?.fullname}}
+                  {{loginResponse.fullname}}
                 </button>
                 <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
                   <li *ngIf="loginResponse?.role_id === 2" routerLink="/admin/edit-products" routerLinkActive="active">Trang quản trị</li>
@@ -50,7 +50,7 @@
               </div>
             </li>
           </ng-container>
-          <ng-container *ngIf="!loginResponse$">
+          <ng-container *ngIf="!loginResponse">
             
               <li class="nav-item">
                 <a class="nav-link" routerLink="/login" routerLinkActive="active">Đăng nhập</a>
