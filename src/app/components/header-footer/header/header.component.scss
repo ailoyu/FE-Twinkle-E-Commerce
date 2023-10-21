@@ -84,31 +84,36 @@ ul {
   .tags {
     display: inline;
     position: relative;
+    height: 200px;
     z-index: 1; /* Set a z-index for the <div> to create a stacking context */
   }
   
-  .tags:hover:after {
-    background: #333;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
-    bottom: -34px;
-    color: #fff;
+  .tags:hover:before {
     content: attr(data-gloss);
-    left: 20%;
-    padding: 5px 15px;
     position: absolute;
+    top: -41px;
+    left: 20%;
+    width: 250px;
     z-index: 2; /* Ensure the :after pseudo-element appears on top */
-    width: 350px;
+    background: #333;
+    // background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
-  .tags:hover:before {
-    border: solid;
-    border-color: #333 transparent;
-    border-width: 0 6px 6px 6px;
-    bottom: -4px;
+  .tags:hover:after {
+    // border: solid;
+    // border-color: #333 transparent;
+    // border-width: 0px 6px 6px 6px;
+    // left: 50%;
     content: "";
-    left: 50%;
     position: absolute;
+    // bottom: 0;
+    // right: 0;
     z-index: 3; /* Ensure the :before pseudo-element appears on top */
   }
   
@@ -120,7 +125,7 @@ ul {
   .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 160%;
     left: 0;
     z-index: 1;
     background-color: white !important;

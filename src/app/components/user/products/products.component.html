@@ -19,6 +19,26 @@
         </select>
         <button class="btn btn-primary ml-2" (click)="searchProducts()">Tìm kiếm</button>
     </div>
+
+
+    <div class="box-father">
+        <button class="box-1">Nâng cao</button>
+        <div class="box-1"> 
+            <button></button>
+            <div class="container">
+                <div class="box-2">
+                    <div class="filter-1" placeholder="Laptop">Laptop</div>
+                    <div class="filter-1" placeholder="Laptop">Laptop</div>
+                    <div class="filter-1" placeholder="Laptop">Laptop</div>
+                    <div class="filter-1" placeholder="Laptop">Laptop</div>
+                    <div class="filter-1" placeholder="Laptop">Laptop</div>
+                </div>
+        </div>
+        
+        </div>
+
+    </div>
+
     <div class="row twinkle">        
         <div class="col-lg-4 col-md-6" *ngFor="let product of products">
             <div class="product-item" (click)="onProductClick(product.id)" >
