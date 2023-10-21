@@ -69,17 +69,49 @@ ul {
   }
   
   .dropdown-toggle {
-    padding: 10px 0px 10px 40px;
+    // padding: 10px 0px 10px 40px;
     color: #333;
     cursor: pointer;
     font-size: 18px;
     border-radius: 30px;
-    width: 270px;
+    width: 200px;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  .tags {
+    display: inline;
+    position: relative;
+    z-index: 1; /* Set a z-index for the <div> to create a stacking context */
+  }
+  
+  .tags:hover:after {
+    background: #333;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    bottom: -34px;
+    color: #fff;
+    content: attr(data-gloss);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 2; /* Ensure the :after pseudo-element appears on top */
+    width: 350px;
+  }
+  
+  .tags:hover:before {
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 0 6px 6px 6px;
+    bottom: -4px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 3; /* Ensure the :before pseudo-element appears on top */
+  }
+  
   
   .dropdown-toggle i {
     padding-right: 6px;

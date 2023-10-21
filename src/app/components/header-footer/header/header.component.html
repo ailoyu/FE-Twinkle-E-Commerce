@@ -35,9 +35,10 @@
         </li>
         <ng-container *ngIf="loginResponse">
           <li>
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-user icon"></i>
+              <div class="dropdown tags"  [attr.data-gloss]="loginResponse.fullname">
+                <button class="btn btn-primary dropdown-toggle"
+                type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user icon" ></i>
                   {{loginResponse.fullname}}
                 </button>
                 <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
