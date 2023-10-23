@@ -48,7 +48,8 @@ export class LoginComponent {
 
   ngOnInit() {
     // Gọi API lấy danh sách roles và lưu vào biến roles ở ngoài Login
-    this.tokenService.removeToken();
+    // this.tokenService.removeToken();
+    this.userService.removeUserFromLocalStorage();
 
     debugger
     this.roleService.getRoles().subscribe({

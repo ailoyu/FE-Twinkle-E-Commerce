@@ -83,8 +83,8 @@ export class HeaderComponent implements OnInit {
   
 
   signOut(){
-  this.userService.removeUserFromLocalStorage();
-    this.tokenService.removeToken();
+    // this.tokenService.removeToken();
+    this.userService.removeUserFromLocalStorage();
     this.loginResponse = this.userService.getUserResponseFromLocalStorage();  
     location.reload();
   }
