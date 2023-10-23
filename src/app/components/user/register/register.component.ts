@@ -122,8 +122,13 @@ export class RegisterComponent {
       }
 
     }
+  }
 
-    
+
+  passwordFieldType: string = 'password'; // Initialize to 'password'
+
+  showPassword() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
   }
 
 
