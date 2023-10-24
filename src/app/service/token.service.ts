@@ -45,7 +45,7 @@ export class TokenService {
         
         if (token) {
           const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-          const url = `${environment.apiBaseUrl}/users/${phoneNumber}`;
+          const url = `${environment.apiBaseUrl}/users/find-by-phone/${phoneNumber}`;
     
           return this.http.get<LoginResponse>(url, { headers });
         }

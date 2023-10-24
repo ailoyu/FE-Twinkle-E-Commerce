@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { LoginResponse } from 'src/app/responses/user/login.response';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/service/cart.service';
 
 
 @Component({
@@ -39,6 +40,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private tokenService: TokenService,
     private userService: UserService,
+    private cartService: CartService,
     private router: Router){
     }
     
@@ -83,7 +85,8 @@ export class HeaderComponent implements OnInit {
   
 
   signOut(){
-    // this.tokenService.removeToken();
+    this.cartService.clearCart();
+    this.tokenService.removeToken();
     this.userService.removeUserFromLocalStorage();
     this.loginResponse = this.userService.getUserResponseFromLocalStorage();  
     location.reload();
