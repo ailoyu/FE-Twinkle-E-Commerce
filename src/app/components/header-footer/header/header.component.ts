@@ -85,10 +85,10 @@ export class HeaderComponent implements OnInit {
   
 
   signOut(){
-    this.cartService.clearCart();
     this.tokenService.removeToken();
     this.userService.removeUserFromLocalStorage();
     this.loginResponse = this.userService.getUserResponseFromLocalStorage();  
+    this.cartService.clearCart();
     location.reload();
   }
 
