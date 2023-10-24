@@ -355,73 +355,73 @@ tfoot tr td h4 {
 // }
 
 // Mobile: width < 768px
-@media only screen and (max-width: 46.1875em) {
-.dashboard {
-  height: 104vh;
-  margin-top: 0px;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-}
-
-.dashboard-sidebar {
-  width: 100% !important;
-  height: 172px !important;
-  position: absolute;
-  top: 0px !important;
-  margin-top: 0px!important;
-  z-index: 10;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
-.dashboard-sidebar ul {
-  text-align: center;
-}
-
-.dashboard-sidebar ul li {
-  font-size: 20px !important;
-  font-weight: bold;
-  text-align: center;
-}
-
-.dashboard-sidebar ul li a {
-  font-size: 18px!important;
-  margin-bottom: 40px!important;
-}
-
-// .container {
-//   position: inherit;
-// }
-
-// .confirmation .container {
-//   position: absolute;
-//   top: 176px !important;
-//   left: 2%;
-//   width: 96%;
-//   z-index: 10;
-// }
-
-// .row {
+// @media only screen and (max-width: 46.1875em) {
+// .dashboard {
+//   height: 104vh;
+//   margin-top: 0px;
 //   position: relative;
 //   top: 0;
 //   left: 0;
-//   z-index: 10;
+//   z-index: 1;
 //   width: 100%;
-//   display: none;
 // }
 
-// table {
+// .dashboard-sidebar {
+//   width: 100% !important;
+//   height: 172px !important;
 //   position: absolute;
-//   top: 0;
-//   left: 2%;
-//   z-index: 100;
-//   width: 96%;
+//   top: 0px !important;
+//   margin-top: 0px!important;
+//   z-index: 10;
+//   border-top-left-radius: 20px;
+//   border-bottom-left-radius: 20px;
 // }
 
-}
+// .dashboard-sidebar ul {
+//   text-align: center;
+// }
+
+// .dashboard-sidebar ul li {
+//   font-size: 20px !important;
+//   font-weight: bold;
+//   text-align: center;
+// }
+
+// .dashboard-sidebar ul li a {
+//   font-size: 18px!important;
+//   margin-bottom: 40px!important;
+// }
+
+// // .container {
+// //   position: inherit;
+// // }
+
+// // .confirmation .container {
+// //   position: absolute;
+// //   top: 176px !important;
+// //   left: 2%;
+// //   width: 96%;
+// //   z-index: 10;
+// // }
+
+// // .row {
+// //   position: relative;
+// //   top: 0;
+// //   left: 0;
+// //   z-index: 10;
+// //   width: 100%;
+// //   display: none;
+// // }
+
+// // table {
+// //   position: absolute;
+// //   top: 0;
+// //   left: 2%;
+// //   z-index: 100;
+// //   width: 96%;
+// // }
+
+// }
 
 // Table: width >= 768px and width < 1024px
 // @media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
