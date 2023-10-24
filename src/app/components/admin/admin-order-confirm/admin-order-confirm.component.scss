@@ -350,9 +350,9 @@ tfoot tr td h4 {
 
 // Responsive
 // Mobile & tablet: width < 1024px
-@media only screen and (max-width: 63.9375em) {
+// @media only screen and (max-width: 63.9375em) {
 
-}
+// }
 
 // Mobile: width < 768px
 @media only screen and (max-width: 46.1875em) {
@@ -424,20 +424,20 @@ tfoot tr td h4 {
 }
 
 // Table: width >= 768px and width < 1024px
-@media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-.dashboard-sidebar {
-  width: 204px!important;
-}
+// @media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+// .dashboard-sidebar {
+//   width: 204px!important;
+// }
 
-.dashboard {
-  height: 77vh;
-}
+// .dashboard {
+//   height: 77vh;
+// }
 
-.container {
-  width: 500px;
-}
+// .container {
+//   width: 500px;
+// }
 
-.dashboard-sidebar li:hover { 
-  display: none;
-}
-}
+// .dashboard-sidebar li:hover { 
+//   display: none;
+// }
+// }
