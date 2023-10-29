@@ -26,6 +26,41 @@ export class DetailProductComponent implements OnInit{
     private route: ActivatedRoute,
   ){}
 
+
+  allCards = [
+    // Thêm tất cả các thẻ card của bạn vào đây
+    // Ví dụ: { title: 'Tiêu đề 1', details: 'Nội dung 1' },
+    { title: 'Tiêu đề 1', details: 'Nội dung 1' },
+    { title: 'Tiêu đề 1', details: 'Nội dung 1' },
+    { title: 'Tiêu đề 1', details: 'Nội dung 1' },
+    { title: 'Tiêu đề 1', details: 'Nội dung 1' },
+    { title: 'Tiêu đề 1', details: 'Nội dung 1' },
+    { title: 'Tiêu đề 1', details: 'Nội dung 1' },
+    { title: 'Tiêu đề 1', details: 'Nội dung 1' },
+  ];
+
+  // Biến để theo dõi vị trí hiển thị
+  currentIndex = 0;
+
+  // Biến để lưu trữ 3 thẻ card hiển thị tại thời điểm hiện tại
+  visibleCards = this.allCards.slice(this.currentIndex, this.currentIndex + 3);
+
+  // Hàm hiển thị thẻ tiếp theo
+  showNextCards() {
+    if (this.currentIndex + 3 < this.allCards.length) {
+      this.currentIndex += 3;
+      this.visibleCards = this.allCards.slice(this.currentIndex, this.currentIndex + 3);
+    }
+  }
+
+  // Hàm hiển thị thẻ trước
+  showPreviousCards() {
+    if (this.currentIndex > 0) {
+      this.currentIndex -= 3;
+      this.visibleCards = this.allCards.slice(this.currentIndex, this.currentIndex + 3);
+    }
+  }
+
   ngOnInit() {
       // Lấy productId từ URL
 

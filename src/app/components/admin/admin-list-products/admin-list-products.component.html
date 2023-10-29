@@ -1,20 +1,25 @@
 <app-header></app-header>
+<div style="margin-top: 100px;">
 <div class="dashboard">
     <div class="dashboard-sidebar">
       <!-- Add your dashboard components here -->
       <ul>
         <li><a routerLink="/admin/order-confirm/pending" routerLinkActive="active">Quản lý đơn hàng</a></li>
-        <li><a routerLink="#" routerLinkActive="active">Quản lý thể loại</a></li>
+        <li><a routerLink="/admin/list-categories" routerLinkActive="active">Quản lý thể loại</a></li>
         <li><a routerLink="#" routerLinkActive="active">Quản lý tài khoản</a></li>
         <li><a routerLink="#" routerLinkActive="active">Quản lý nhân viên</a></li>
         <li><a routerLink="#" routerLinkActive="active">Quản lý khách hàng</a></li>
         <li><a routerLink="#" routerLinkActive="active">Thống kê doanh thu</a></li>
-        <li><a routerLink="#" routerLinkActive="active">Quản lý sản phẩm</a></li>
-        <li><a routerLink="/admin/list-products" routerLinkActive="active">Chỉnh sửa sản phẩm</a></li>
-        <li><a routerLink="/admin/edit-products" routerLinkActive="active">Thêm mới sản phẩm</a></li>
+        <li>
+          <a (click)="toggleSubMenu()" routerLinkActive="active" >+ Quản lý sản phẩm</a>
+          <ul *ngIf="subMenuVisible" style="padding-left: 5px; margin-top: 10px;">
+            <li><a routerLink="/admin/list-products" style="font-size: 20px; font-weight: normal;" routerLinkActive="active">- Chỉnh sửa sản phẩm</a></li>
+            <li><a routerLink="/admin/edit-products" style="font-size: 20px; font-weight: normal" routerLinkActive="active">- Thêm mới sản phẩm</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
-<div class="container twinkle">
+<div class="container twinkle" style="margin-top: 100px;">
     <div class="confirmation-container" style="text-align: center;">
         <h1>Danh sách sản phẩm</h1>
         <div class="search-box">
@@ -58,7 +63,7 @@
                         </div>
                     </td>
                     <td>{{product.description}}</td>
-                    <td>{{product.price | number: '.0-0'}} VND</td>
+                    <td>${{product.price}}</td>
                     <td>{{product.category_name}}</td>
                 </tr>
             </tbody>
@@ -93,6 +98,7 @@
             </ul>
         </nav>
     </div>
+</div>
 </div>
 </div>
 <app-footer></app-footer>

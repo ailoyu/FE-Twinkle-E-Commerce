@@ -32,6 +32,13 @@ export class AdminListProductsComponent {
       this.getCategories();
   }
 
+  subMenuVisible = false;
+
+  toggleSubMenu() {
+    debugger
+    this.subMenuVisible = !this.subMenuVisible;
+  }
+
   
 
   getCategories(){

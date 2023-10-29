@@ -1,2 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+// Reset the body of page
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Using for the all of container in file ".component.scss"
+.edit-overall {
+    margin-top: 120px!important;
+}
+
+// Using for the products.component.scss
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+}

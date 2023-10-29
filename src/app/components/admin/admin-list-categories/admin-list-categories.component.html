@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div style="margin-top: 100px;">
+    <div class="dashboard">
+        <div class="dashboard-sidebar">
+          <!-- Add your dashboard components here -->
+          <ul>
+            <li><a routerLink="/admin/order-confirm/pending" routerLinkActive="active">Quản lý đơn hàng</a></li>
+            <li><a routerLink="/admin/list-categories" routerLinkActive="active">Quản lý thể loại</a></li>
+            <li><a routerLink="#" routerLinkActive="active">Quản lý tài khoản</a></li>
+            <li><a routerLink="#" routerLinkActive="active">Quản lý nhân viên</a></li>
+            <li><a routerLink="#" routerLinkActive="active">Quản lý khách hàng</a></li>
+            <li><a routerLink="#" routerLinkActive="active">Thống kê doanh thu</a></li>
+            <li>
+              <a (click)="toggleSubMenu()" routerLinkActive="active" >+ Quản lý sản phẩm</a>
+              <ul *ngIf="subMenuVisible" style="padding-left: 5px; margin-top: 10px;">
+                <li><a routerLink="/admin/list-products" style="font-size: 20px; font-weight: normal;" routerLinkActive="active">- Chỉnh sửa sản phẩm</a></li>
+                <li><a routerLink="/admin/edit-products" style="font-size: 20px; font-weight: normal" routerLinkActive="active">- Thêm mới sản phẩm</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    <div class="container twinkle" style="margin-top: 100px;">
+        <div class="confirmation-container" style="text-align: center;">
+            <h1>Danh sách thể loại</h1>
+        </div>
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Mã thể loại</th>
+                        <th scope="col">Tên thể loại</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let category of categories" class="twinkle">
+                        <td>{{category.id}}</td>
+                        <td>{{category.name}}</td>
+                    </tr>
+                </tbody>
+            </table>   
+            
+            <div class="text-center mt-3">
+               <button class="btn btn-gradient" type="button"><a routerLink="/admin/edit-products" routerLinkActive="active">Thêm mới sản phẩm</a></button>
+               
+            </div> 
+        </div>  
+        
+        
+    </div>
+    </div>
+    </div>
+
+<app-footer></app-footer>
+

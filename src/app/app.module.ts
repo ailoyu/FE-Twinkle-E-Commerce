@@ -34,6 +34,9 @@ import { IdentityComponent } from './components/user/identity/identity.component
 import { AdminEditComponent } from './components/admin/admin-edit/admin-edit.component';
 import { AdminListProductsComponent } from './components/admin/admin-list-products/admin-list-products.component';
 import { AdminOrderConfirmComponent } from './components/admin/admin-order-confirm/admin-order-confirm.component';
+import { AdminListCategoriesComponent } from './components/admin/admin-list-categories/admin-list-categories.component';
+import { NextDirective } from './next.directive';
+import { PrevDirective } from './prev.directive';
 
 
 
@@ -57,6 +60,9 @@ import { AdminOrderConfirmComponent } from './components/admin/admin-order-confi
          AdminEditComponent,
          AdminListProductsComponent,
          AdminOrderConfirmComponent,
+         AdminListCategoriesComponent,
+         NextDirective,
+         PrevDirective,
   ],
   imports: [
     ReactiveFormsModule,

@@ -23,6 +23,13 @@ export class AdminEditComponent implements OnInit {
 
   images: { file: File, base64: string }[] = [];
 
+  subMenuVisible = false;
+
+  toggleSubMenu() {
+    debugger
+    this.subMenuVisible = !this.subMenuVisible;
+  }
+
 onFileChange(event: any) {
   const files: FileList = event.target.files;
   const newImages: { file: File, base64: string }[] = [];
