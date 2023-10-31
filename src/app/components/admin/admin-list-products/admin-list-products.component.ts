@@ -32,6 +32,17 @@ export class AdminListProductsComponent {
       this.getCategories();
   }
 
+  subMenuVisible = false;
+
+  toggleSubMenu() {
+    debugger
+    this.subMenuVisible = !this.subMenuVisible;
+  }
+
+  calculateTotalQuantity(quantities: number[]): number {
+    return quantities.reduce((total, quantity) => total + quantity, 0);
+  }
+
   
 
   getCategories(){

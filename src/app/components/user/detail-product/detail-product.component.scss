@@ -1,6 +1,4 @@
-.container {
-  margin-top: 40px;
-}
+
 
 .intro-section {
     color: white;
@@ -98,6 +96,72 @@
   .product-quantity input:focus {
     outline: none;
   }  
+
+// Recommendation products section
+span  h2 {
+  color: #ffffff;
+  padding: 20px 0px 10px;
+
+}
+.section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  height: 500px;
+}
+
+.card {
+  width: 30%;
+  left: 0;
+}
+
+
+
+.card-images {
+  position: inherit;
+  height: 50%;
+  background-image: url(./images/cat.png);
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  padding: 10px 20px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.card-details {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+
+
+
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+
+.buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff5;
+  color: red;
+  font-weight: bold;
+  font-family: monospace;
+}
+
 
 
   .twinkle{

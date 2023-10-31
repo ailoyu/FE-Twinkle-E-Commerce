@@ -1,15 +1,17 @@
-
-
 header {
-    background-color: rgba(0, 0, 0, 0);
-    color: rgb(173, 178, 203);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0a0714;
+  color: rgb(173, 178, 203);
+  z-index: 1000;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
-
-
 .navbar {
-    background-color: rgba(0, 0, 0, 0) !important;
-
+    background-color: rgba(0, 0, 0, 0)!important;
 }
 
 .navbar .container {

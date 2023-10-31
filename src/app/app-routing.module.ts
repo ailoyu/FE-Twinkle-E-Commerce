@@ -11,11 +11,16 @@ import { ProductsComponent } from './components/user/products/products.component
 import { AboutUsComponent } from './components/user/about-us/about-us.component';
 import { ChangePasswordComponent } from './components/user/change-password/change-password.component';
 import { IdentityComponent } from './components/user/identity/identity.component';
-import { AdminEditComponent } from './components/admin/admin-edit/admin-edit.component';
+import { AdminEditComponent } from './components/admin/admin-edit-product/admin-edit-product.component';
 import { AdminAuthGuard } from './authorization/admin.authorization.service';
 import { LoginAuthGuard } from './authorization/login.authorization.service';
 import { AdminListProductsComponent } from './components/admin/admin-list-products/admin-list-products.component';
 import { AdminOrderConfirmComponent } from './components/admin/admin-order-confirm/admin-order-confirm.component';
+import { AdminListCategoriesComponent } from './components/admin/admin-list-categories/admin-list-categories.component';
+import { AdminListUsersComponent } from './components/admin/admin-list-users/admin-list-users.component';
+import { AdminEditUserComponent } from './components/admin/admin-edit-user/admin-edit-user.component';
+import { AdminListProvidersComponent } from './components/admin/admin-list-providers/admin-list-providers.component';
+import { AdminEditProviderComponent } from './components/admin/admin-edit-provider/admin-edit-provider.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -34,10 +39,21 @@ const routes: Routes = [
     path: 'admin', 
     canActivate: [AdminAuthGuard], 
     children: [
+      { path: 'order-confirm/:status', component: AdminOrderConfirmComponent },
+      
       { path: 'edit-products', component: AdminEditComponent },
       { path: 'edit-products/:id', component: AdminEditComponent },
       { path: 'list-products', component: AdminListProductsComponent },
-      { path: 'order-confirm/:status', component: AdminOrderConfirmComponent },
+
+      { path: 'edit-providers', component: AdminEditProviderComponent },
+      { path: 'edit-providers/:id', component: AdminEditProviderComponent },
+      { path: 'list-providers', component: AdminListProvidersComponent },
+
+
+      { path: 'list-categories', component: AdminListCategoriesComponent},
+
+      { path: 'list-users', component: AdminListUsersComponent },
+      { path: 'edit-users', component: AdminEditUserComponent },
     ]
   },
 

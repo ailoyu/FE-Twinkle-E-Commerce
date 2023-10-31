@@ -271,58 +271,6 @@ tfoot tr td h4 {
   display: flex;
   margin-top: 20px;
 
-  .dashboard-sidebar {
-    width: 268px;
-    background-color: #007bff;
-    padding: 20px;
-    animation: slide-in 0.5s ease-in-out;
-    height: 868px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-top: 50px;
-    }
-    
-    @keyframes slide-in {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-    }
-    
-    @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-    }
-    
-    .dashboard-sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .dashboard-sidebar li {
-      margin-bottom: 20px;
-      color: #fff;
-      cursor: pointer;
-      transition: color 0.3s ease-in-out;
-      font-size: 18px;
-    }
-    
-    .dashboard-sidebar li:hover {
-      color: #e3e3e3;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
 }
 
 

@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container twinkle">
+<div class="container edit-overall twinkle">
     <div class="confirmation-container">
         <h1>Lịch sử các đơn hàng</h1>
         <p>Dưới đây là thông tin chi tiết về các đơn hàng của bạn</p>     
@@ -44,15 +44,15 @@
                         </div>
                     </td>
                     <td>{{orderDetail.numberOfProducts}}</td>
-                    <td>{{orderDetail.price | number: '.0-0' }} VND</td>
-                    <td>{{orderDetail.price * orderDetail.numberOfProducts | number: '.0-0' }} VND</td>
+                    <td>${{orderDetail.productPrice}}</td>
+                    <td>${{orderDetail.productPrice * orderDetail.numberOfProducts}}</td>
                 </tr>
             </table>
             </tbody>
             <tfoot *ngIf="selectedOrder === order.id">
                 <tr>
                     <td colspan="4" class="text-end">
-                        <h4 class="header-text">Tổng giá: {{order.totalMoney| number: '.0-0' }} VND</h4>
+                        <h4 class="header-text">Tổng Đơn Hàng: ${{order.totalMoney}}</h4>
                     </td>
                 </tr>
             </tfoot>

@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container">
+<div class="container edit-overall">
     <div class="intro-section">
         <h1>Giỏ hàng</h1>
     </div>    
@@ -116,8 +116,8 @@
                             </div>
                         </td>
                         <td>{{ item.quantity }}</td>
-                        <td>{{ item.product.price | number: '.0-0'  }} VND</td>
-                        <td>{{ (item.product.price * item.quantity) | number: '.0-0'  }} VND</td>
+                        <td>{{ item.product.price }} VND</td>
+                        <td>{{ (item.product.price * item.quantity) }} VND</td>
                     </tr>
                 </ng-container>
             </tbody>

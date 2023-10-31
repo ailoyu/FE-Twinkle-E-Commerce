@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container">
+<div class="container edit-overall">
     <div class="intro-section">
         <h1>Đây là trang chi tiết sản phẩm</h1>
         <p>Enjoy your moment of shopping</p>
@@ -58,6 +58,27 @@
                 </div>
             </div>
         </div>
+        <!-- Recommendation products -->
+        <span><h2 style="color:white">Recommend-Products</h2></span>
+        <div class="section twinkle">        
+            <div *ngFor="let card of visibleCards; let i = index" class="card" [class.active]="i === currentIndex">
+            <div class="card">
+                <div class="card-images"><a href="https://play-lh.googleusercontent.com/E79yq4jNK1lFtZJh8SEebMhqT3Zg9mhZ4PjfmKxqGXUISZhddU-cVwGDV22pYb5IEw7U"></a>sdfsdf</div>
+                <div class="card-title"><a href="">sdfsdfsdf</a></div>
+                <div class="card-details"><p>loremsdfsdfsdfsdf</p></div>
+            </div>
+        </div>    
+            
+            
+            
+            <div class="buttons">
+                <button (click)="showPreviousCards()" id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                <button (click)="showNextCards()" id="next"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        
+       
     </div>
 </div>
 <app-footer></app-footer>

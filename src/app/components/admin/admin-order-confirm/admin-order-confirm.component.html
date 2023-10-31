@@ -1,19 +1,7 @@
 <app-header></app-header>
+<div style="margin-top: 100px;">
 <div class="dashboard">
-    <div class="dashboard-sidebar">
-      <!-- Add your dashboard components here -->
-      <ul>
-        <li><a routerLink="/admin/order-confirm/pending" routerLinkActive="active">Quản lý đơn hàng</a></li>
-        <li><a routerLink="#" routerLinkActive="active">Quản lý thể loại</a></li>
-        <li><a routerLink="#" routerLinkActive="active">Quản lý tài khoản</a></li>
-        <li><a routerLink="#" routerLinkActive="active">Quản lý nhân viên</a></li>
-        <li><a routerLink="#" routerLinkActive="active">Quản lý khách hàng</a></li>
-        <li><a routerLink="#" routerLinkActive="active">Thống kê doanh thu</a></li>
-        <li><a routerLink="#" routerLinkActive="active">Quản lý sản phẩm</a></li>
-        <li><a routerLink="/admin/list-products" routerLinkActive="active">Chỉnh sửa sản phẩm</a></li>
-        <li><a routerLink="/admin/edit-products" routerLinkActive="active">Thêm mới sản phẩm</a></li>
-      </ul>
-    </div>
+    <app-admin-dashboard></app-admin-dashboard>
 <div class="container twinkle">
     <div class="confirmation-container">
         <h1>Quản lý các đơn hàng</h1>
@@ -91,15 +79,15 @@
                         </div>
                     </td>
                     <td>{{orderDetail.numberOfProducts}}</td>
-                    <td>{{orderDetail.price | number: '.0-0' }} VND</td>
-                    <td>{{orderDetail.price * orderDetail.numberOfProducts | number: '.0-0' }} VND</td>
+                    <td>${{orderDetail.productPrice}}</td>
+                    <td>${{orderDetail.productPrice * orderDetail.numberOfProducts}}</td>
                 </tr>
             </table>
             </tbody>
             <tfoot *ngIf="selectedOrder === order.id">
                 <tr>
                     <td colspan="4" class="text-end">
-                        <h4 class="header-text">Tổng giá: {{order.totalMoney| number: '.0-0' }} VND</h4>
+                        <h4 class="header-text">Tổng Đơn Hàng: ${{order.totalMoney}}</h4>
                     </td>
                 </tr>
             </tfoot>
@@ -111,5 +99,5 @@
     </div>
 </div>
 </div>
-
+</div>
 <app-footer></app-footer>

@@ -35,9 +35,11 @@ export class ProductService{
         return this.http.get<Product[]>(`${this.apiProducts}/by-ids`, { params });
       }
 
-      saveProduct(product: Product): Observable<any>{
+      private apiInputOrder = `${environment.apiBaseUrl}/input_orders`;
+
+      saveProduct(product: any): Observable<any>{
         debugger
-        return this.http.post(this.apiProducts, product);
+        return this.http.post(this.apiInputOrder, product);
     }
 
 

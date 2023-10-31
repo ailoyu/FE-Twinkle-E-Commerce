@@ -13,6 +13,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductsComponent implements OnInit{
 
+  showFilter = false;
 
   
   products: Product[] = [];

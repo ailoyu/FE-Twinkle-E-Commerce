@@ -24,8 +24,8 @@ export class LoginComponent {
 
   isLoading = false;
 
-  roles: Role[] = []; // Mảng roles
   rememberMe: boolean = true;
+  roles: Role[] = []; // Mảng roles
   selectedRole: Role | undefined; // Biến để lưu giá trị được chọn từ dropdown
   userInfo: any;
 
