@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
 import { Category } from 'src/app/model/category';
@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit{
 
 
   constructor(private productService: ProductService,
+    private el: ElementRef,
     private router: Router){}
 
   ngOnInit(): void {
@@ -54,5 +55,8 @@ export class HomeComponent implements OnInit{
     // Điều hướng đến trang detail-product với productId là tham số
     this.router.navigate(['/detail-product', productId]);
   }
+
+
+  
   
 }

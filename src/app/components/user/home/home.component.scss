@@ -14,186 +14,76 @@
     padding: 20px;
 }
 
-.search-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
 .twinkle{
     animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
 }
 @keyframes slide-in {
     0% {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
     100% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
-  @keyframes fade-in {
+}
+
+@keyframes fade-in {
     0% {
-      opacity: 0;
+        opacity: 0;
     }
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-
-.product-category {
-    width: 200px;
 }
 
-.search-input {
-    width: 300px;
-    background-color: rgb(19, 23, 42);
-    margin-right: 10px;
-    border-color: rgba(255, 255, 255, 0.5);
-    color: white;
-}
-
-.form-control {
-    background-color: transparent;
-    color: white;
-}
-
-.form-control::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(255, 255, 255, 0.5);
-    opacity: 1;
-    /* Firefox */
-}
-
-.form-control:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.form-control::-ms-input-placeholder {
-    /* Microsoft Edge */
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.product-item {
-    background-color: rgb(19, 23, 42);
-    border: 1px solid rgb(35, 39, 61);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-.product-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.product-name {
-    color: white;
-}
-
-.product-description {
-    color: rgb(173, 178, 203);
-}
-
-.product-warranty {
-    color: rgb(242, 126, 212);
-}
-
-.product-price {
-    color: white;
-}
-
-.product-rating {
-    color: #FFD700;
-    margin-top: 10px;
-}
-
-.product-actions {
+.carousel {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+
 }
 
-.space-x {
-    margin: 0 5px;
-    /*margin-top, margin-right, margin-bottom, margin-left*/
-}
-
-// Code from "Quang"
-// .carousel-image {
-//     width: 100%;
-//     height: auto;
-//     object-fit: contain;
-//     max-height: 80vh;
-//     margin: 0 auto;
-//   }
-
-// .carousel-caption {
-//   position: absolute;
-//   bottom: 0;
-//   left: 0;
-//   text-align: center;
-//   color: white;
-//   background-color: rgba(0, 0, 0, 0.7);
-//   padding: 10px;
-//   width: 100%;
-//   margin-bottom: 10px;
-// }
-
-// Code from "An"
 .carousel-image {
-    width: 50%;
-    margin-left: 25%;
-    height: auto;
-    object-fit: contain;
-    max-height: 90vh;
-    // margin: 0 auto;
-    margin-bottom: 125px;
+    width: 500px;
+    height: 400px;
 }
 
 // .carousel-image {
-//     position: relative;
-//     bottom: 0;
-//     left: 0;
-//     object-fit: contain;
 //     width: 50%;
 //     margin-left: 25%;
-//     margin-bottom: 10px;
+//     height: auto;
+//     object-fit: contain;
+//     max-height: 90vh;
+//     // margin: 0 auto;
+//     margin-bottom: 125px;
 // }
 
-.carousel-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  margin-bottom: 10px;
-//   width: 100%;
-  width: 50%;
-  margin-left: 25%;
-}
+// .carousel-caption {
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     text-align: center;
+//     color: white;
+//     background-color: rgba(0, 0, 0, 0.7);
+//     padding: 10px;
+//     margin-bottom: 10px;
+//     width: 50%;
+//     margin-left: 25%;
+// }
 
-.carousel-caption p {
-    font-size: 18px;
-    padding-bottom: 10px;
-}
+// .carousel-caption p {
+//     font-size: 18px;
+//     padding-bottom: 10px;
+// }
 
-.carousel-caption p span {
-    padding-right: 4px;
-}
+// .carousel-caption p span {
+//     padding-right: 4px;
+// }
 
+
+// Nike -nicexu
 .right {
     top: 100px;
     bottom: 100px;
 }
 
-// Nike -nicexu
 .section {
     width: 100%;
     height: 100%;
@@ -216,6 +106,7 @@
     width: 100%;
     height: 1032px;
     margin-bottom: 40px;
+    object-fit: cover;
 }
 
 .banner-video-ads h1 {
@@ -338,6 +229,7 @@ span {
     width: 705px;
     height: 700px;
 }
+
 .third {
     margin-bottom: 90px;
 }
@@ -406,17 +298,11 @@ span {
     height: 594px;
 }
 
-
-
 .list-item  {
     position: relative;
     width: 435px;
     height: 594px;
 }
-
-
-
-
 
 .fourth .list-item {
     position: relative;
@@ -436,8 +322,6 @@ span {
     background-color: #9e9ea0;
 }
 
-
-
 .list-item .content h3 {
     color: #fffcfe;
     font-size: 20px;
@@ -447,6 +331,7 @@ span {
 .list .list-item .content button {
     border: none;
 }
+
 .list-item img {
     width: 100%;
     height: 100%;
@@ -460,7 +345,6 @@ span {
     z-index: 1;
 }
 
-
 .middle {
     margin-bottom: 90px;
 }
@@ -469,144 +353,12 @@ span {
     margin-bottom: 90px;
 }
 
-// Slider section
-.product-shoes,
-.product-shoes-sport {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 140px;
-    width: 96%;
-    margin-left: 2%;
-    margin-top: 34px;
-}
-
-.product-shoes .container-fluid {
-    padding: 0px;
-}
-
-.product-shoes-sport .container-fluid {
-    padding: 0px;
-}
-
-.container-fluid .slider-wrap {
-    position: relative;
-    overflow: hidden;
-    height: 339px;
-}
-
-.product-shoes-sport .container-fluid .slider-wrap {
-    position: relative;
-    overflow: hidden;
-    height: 441px;
-}
-
-
-.slider-wrap .slider-main {
-    position: absolute;
-    top: 0px;
-    width: 200%;
-    height: 339px;
-}
-
-.product-shoes-sport .slider-wrap .slider-main {
-    position: absolute;
-    top: 0px;
-    width: 200%;
-    height: 441px;
-}
-
-.slider-main .item {
-    position: relative;
-    display: inline-block;
-    width: 300px;
-    height: 339px;
-    // background-color: red;
-    background-color: transparent;
-    color: #fff;
-    margin-right: 16px;
-}
-
-.product-shoes-sport .slider-main .item {
-    position: relative;
-    display: inline-block;
-    width: 467px;
-    height: 441px;
-    // background-color: red;
-    background-color: transparent;
-    color: #fff;
-    margin-right: 16px;
-}
-
-.slider-main .item .text {
-    position: absolute;
-    padding-right: 34%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.product-shoes-sport .slider-main .item .text {
-    position: absolute;
-    // padding-right: 34%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.slider-main .item .text img {
-    width: 300px;
-    height: 339px;
-}
-
-.product-shoes-sport .slider-main .item .text img {
-    width: 467px;
-    // height: 441px;
-    height: 200px;
-}
-
-.product-shoes-sport .slider-main .item .text h5 {
-    margin-top: 20px;
-}
-
-.product-shoes-sport .slider-main .item .text p {
-    margin-bottom: 20px;
-}
-
-.prev {
-    position: absolute;
-    left: 5%;
-    top: 50%;
-    translate: transform(-50%, -50%);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-    color: black;
-    border: none;
-    cursor: pointer;
-}
-
-
-.next {
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    translate: transform(-50%, -50%);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-    color: black;
-    border: none;    
-    cursor: pointer;
-}
 
 
 
 // Responsive
 // Mobile & tablet: width < 1024px
 @media only screen and (max-width: 63.9375em) {
-
 }
 
 // Mobile: width < 768px
@@ -644,4 +396,3 @@ span {
         margin-left: 15%;
     }
 }
-

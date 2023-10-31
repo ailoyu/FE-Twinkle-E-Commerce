@@ -17,6 +17,7 @@ import { LoginAuthGuard } from './authorization/login.authorization.service';
 import { AdminListProductsComponent } from './components/admin/admin-list-products/admin-list-products.component';
 import { AdminOrderConfirmComponent } from './components/admin/admin-order-confirm/admin-order-confirm.component';
 import { AdminListCategoriesComponent } from './components/admin/admin-list-categories/admin-list-categories.component';
+import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'detail-product/:id', component: DetailProductComponent }, // Route cho DetailProductComponent
   { path: 'order-history', component: OrderHistoryComponent, canActivate:[LoginAuthGuard]},
   { path: 'about-us', component: AboutUsComponent},
+  { path: 'best-sellers', component: BestSellersComponent},
   { path: 'info', component: IdentityComponent, canActivate:[LoginAuthGuard]},
   { path: 'change-password', component: ChangePasswordComponent, canActivate:[LoginAuthGuard]},
   { 

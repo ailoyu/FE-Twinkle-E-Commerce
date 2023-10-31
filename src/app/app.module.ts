@@ -37,6 +37,7 @@ import { AdminOrderConfirmComponent } from './components/admin/admin-order-confi
 import { AdminListCategoriesComponent } from './components/admin/admin-list-categories/admin-list-categories.component';
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
+import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
 
 
 
@@ -63,6 +64,7 @@ import { PrevDirective } from './prev.directive';
          AdminListCategoriesComponent,
          NextDirective,
          PrevDirective,
+         BestSellersComponent,
   ],
   imports: [
     ReactiveFormsModule,

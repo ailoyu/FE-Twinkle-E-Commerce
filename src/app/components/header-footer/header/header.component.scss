@@ -1,7 +1,7 @@
 .fixed {
   position: fixed;
   width: 100%;
-  transition: 0.5s linear;
+  transition: 0.2s linear;
   top: 0px;
   z-index: 1000;
   border-bottom-right-radius: 30px;
@@ -10,7 +10,7 @@
 
 .nofixed {
   position: static;
-  transition: 0.5s linear;
+  transition: 0.2s linear;
   top: -50px;
 }
 
@@ -34,7 +34,7 @@
 .navbar .container .navbar-nav .nav-link {
   color: rgb(173, 178, 203);
   border-radius: 20px;
-  padding: 8px 18px;
+  padding: 8px 17px;
   font-size: 18px;
 }
 
@@ -74,6 +74,8 @@ ul {
     display: inline-block;
   }
   
+
+
   .dropdown-toggle {
     // padding: 10px 0px 10px 40px;
     color: #333;
@@ -85,6 +87,13 @@ ul {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .dropdown-toggle::after {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    font-size: 25px;
   }
 
   .tags {

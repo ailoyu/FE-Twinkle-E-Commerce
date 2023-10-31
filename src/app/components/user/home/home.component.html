@@ -6,29 +6,13 @@
       <h1>Twinkle</h1>
       <p>Shopping and life</p>
   </div>
-
-  <!-- Đoạn này có 1 search bar bên trái, 1 combo box bên phải (hiện danh mục sphẩm) -->
-  <carousel>
-        <div  *ngFor="let product of products">
-        <slide (click)="onProductClick(product.id)">
-          <img class="carousel-image twinkle" [src]="product.url" alt="Slide 2" style="cursor: pointer;">
-          <img class="carousel-image twinkle" [src]="product.url" alt="Slide 1" style="cursor: pointer;">
-          <img class="carousel-image twinkle" [src]="product.url" alt="Slide 3" style="cursor: pointer;">
-          
-          <!-- <div class="carousel-caption">
-            <h3>{{product.name}}</h3>
-            <p>Giá: {{product.price | number: '.0-0' }} VND</p>
-          </div> -->
-        </slide>
-    </div>
-      </carousel>
 </div>
-  lạ lùng em hỡi gió hát lên câu ca làm anh thao thức
+
 <div class="section">
   <!-- This is the top video-ads -->
   <div class="top">
     <div class="banner-video-ads">
-      <video src="./assets/video/Top.mp4" autoplay loop></video>
+      <video src="https://res.cloudinary.com/dxctlgwec/video/upload/v1698678452/pfyatkw1ynidracek5cc.mp4" autoplay loop></video>
       <h1>RUN YOUR RUN</h1><br>
       <p>Follow the feeling that keeps your running best in the city.</p><br>
       <div class="button">
@@ -119,7 +103,7 @@
   <div class="middle">
     <div class="banner-video-ads">
       <h3>Trending</h3>
-      <video src="./assets/video/Middle.mp4" autoplay loop></video>
+      <video src="https://res.cloudinary.com/dxctlgwec/video/upload/v1698678372/p9qsdq4knrwkmuvowfzu.mp4" autoplay loop></video>
       <h1>TUNED FOR TOUCH</h1><br>
       <p>Make every touch a masterpiece like Jamala Musiala with the Tiempo 10.</p><br>
       <button>Shop</button>
@@ -132,7 +116,7 @@
   <div class="bottom">
     <div class="banner-video-ads">
       <h3>Don't Miss</h3>
-      <video src="./assets/video/Bottom.mp4" autoplay loop></video>
+      <video src="https://res.cloudinary.com/dxctlgwec/video/upload/v1698678304/giqcojfgpr7tm5oywvqd.mp4" autoplay loop></video>
       <p>Nike Vomeo 17</p>
       <h1>INCREDIBLY SOFT,BOLDLY RESPONSIVE</h1><br>
       <p>Set off on your next run with snap in your step and cushion underfoot.</p><br>
@@ -140,81 +124,7 @@
     </div>
   </div>
 
-  <span>Always Iconic</span>
-  <!-- This is the content of image slider shoes -->
-  <div class="product-shoes">
-    <div class="container-fluid">
-      <div class="slider-wrap">
-        <div class="slider-main">
-          <div class="item">
-            <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-          </div>
-        </div>
-        <div class="button-area">
-          <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-          <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
-        </div>
-      </div>
-    </div>
-  </div>
   
-  <span>Shop by Sport</span>
-  <!-- This is the content of image slider shoes with variety sport -->
-  <div class="product-shoes-sport">
-    <div class="container-fluid">
-      <div class="slider-wrap">
-        <div class="slider-main">
-          <div class="item">
-            <div class="text">
-              <img src="./assets/images/model-5.jpg" alt="">
-              <h5>Nike Basketball</h5>
-              <p>Styles made for your game.</p>
-              <a href="">Shop</a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/model-6.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/model-7.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/model-8.jpg" alt=""></div>
-          </div>
-          <div class="item">
-            <div class="text"><img src="./assets/images/model-9.jpg" alt=""></div>
-          </div>
-        </div>
-        <div class="button-area">
-          <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-          <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
   <span>The Essentials</span>
   <!-- This is the content "The Essentials" -->
   <div class="fourth">
@@ -243,11 +153,5 @@
   
   <!-- <router-outlet></router-outlet> -->
   <app-footer></app-footer>
-  
-  
-  https://www.youtube.com/watch?v=l5m84G2AwZ0&ab_channel=evondev
-  
-  <!-- making the multiple slide with angular -->
-  https://www.youtube.com/watch?v=tihuf0iuUhI&ab_channel=CreativeDeveloper
   
   

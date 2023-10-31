@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
   navbarfixed:boolean = false;
 
   @HostListener('window:scroll',['$event']) onscroll(){
-    if(window.scrollY>400)
+    if(window.scrollY>1500)
     {
       this.navbarfixed = false;
     }
