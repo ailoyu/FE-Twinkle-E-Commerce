@@ -162,8 +162,17 @@ button {
   color: white;
 }
 
-.product-description {
+.product-description{
   color: rgb(173, 178, 203);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-description:hover {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .product-warranty {

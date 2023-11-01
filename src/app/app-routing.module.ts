@@ -21,6 +21,7 @@ import { AdminListUsersComponent } from './components/admin/admin-list-users/adm
 import { AdminEditUserComponent } from './components/admin/admin-edit-user/admin-edit-user.component';
 import { AdminListProvidersComponent } from './components/admin/admin-list-providers/admin-list-providers.component';
 import { AdminEditProviderComponent } from './components/admin/admin-edit-provider/admin-edit-provider.component';
+import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -33,12 +34,15 @@ const routes: Routes = [
   { path: 'detail-product/:id', component: DetailProductComponent }, // Route cho DetailProductComponent
   { path: 'order-history', component: OrderHistoryComponent, canActivate:[LoginAuthGuard]},
   { path: 'about-us', component: AboutUsComponent},
+  { path: 'best-sellers', component: BestSellersComponent},
   { path: 'info', component: IdentityComponent, canActivate:[LoginAuthGuard]},
   { path: 'change-password', component: ChangePasswordComponent, canActivate:[LoginAuthGuard]},
   { 
     path: 'admin', 
     canActivate: [AdminAuthGuard], 
     children: [
+      { path: 'order-confirm/:status', component: AdminOrderConfirmComponent },
+      
       { path: 'order-confirm/:status', component: AdminOrderConfirmComponent },
       
       { path: 'edit-products', component: AdminEditComponent },

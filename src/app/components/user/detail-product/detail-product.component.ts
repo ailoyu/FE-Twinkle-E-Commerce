@@ -8,6 +8,7 @@ import { CategoryService } from 'src/app/service/category.service';
 import { ProductService } from 'src/app/service/product.service';
 
 @Component({
+  
   selector: 'app-detail-product',
   templateUrl: './detail-product.component.html',
   styleUrls: ['./detail-product.component.scss']
@@ -30,7 +31,6 @@ export class DetailProductComponent implements OnInit{
   allCards = [
     // Thêm tất cả các thẻ card của bạn vào đây
     // Ví dụ: { title: 'Tiêu đề 1', details: 'Nội dung 1' },
-    { title: 'Tiêu đề 1', details: 'Nội dung 1' },
     { title: 'Tiêu đề 1', details: 'Nội dung 1' },
     { title: 'Tiêu đề 1', details: 'Nội dung 1' },
     { title: 'Tiêu đề 1', details: 'Nội dung 1' },

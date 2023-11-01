@@ -26,12 +26,7 @@ export class AdminEditComponent implements OnInit {
   sizes: number[] = [];
   quantity: number[] = [];
 
-  subMenuVisible = false;
-
-  toggleSubMenu() {
-    debugger
-    this.subMenuVisible = !this.subMenuVisible;
-  }
+ 
 
 onFileChange(event: any) {
   const files: FileList = event.target.files;

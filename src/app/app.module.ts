@@ -40,6 +40,9 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
 import { AdminEditUserComponent } from './components/admin/admin-edit-user/admin-edit-user.component';
 import { AdminListProvidersComponent } from './components/admin/admin-list-providers/admin-list-providers.component';
 import { AdminEditProviderComponent } from './components/admin/admin-edit-provider/admin-edit-provider.component';
+import { NextDirective } from './next.directive';
+import { PrevDirective } from './prev.directive';
+import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
 
 
 
@@ -69,6 +72,9 @@ import { AdminEditProviderComponent } from './components/admin/admin-edit-provid
          AdminEditUserComponent,
          AdminListProvidersComponent,
          AdminEditProviderComponent,
+         NextDirective,
+         PrevDirective,
+         BestSellersComponent,
   ],
   imports: [
     ReactiveFormsModule,

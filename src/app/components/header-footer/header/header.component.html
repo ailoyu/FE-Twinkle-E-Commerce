@@ -1,15 +1,16 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'"
+  >
     <div class="container">
       <div>
         <a class="navbar-brand" routerLink="/" routerLinkActive="active">
             Twinkle
         </a>
-    </div>
-    <button class="navbar-toggler custom-toggler" type="button" (click)="toggleMenu()" >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" [ngClass]="{'show': showMenu}">
+      </div>
+      <button class="navbar-toggler custom-toggler" type="button" (click)="toggleMenu()" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{'show': showMenu}">
       <ul class="navbar-nav">
           <li class="nav-item">
               <a class="nav-link" routerLink="/home" routerLinkActive="active">
@@ -17,7 +18,7 @@
                 Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="#" routerLinkActive="active">
+            <a class="nav-link" routerLink="/best-sellers" routerLinkActive="active">
                 <i class="fas fa-star icon"></i> 
                 Best Seller
             </a>
@@ -67,8 +68,8 @@
               </li>                          
             </ng-container>
       </ul>
-          </div>
       </div>
+    </div>
   </nav>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
 </header>

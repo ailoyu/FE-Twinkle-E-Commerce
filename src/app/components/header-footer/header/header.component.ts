@@ -37,6 +37,19 @@ import { CartService } from 'src/app/service/cart.service';
   providedIn: 'root'
 })
 export class HeaderComponent implements OnInit {
+  // Test coding for show/hide navigation when scrolling mouse
+  navbarfixed:boolean = false;
+
+  @HostListener('window:scroll',['$event']) onscroll(){
+    if(window.scrollY>1500)
+    {
+      this.navbarfixed = false;
+    }
+    else
+    {
+      this.navbarfixed = true;
+    }
+  }
 
   constructor(private tokenService: TokenService,
     private userService: UserService,
@@ -91,6 +104,4 @@ export class HeaderComponent implements OnInit {
     this.cartService.clearCart();
     location.reload();
   }
-
-  
 }

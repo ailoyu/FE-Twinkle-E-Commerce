@@ -12,8 +12,7 @@
                     *ngFor="let image of product?.product_images; let i = index"
                     [ngClass]="{'active': i === currentImageIndex}">
                         <div class="square-image">
-                            <img [src]="image.image_url"
-                                class="product-image" alt="Product Image">
+                            <img [src]="image.image_url" class="product-image" alt="Product Image">
                         </div>
                     </div>
                 </div>
@@ -49,6 +48,42 @@
                     <button class="btn btn-primary" (click)="addToCart()" >Thêm vào giỏ hàng</button>
                     <button class="btn btn-success" (click)="buyNow()">Mua ngay</button>
                 </div>
+                <!-- Table size of shoes -->
+                <div class="table">
+                    <!-- <h1>laskdfal;sdk</h1> -->
+                    <div class="list-size">
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                    </div>
+                    <div class="list-size">
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                    </div>
+                    <div class="list-size">
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                    </div>
+                    <div class="list-size">
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                        <div class="size">42</div>
+                    </div>
+                </div>
                 <div class="product-quantity">
                     <div class="border-wrapper">
                         <button (click)="decreaseQuantity()" >-</button>
@@ -58,27 +93,45 @@
                 </div>
             </div>
         </div>
-        <!-- Recommendation products -->
-        <span><h2 style="color:white">Recommend-Products</h2></span>
-        <div class="section twinkle">        
-            <div *ngFor="let card of visibleCards; let i = index" class="card" [class.active]="i === currentIndex">
-            <div class="card">
-                <div class="card-images"><a href="https://play-lh.googleusercontent.com/E79yq4jNK1lFtZJh8SEebMhqT3Zg9mhZ4PjfmKxqGXUISZhddU-cVwGDV22pYb5IEw7U"></a>sdfsdf</div>
-                <div class="card-title"><a href="">sdfsdfsdf</a></div>
-                <div class="card-details"><p>loremsdfsdfsdfsdf</p></div>
+    <!-- Recommendation products -->
+    <h2 style="color:white">Recommend-Products</h2>
+        
+    <!-- This is the content of image slider shoes -->
+    <div class="product-shoes">
+        <div class="container-fluid">
+        <div class="slider-wrap">
+            <div class="slider-main">
+            <div class="item">
+                <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
             </div>
-        </div>    
-            
-            
-            
-            <div class="buttons">
-                <button (click)="showPreviousCards()" id="prev"><i class="fa-solid fa-arrow-left"></i></button>
-                <button (click)="showNextCards()" id="next"><i class="fa-solid fa-arrow-right"></i></button>
+            <div class="item">
+                <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
+            </div>
+            <div class="item">
+                <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
+            </div>
+            <div class="item">
+                <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
+            </div>
+            <div class="item">
+                <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
+            </div>
+            <div class="item">
+                <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
+            </div>
+            <div class="item">
+                <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
+            </div>
+            </div>
+            <div class="button-area">
+            <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+            <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
             </div>
         </div>
-
-        
-       
+        </div>
+    </div>     
     </div>
 </div>
 <app-footer></app-footer>
+
+

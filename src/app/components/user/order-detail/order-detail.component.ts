@@ -75,5 +75,11 @@ export class OrderDetailComponent {
     this.router.navigate(['/']);
   }
 
+  // home
+  
+
+
+
+
 
 }
