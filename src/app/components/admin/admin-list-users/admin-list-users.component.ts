@@ -95,28 +95,7 @@ export class AdminListUsersComponent {
     this.getUsers(this.keyword, this.phoneNumber, this.selectedRoleId, this.currentPage, this.itemsPerPage);
   }
 
-  getProducts(keyword: string, selectedCategoryId: number, page: number, limit: number){
-    this.productService.getProducts(keyword, selectedCategoryId, page, limit).subscribe({
-      next: (response: any) => {
-        
-        response.products.forEach((product : Product) => {
-          product.url = product.thumbnail;
-        });
-        debugger
-        this.products = response.products;
-        this.totalPages = response.totalPage;
-        this.visiblePages = this.generateVisiblePageArray(this.currentPage, this.totalPages);
-      },
-      complete: () => {
-        debugger;
-      },
-      error: (error: any) => {
-        debugger;
-        console.error("Lỗi bắt dữ liệu sản phẩm", error);
-      }
-    });
-  }
-
+  
   users: any[] = [];
 
   getUsers(keyword: string, phoneNumber: string, selectedRole: number, page: number, limit: number){

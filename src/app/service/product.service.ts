@@ -14,10 +14,15 @@ export class ProductService{
     constructor(private http: HttpClient){}
 
     getProducts(keyword:string, categoryId: number,
+        size: number, orderBy: string,
+        selectedPriceRate: string,
         page: number, limit: number): Observable<Product[]>{
         const params = new HttpParams()
         .set('keyword', keyword)
+        .set('size', size)
+        .set('order_by', orderBy)
         .set('category_id', categoryId)
+        .set('selected_price_rate', selectedPriceRate)
         .set('page', page.toString())
         .set('limit', limit.toString());
         return this.http.get<Product[]>(this.apiProducts, {params});
@@ -25,6 +30,10 @@ export class ProductService{
 
     getDetailProduct(productId: number){
         return this.http.get(`${environment.apiBaseUrl}/products/${productId}`);
+    }
+
+    getAvailableSizes(){
+        return this.http.get(`${environment.apiBaseUrl}/products/get-all-available-sizes`);
     }
 
     getProductsByIds(productIds: number[]): Observable<Product[]> {
@@ -43,9 +52,9 @@ export class ProductService{
     }
 
 
-    updateProduct(product: Product): Observable<any>{
+    updateProduct(product: any): Observable<any>{
         debugger
-        return this.http.put(`${environment.apiBaseUrl}/products/` + product.id, product);
+        return this.http.put(`${environment.apiBaseUrl}/input_orders/` + product.input_order_id, product);
     }
 
     deleteProducts(selectedIds: number[]): Observable<any>{

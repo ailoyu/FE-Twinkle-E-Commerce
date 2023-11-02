@@ -14,13 +14,17 @@ import { ProductService } from 'src/app/service/product.service';
 export class AdminListProductsComponent {
   products: Product[] = [];
   currentPage: number = 1;
-  itemsPerPage: number = 5; // 10 items/ 1 trang
+  itemsPerPage: number = 12; // 10 items/ 1 trang
   pages: number [] = [];
   totalPages: number = 0;
   visiblePages: number [] = [];
   keyword: string = "";
   categories: Category[] = []; // Dữ liệu động từ CategoryService
   selectedCategoryId: number = 0; // Giá trị category được chọn
+  selectedPriceRate: string = "";
+  orderBy: string = "asc";
+  selectedSize: number = 0;
+  sizes: number[] = [];
 
   constructor(private productService :ProductService,
     private categoryService: CategoryService,
@@ -28,8 +32,25 @@ export class AdminListProductsComponent {
     ){}
 
   ngOnInit() {
-      this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
+    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
       this.getCategories();
+      this.getAvailableSizes();
+  }
+
+  getAvailableSizes(){
+    this.productService.getAvailableSizes().subscribe({
+      next: (response: any) => {
+        debugger 
+        this.sizes = response.sizes;
+      },
+      complete: () => {
+        debugger;
+      },
+      error: (error: any) => {
+        debugger;
+        
+      }
+    })
   }
 
   subMenuVisible = false;
@@ -65,17 +86,18 @@ export class AdminListProductsComponent {
     this.currentPage = 1;
     this.itemsPerPage = 5;
     debugger
-    this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
+    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
   }
 
-  getProducts(keyword: string, selectedCategoryId: number, page: number, limit: number){
-    this.productService.getProducts(keyword, selectedCategoryId, page, limit).subscribe({
+  getProducts(keyword: string, selectedCategoryId: number, selectedSize: number, orderBy: string, selectedPriceRate: string, page: number, limit: number){
+    this.productService.getProducts(keyword, selectedCategoryId, selectedSize, orderBy, selectedPriceRate, page, limit).subscribe({
       next: (response: any) => {
         
         response.products.forEach((product : Product) => {
           product.url = product.thumbnail;
         });
         debugger
+        
         this.products = response.products;
         this.totalPages = response.totalPage;
         this.visiblePages = this.generateVisiblePageArray(this.currentPage, this.totalPages);
@@ -93,7 +115,7 @@ export class AdminListProductsComponent {
   onPageChange(page: number){
     debugger;
     this.currentPage = page;
-    this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
+    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
   }
   
 

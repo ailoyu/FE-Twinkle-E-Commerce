@@ -13,6 +13,8 @@ export interface Product {
     category_name: string;
     category_id: number;
     provider_id: number;
+    employee_id: number;
+    input_order_id: number;
     url: string;
     product_images: ProductImage[];
 }

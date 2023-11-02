@@ -48,42 +48,14 @@
                     <button class="btn btn-primary" (click)="addToCart()" >Thêm vào giỏ hàng</button>
                     <button class="btn btn-success" (click)="buyNow()">Mua ngay</button>
                 </div>
-                <!-- Table size of shoes -->
-                <div class="table">
-                    <!-- <h1>laskdfal;sdk</h1> -->
-                    <div class="list-size">
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                    </div>
-                    <div class="list-size">
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                    </div>
-                    <div class="list-size">
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                    </div>
-                    <div class="list-size">
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                    </div>
-                </div>
+                <section class="radio-section">
+                    <div class="radio-list">
+                        <div class="radio-item" *ngFor="let size of product?.sizes; let i = index">
+                            <input type="radio" name="radio" [attr.id]="'radio' + i">
+                            <label [attr.for]="'radio' + i">{{size}}</label>
+                        </div>
+                    </div>  
+                </section>
                 <div class="product-quantity">
                     <div class="border-wrapper">
                         <button (click)="decreaseQuantity()" >-</button>

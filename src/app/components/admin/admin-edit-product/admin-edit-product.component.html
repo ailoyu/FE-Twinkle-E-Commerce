@@ -84,7 +84,7 @@
                         <tbody>
                             <tr *ngFor="let size of sizes; let i = index" >
                                 <td>
-                                  <input type="number" [value]="sizes[i]"  placeholder="Size">
+                                  <input type="number" [value]="sizes[i]" placeholder="Size">
                                 </td>
 
                                 <td>
@@ -98,7 +98,7 @@
 
                         </tbody>
                     </table>
-                    <button class="btn btn-gradient" (click)="addSize()">Thêm Size</button>
+                    <button class="btn btn-gradient" (click)="addSize()" style="width: 300px;">Thêm Size từ nhà cung cấp</button>
                 </div>
                   
 

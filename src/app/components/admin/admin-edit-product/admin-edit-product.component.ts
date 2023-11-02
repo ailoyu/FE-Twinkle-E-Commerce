@@ -5,9 +5,11 @@ import { environment } from 'src/app/environments/environment';
 import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/product';
 import { ProductImage } from 'src/app/model/product.image';
+import { LoginResponse } from 'src/app/responses/user/login.response';
 import { CategoryService } from 'src/app/service/category.service';
 import { ProductService } from 'src/app/service/product.service';
 import { ProviderService } from 'src/app/service/provider.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-admin-edit',
@@ -76,6 +78,7 @@ deleteImage(image: { file: File, base64: string }) {
     private categoryService: CategoryService,
     private providerService: ProviderService,
     private route: ActivatedRoute,
+    private userService: UserService,
     private router: Router) {
     this.productForm = this.fb.group({
       name: ['', Validators.required], // fullname là FormControl bắt buộc      
@@ -83,7 +86,8 @@ deleteImage(image: { file: File, base64: string }) {
       price: ['', [Validators.required]], // phone_number bắt buộc và ít nhất 6 ký tự
       category_id: ['', Validators.required],
       provider_id: ['', Validators.required],
-      sizes: this.fb.array([]) // Create an empty FormArray
+      sizes: this.fb.array([]), // Create an empty FormArray
+
     });
     
   }
@@ -217,46 +221,57 @@ deleteImage(image: { file: File, base64: string }) {
 
     this.isLoading = true;
 
+    this.loginResponse = this.userService.getUserResponseFromLocalStorage();
+
     debugger
     this.product = {
       ...this.product,
       ...this.productForm.value
     };
+    this.product.employee_id = this.loginResponse!.employee_id;
+
+    this.product.id = this.productId;
+    this.product.sizes = this.sizes;
+    this.product.quantity = this.quantity;
 
     this.product.images = this.images.map(image => image.base64);
 
     console.log(this.product);
 
     // // Call your product service to save the product
-    // this.productService.saveProduct(this.product)?.subscribe({
-    //   next: (product) => {
-        
-    //     alert("Thêm sản phẩm thành công");
-    //     this.router.navigate(['/admin/edit-products', product.id]);
-    //     this.isLoading = false;
-    //   },
-    //   complete: () => {
+    this.productService.saveProduct(this.product)?.subscribe({
+      next: (response) => {
+        debugger
+        alert("Thêm sản phẩm thành công");
+        this.router.navigate(['/admin/edit-products', response.input_orders.detailInputOrders[0].product.id]);
+        this.isLoading = false;
+      },
+      complete: () => {
       
-    //   },
-    //   error: (error: any) => {
-    //     debugger;
-    //     console.error('Error fetching detail:', error);
-    //     alert("Thêm sản phẩm thất bại");
-    //     this.isLoading = false;
-    //   }
-    // });
+      },
+      error: (error: any) => {
+        debugger;
+        console.error('Error fetching detail:', error);
+        alert("Thêm sản phẩm thất bại");
+        this.isLoading = false;
+      }
+    });
   }
 
  
-
+  loginResponse!: LoginResponse | null;
 
   updateProduct() {
     this.isLoading = true;
+    this.loginResponse = this.userService.getUserResponseFromLocalStorage();
     debugger  
     this.product = {
       ...this.product,
       ...this.productForm.value
     };
+    this.product.employee_id = this.loginResponse!.employee_id;
+    
+    this.product.input_order_id = this.product.id;
     this.product.id = this.productId;
     this.product.sizes = this.sizes;
     this.product.quantity = this.quantity;
@@ -265,28 +280,31 @@ deleteImage(image: { file: File, base64: string }) {
     this.product.images = this.images.map(image => image.base64);
 
     // Call your product service to save the product
-    // this.productService.updateProduct(this.product)?.subscribe({
-    //   next: (product) => {
-        
-    //     alert("Cập nhật sản phẩm thành công");
-    //     this.isLoading = false;
-    //   },
-    //   complete: () => {
+    this.productService.updateProduct(this.product)?.subscribe({
+      next: (response : any) => {
+        debugger
+        alert("Cập nhật sản phẩm thành công");
+        this.router.navigate(['/admin/edit-products', response.input_orders.detailInputOrders[0].product.id]);
+        this.isLoading = false;
+      },
+      complete: () => {
       
-    //   },
-    //   error: (error: any) => {
-    //     debugger;
-    //     console.error('Error fetching detail:', error);
-    //     alert("Cập nhật sản phẩm thất bại");
-    //     this.isLoading = false;
-    //   }
-    // });
+      },
+      error: (error: any) => {
+        debugger;
+        console.error('Error fetching detail:', error);
+        alert("Cập nhật sản phẩm thất bại");
+        this.isLoading = false;
+      }
+    });
 
   }
 
   addSize() {
-    this.sizes.push(0)
-    this.quantity.push(0);
+    const randomSize = (Math.floor(Math.random() * 23) + 70) / 2;
+    const randomQuantity = Math.floor(Math.random() * 11) + 5;
+    this.sizes.push(randomSize)
+    this.quantity.push(randomQuantity);
   }
 
   removeSize(index: number) {
@@ -294,6 +312,9 @@ deleteImage(image: { file: File, base64: string }) {
     this.quantity.splice(index, 1);
   }
 
+  onSizeChange() {
+    console.log(this.sizes);
+  }
 
   
   

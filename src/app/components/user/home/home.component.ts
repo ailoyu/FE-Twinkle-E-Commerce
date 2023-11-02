@@ -25,30 +25,10 @@ export class HomeComponent implements OnInit{
     private router: Router){}
 
   ngOnInit(): void {
-    this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
-
+  
   }
 
-  getProducts(keyword: string, selectedCategoryId: number, page: number, limit: number){
-    this.productService.getProducts(keyword, selectedCategoryId, page, limit).subscribe({
-      next: (response: any) => {
-        
-        response.products.forEach((product : Product) => {
-          product.url = product.thumbnail;
-        });
-        debugger
-        this.products = response.products;
-      },
-      complete: () => {
-        debugger;
-      },
-      error: (error: any) => {
-        debugger;
-        console.error("Lỗi bắt dữ liệu sản phẩm", error);
-      }
-    });
-  }
-
+  
 
   onProductClick(productId: number) {
     debugger
