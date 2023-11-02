@@ -27,11 +27,11 @@ export class DetailProductComponent implements OnInit{
     private route: ActivatedRoute,
   ){}
 
-
+    recommendedProducts: any[] = [];
 
   ngOnInit() {
       // Lấy productId từ URL
-
+      
       debugger
       this.route.paramMap.subscribe(params => {
         const idParam = params.get('id');
@@ -41,6 +41,8 @@ export class DetailProductComponent implements OnInit{
           this.productId = +idParam;
         }
         if(!isNaN(this.productId)){
+          
+
           this.productService.getDetailProduct(this.productId).subscribe({
             next: (response : any) => {
               // Lấy danh sách sản phẩm và thay đổi URL
@@ -52,6 +54,20 @@ export class DetailProductComponent implements OnInit{
               // }
               debugger
               this.product = response
+              this.productService.getProductByCategory(this.product!.category_id).subscribe({
+                next: (response: any) => {
+                  debugger
+                  this.recommendedProducts = response;
+                  console.log(this.recommendedProducts);
+                },
+                complete: () => {
+                  debugger;
+                },
+                error: (error: any) => {
+                  debugger
+                  console.error('Lỗi bắt dữ liệu detail product', error);
+                }
+              });
               // Bắt đầu với ảnh đầu tiên
               this.showImage(0);
             },
