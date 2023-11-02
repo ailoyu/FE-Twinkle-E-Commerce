@@ -42,7 +42,7 @@ export class ProductService{
         debugger
         const params = new HttpParams().set('ids', productIds.join(',')); 
         return this.http.get<Product[]>(`${this.apiProducts}/by-ids`, { params });
-      }
+    }
 
       private apiInputOrder = `${environment.apiBaseUrl}/input_orders`;
 
@@ -50,6 +50,17 @@ export class ProductService{
         debugger
         return this.http.post(this.apiInputOrder, product);
     }
+
+    getAllBestSellers(){
+
+    }
+
+
+    getProductByCategory(productId: number){
+        return this.http.get(`${environment.apiBaseUrl}/products/products-from-category/${productId}`);
+    }
+
+
 
 
     updateProduct(product: any): Observable<any>{
