@@ -18,6 +18,7 @@ import { AdminListProductsComponent } from './components/admin/admin-list-produc
 import { AdminOrderConfirmComponent } from './components/admin/admin-order-confirm/admin-order-confirm.component';
 import { AdminListCategoriesComponent } from './components/admin/admin-list-categories/admin-list-categories.component';
 import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
+import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -44,6 +45,7 @@ const routes: Routes = [
       { path: 'list-products', component: AdminListProductsComponent },
 
       { path: 'list-categories', component: AdminListCategoriesComponent},
+      { path: 'panel', component: AdminPanelComponent},
     ]
   },
 

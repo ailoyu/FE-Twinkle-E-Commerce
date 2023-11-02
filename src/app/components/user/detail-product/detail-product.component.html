@@ -16,8 +16,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                 data-bs-slide="prev" (click)="previousImage()">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" (click)="previousImage()">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
@@ -48,42 +47,58 @@
                     <button class="btn btn-primary" (click)="addToCart()" >Thêm vào giỏ hàng</button>
                     <button class="btn btn-success" (click)="buyNow()">Mua ngay</button>
                 </div>
+                
                 <!-- Table size of shoes -->
-                <div class="table">
-                    <!-- <h1>laskdfal;sdk</h1> -->
-                    <div class="list-size">
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                    </div>
-                    <div class="list-size">
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                    </div>
-                    <div class="list-size">
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                    </div>
-                    <div class="list-size">
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                        <div class="size">42</div>
-                    </div>
-                </div>
+                <section class="radio-section">
+                    <div class="radio-list">
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio1">
+                            <label for="radio1">41</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio2">
+                            <label for="radio2">42</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio3">
+                            <label for="radio3">43</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio4">
+                            <label for="radio4">44</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio5">
+                            <label for="radio5">45</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio6">
+                            <label for="radio6">45</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio7">
+                            <label for="radio7">45</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio8">
+                            <label for="radio8">45</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio9">
+                            <label for="radio9">45</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio10">
+                            <label for="radio10">45</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="radio" id="radio11">
+                            <label for="radio11">45</label>
+                        </div>
+                    </div>  
+                </section>
+
+
                 <div class="product-quantity">
                     <div class="border-wrapper">
                         <button (click)="decreaseQuantity()" >-</button>
@@ -132,6 +147,7 @@
     </div>     
     </div>
 </div>
+
 <app-footer></app-footer>
 
 

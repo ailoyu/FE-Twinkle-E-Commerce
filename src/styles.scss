@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: linear-gradient(rgb(14,17,36), rgb(36,26,73));
+}
+
 // Using for the all of container in file ".component.scss"
 .edit-overall {
     margin-top: 120px!important;

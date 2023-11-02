@@ -66,7 +66,6 @@
   backface-visibility: hidden;
 }
 
-
 .front img {
   // background-image: url(./assets/images/user.png);
   // background-size: cover;
@@ -81,6 +80,7 @@
   object-fit: contain;
   width: 350px;
   height: 515px;
+  border-radius: 15px;
 }
 
 .front .content {
