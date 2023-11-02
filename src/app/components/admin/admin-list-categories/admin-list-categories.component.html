@@ -2,24 +2,7 @@
 
 <div style="margin-top: 100px;">
     <div class="dashboard">
-        <div class="dashboard-sidebar">
-          <!-- Add your dashboard components here -->
-          <ul>
-            <li><a routerLink="/admin/order-confirm/pending" routerLinkActive="active">Quản lý đơn hàng</a></li>
-            <li><a routerLink="/admin/list-categories" routerLinkActive="active">Quản lý thể loại</a></li>
-            <li><a routerLink="#" routerLinkActive="active">Quản lý tài khoản</a></li>
-            <li><a routerLink="#" routerLinkActive="active">Quản lý nhân viên</a></li>
-            <li><a routerLink="#" routerLinkActive="active">Quản lý khách hàng</a></li>
-            <li><a routerLink="#" routerLinkActive="active">Thống kê doanh thu</a></li>
-            <li>
-              <a (click)="toggleSubMenu()" routerLinkActive="active" >+ Quản lý sản phẩm</a>
-              <ul *ngIf="subMenuVisible" style="padding-left: 5px; margin-top: 10px;">
-                <li><a routerLink="/admin/list-products" style="font-size: 20px; font-weight: normal;" routerLinkActive="active">- Chỉnh sửa sản phẩm</a></li>
-                <li><a routerLink="/admin/edit-products" style="font-size: 20px; font-weight: normal" routerLinkActive="active">- Thêm mới sản phẩm</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+      <app-admin-dashboard></app-admin-dashboard>
     <div class="container twinkle" style="margin-top: 100px;">
         <div class="confirmation-container" style="text-align: center;">
             <h1>Danh sách thể loại</h1>
@@ -39,11 +22,17 @@
                     </tr>
                 </tbody>
             </table>   
+
+            <div *ngIf="showInput" class="text-center mt-3">
+                <input type="text" [(ngModel)]="newCategoryName" placeholder="Enter category name">
+                <button class="btn btn-gradient" type="button" (click)="addCategory()">Thêm thể loại</button>
+             </div> 
             
             <div class="text-center mt-3">
-               <button class="btn btn-gradient" type="button"><a routerLink="/admin/edit-products" routerLinkActive="active">Thêm mới sản phẩm</a></button>
-               
-            </div> 
+                <button class="btn btn-gradient" type="button" (click)="showInput = !showInput">Thêm mới thể loại</button>
+             </div>
+             
+             
         </div>  
         
         

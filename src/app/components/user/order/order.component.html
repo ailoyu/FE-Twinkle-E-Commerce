@@ -117,8 +117,8 @@
                             </div>
                         </td>
                         <td>{{ item.quantity }}</td>
-                        <td>{{ item.product.price | number: '.0-0'  }} VND</td>
-                        <td>{{ (item.product.price * item.quantity) | number: '.0-0'  }} VND</td>
+                        <td>{{ item.product.price }} VND</td>
+                        <td>{{ (item.product.price * item.quantity) }} VND</td>
                     </tr>
                 </ng-container>
             </tbody>

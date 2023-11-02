@@ -9,6 +9,7 @@
                     <label for="phoneNumber">Số điện thoại</label>
                     <input type="text" class="form-control"
                     [(ngModel)]="phoneNumber" required
+                    placeholder="Vui lòng nhập số điện thoại"
                     (focus)="registerForm.form.markAsTouched()"
                     name="phone"
                     (input)="onPhoneNumberChange()"
@@ -60,6 +61,7 @@
                     <label for="full-name">Họ và tên</label>
                     <input type="text" required
                     name="fullName"
+                    placeholder="Vui lòng nhập họ và tên"
                     [(ngModel)]="fullName" 
                     class="form-control" id="full-name">
                     <div class="divider-nospace"></div>

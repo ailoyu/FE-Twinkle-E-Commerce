@@ -5,52 +5,32 @@ import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/product';
 import { CategoryService } from 'src/app/service/category.service';
 import { ProductService } from 'src/app/service/product.service';
+import { ProviderService } from 'src/app/service/provider.service';
 
 @Component({
-  selector: 'app-admin-list-product',
-  templateUrl: './admin-list-products.component.html',
-  styleUrls: ['./admin-list-products.component.scss']
+  selector: 'app-admin-list-providers',
+  templateUrl: './admin-list-providers.component.html',
+  styleUrls: ['./admin-list-providers.component.scss']
 })
-export class AdminListProductsComponent {
-  products: Product[] = [];
+export class AdminListProvidersComponent {
+  providers: any[] = [];
   currentPage: number = 1;
-  itemsPerPage: number = 12; // 10 items/ 1 trang
+  itemsPerPage: number = 5; // 10 items/ 1 trang
   pages: number [] = [];
   totalPages: number = 0;
   visiblePages: number [] = [];
   keyword: string = "";
-  categories: Category[] = []; // Dữ liệu động từ CategoryService
+  address: string = "0";
+  addresses: string[] = []; // Dữ liệu động từ CategoryService
   selectedCategoryId: number = 0; // Giá trị category được chọn
-  selectedPriceRate: string = "";
-  orderBy: string = "asc";
-  selectedSize: number = 0;
-  sizes: number[] = [];
 
-  constructor(private productService :ProductService,
-    private categoryService: CategoryService,
+  constructor(private providerService :ProviderService,
     private router: Router
     ){}
 
   ngOnInit() {
-    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
-      this.getCategories();
-      this.getAvailableSizes();
-  }
-
-  getAvailableSizes(){
-    this.productService.getAvailableSizes().subscribe({
-      next: (response: any) => {
-        debugger 
-        this.sizes = response.sizes;
-      },
-      complete: () => {
-        debugger;
-      },
-      error: (error: any) => {
-        debugger;
-        
-      }
-    })
+      this.getProviders(this.keyword, this.address, this.currentPage, this.itemsPerPage);
+      
   }
 
   subMenuVisible = false;
@@ -66,39 +46,25 @@ export class AdminListProductsComponent {
 
   
 
-  getCategories(){
-    this.categoryService.getCategories().subscribe({
-      next: (categories: Category[]) => {
-        debugger 
-        this.categories = categories;
-      },
-      complete: () => {
-        debugger;
-      },
-      error: (error: any) => {
-        debugger;
-        console.error("Lỗi bắt dữ liệu thể loại", error);
-      }
-    });
-  }
+  
 
   searchProducts(){
     this.currentPage = 1;
     this.itemsPerPage = 5;
     debugger
-    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
+    this.getProviders(this.keyword, this.address, this.currentPage, this.itemsPerPage);
   }
 
-  getProducts(keyword: string, selectedCategoryId: number, selectedSize: number, orderBy: string, selectedPriceRate: string, page: number, limit: number){
-    this.productService.getProducts(keyword, selectedCategoryId, selectedSize, orderBy, selectedPriceRate, page, limit).subscribe({
+  getProviders(keyword: string, address: string, page: number, limit: number){
+    this.providerService.getProviders(keyword, address, page, limit).subscribe({
       next: (response: any) => {
-        
-        response.products.forEach((product : Product) => {
-          product.url = product.thumbnail;
-        });
         debugger
-        
-        this.products = response.products;
+        this.providers = response.providers;
+        this.providers.forEach(provider => {
+          if (provider.address && !this.addresses.includes(provider.address)) {
+            this.addresses.push(provider.address);
+          }
+        });
         this.totalPages = response.totalPage;
         this.visiblePages = this.generateVisiblePageArray(this.currentPage, this.totalPages);
       },
@@ -115,7 +81,7 @@ export class AdminListProductsComponent {
   onPageChange(page: number){
     debugger;
     this.currentPage = page;
-    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
+    this.getProviders(this.keyword, this.address, this.currentPage, this.itemsPerPage);
   }
   
 
@@ -133,10 +99,10 @@ export class AdminListProductsComponent {
     return new Array(endPage - startPage + 1).fill(0).map((_, index) => startPage + index);
   }
    // Hàm xử lý sự kiện khi sản phẩm được bấm vào
-   onProductClick(productId: number) {
+   onProductClick(providerId: number) {
     debugger
-    // Điều hướng đến trang detail-product với productId là tham số
-    this.router.navigate(['/admin/edit-products', productId]);
+    // Điều hướng đến trang detail-product với providerId là tham số
+    this.router.navigate(['/admin/edit-providers', providerId]);
   }
 
 
@@ -166,13 +132,13 @@ export class AdminListProductsComponent {
     }
   }
 
-  deleteSelectedProducts() {
+  deleteSelectedProviders() {
     debugger
     console.log(this.selectedIds);
-    this.productService.deleteProducts(this.selectedIds)?.subscribe({
-      next: (product) => {
+    this.providerService.deleteProviders(this.selectedIds)?.subscribe({
+      next: (provider: any) => {
         
-        alert("Xóa sản phẩm thành công");
+        alert("Xóa thương hiệu thành công");
         location.reload();
       },
       complete: () => {
@@ -181,12 +147,8 @@ export class AdminListProductsComponent {
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Xóa sản phẩm thất bại");
+        alert("Xóa thương hiệu thất bại");
       }
     });
   }
-
-
-
-
 }

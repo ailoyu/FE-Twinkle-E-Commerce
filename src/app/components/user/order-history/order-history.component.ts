@@ -68,7 +68,7 @@ export class OrderHistoryComponent implements OnInit{
     this.datePipe.transform(parsedDate, 'dd-MM-YYYY') :
     this.datePipe.transform(parsedDate, 'dd-MM-YYYY HH:mm:ss');
 
-return formattedDate || '';
+    return formattedDate || '';
   }
   
   // parseThumbnail(thumbnail: string): string{

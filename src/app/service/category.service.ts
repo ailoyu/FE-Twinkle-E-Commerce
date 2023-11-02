@@ -16,4 +16,9 @@ export class CategoryService{
         debugger
         return this.http.get<Category[]>(this.apiGetCategoies);
     }
+
+    saveCategory(category: Category): Observable<any>{
+        debugger
+        return this.http.post(this.apiGetCategoies, category);
+    }
 }

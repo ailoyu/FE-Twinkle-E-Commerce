@@ -27,7 +27,6 @@ export class AdminListCategoriesComponent {
     ){}
 
   ngOnInit() {
-      
       this.getCategories();
   }
 
@@ -56,6 +55,34 @@ export class AdminListCategoriesComponent {
     });
   }
 
+
+  showInput: boolean = false;
+  newCategoryName: string = '';
+  category: Category = { id: 0, name: '' };
+
+  addCategory() {
+    debugger
+    this.category.name = this.newCategoryName;
+    this.categoryService.saveCategory(this.category)?.subscribe({
+      next: (category) => {
+        debugger
+        alert("Thêm thể loại thành công");
+        this.showInput = false;
+        location.reload();
+      },
+      complete: () => {
+        debugger
+      },
+      error: (error: any) => {
+        debugger;
+        alert("Thêm thể loại thất bại");
+        this.showInput = false;
+        location.reload();
+      }
+    });
+    
+    
+  }
   
 
  

@@ -31,10 +31,15 @@ import { DatePipe } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IdentityComponent } from './components/user/identity/identity.component';
-import { AdminEditComponent } from './components/admin/admin-edit/admin-edit.component';
+import { AdminEditComponent } from './components/admin/admin-edit-product/admin-edit-product.component';
 import { AdminListProductsComponent } from './components/admin/admin-list-products/admin-list-products.component';
 import { AdminOrderConfirmComponent } from './components/admin/admin-order-confirm/admin-order-confirm.component';
 import { AdminListCategoriesComponent } from './components/admin/admin-list-categories/admin-list-categories.component';
+import { AdminListUsersComponent } from './components/admin/admin-list-users/admin-list-users.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { AdminEditUserComponent } from './components/admin/admin-edit-user/admin-edit-user.component';
+import { AdminListProvidersComponent } from './components/admin/admin-list-providers/admin-list-providers.component';
+import { AdminEditProviderComponent } from './components/admin/admin-edit-provider/admin-edit-provider.component';
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
 import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
@@ -63,6 +68,11 @@ import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.
          AdminListProductsComponent,
          AdminOrderConfirmComponent,
          AdminListCategoriesComponent,
+         AdminListUsersComponent,
+         AdminDashboardComponent,
+         AdminEditUserComponent,
+         AdminListProvidersComponent,
+         AdminEditProviderComponent,
          NextDirective,
          PrevDirective,
          BestSellersComponent,

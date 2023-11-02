@@ -10,6 +10,14 @@
       color: #fff; /* Add this line to set the text color to white */
       font-family: "Oswald", sans-serif;
     }
+
+    .btn-gradient {
+      background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+      color: white;
+      border-radius: 30px;
+      width: 200px;
+  }
+    
   
     form {
       .form-group {

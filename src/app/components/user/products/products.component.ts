@@ -25,6 +25,10 @@ export class ProductsComponent implements OnInit{
   keyword: string = "";
   categories: Category[] = []; // Dữ liệu động từ CategoryService
   selectedCategoryId: number = 0; // Giá trị category được chọn
+  selectedPriceRate: string = "";
+  orderBy: string = "asc";
+  selectedSize: number = 0;
+  sizes: number[] = [];
 
   constructor(private productService :ProductService,
     private categoryService: CategoryService,
@@ -32,8 +36,25 @@ export class ProductsComponent implements OnInit{
     ){}
 
   ngOnInit() {
-      this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
+      this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
       this.getCategories();
+      this.getAvailableSizes();
+  }
+
+  getAvailableSizes(){
+    this.productService.getAvailableSizes().subscribe({
+      next: (response: any) => {
+        debugger 
+        this.sizes = response.sizes;
+      },
+      complete: () => {
+        debugger;
+      },
+      error: (error: any) => {
+        debugger;
+        
+      }
+    })
   }
 
   getCategories(){
@@ -56,11 +77,12 @@ export class ProductsComponent implements OnInit{
     this.currentPage = 1;
     this.itemsPerPage = 12;
     debugger
-    this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
+    
+    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
   }
 
-  getProducts(keyword: string, selectedCategoryId: number, page: number, limit: number){
-    this.productService.getProducts(keyword, selectedCategoryId, page, limit).subscribe({
+  getProducts(keyword: string, selectedCategoryId: number, selectedSize: number, orderBy: string, selectedPriceRate: string, page: number, limit: number){
+    this.productService.getProducts(keyword, selectedCategoryId, selectedSize, orderBy, selectedPriceRate, page, limit).subscribe({
       next: (response: any) => {
         
         response.products.forEach((product : Product) => {
@@ -85,7 +107,7 @@ export class ProductsComponent implements OnInit{
   onPageChange(page: number){
     debugger;
     this.currentPage = page;
-    this.getProducts(this.keyword, this.selectedCategoryId, this.currentPage, this.itemsPerPage);
+    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
   }
   
 

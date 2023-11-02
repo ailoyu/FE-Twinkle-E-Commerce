@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { RegisterDTO } from '../dtos/user/register.dto';
 import { LoginDTO } from '../dtos/user/login.dto';
@@ -12,6 +12,8 @@ import { LoginResponse } from '../responses/user/login.response';
   providedIn: 'root'
 })
 export class UserService {
+
+  private apiUsers = `${environment.apiBaseUrl}/users`;
 
   constructor(private http: HttpClient) { }
 
@@ -104,6 +106,28 @@ export class UserService {
       // Handle the error as needed
     }
   }
+
+  getUsers(keyword:string, phoneNumber: string,
+    selectedRole: number,
+    page: number, limit: number): Observable<any[]>{
+      debugger
+    const params = new HttpParams()
+    .set('keyword', keyword)
+    .set('phone_number', phoneNumber)
+    .set('role_id', selectedRole.toString())
+    .set('page', page.toString())
+    .set('limit', limit.toString());
+    return this.http.get<any[]>(`${this.apiUsers}/get-all-users-by-admin`, {params});
+}
+
+
+deleteUsers(selectedIds: number[]): Observable<any>{
+  debugger
+  const options = {
+      body: { ids: selectedIds }
+    };
+  return this.http.delete(`${environment.apiBaseUrl}/users/`, options);
+}
   
 
 
