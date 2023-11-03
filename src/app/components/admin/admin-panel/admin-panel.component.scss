@@ -1,0 +1,127 @@
+.item {
+    background-color: gold;
+    border: 1px solid grey;
+    min-height: 50px;
+    font-weight: bold;
+}
+
+
+.section {
+    display: grid;
+    // grid-template-columns: repeat(3 , 1fr);
+    // grid-template-columns: 300px 100px 200px;
+    grid-template-columns: 300px auto 400px;
+    grid-template-rows: 300px 200px 400px 350px;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-right: 20px;
+    grid-template-areas: 
+    "sidebar banner banner"
+    "sidebar category checkout"
+    "sidebar available checkout"
+    "sidebar famous checkout";
+}
+
+.item-1 {
+    grid-area: sidebar;
+}
+
+.item-2 {
+    grid-area: banner;
+    // margin: 20px;
+}
+
+.item-3 {
+    grid-area: category;
+}
+
+.item-4 {
+    grid-area: available;
+}
+
+// Slider section
+.product-shoes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 300px;
+}
+
+.product-shoes .container-fluid {
+    padding: 0px;
+}
+
+.container-fluid .slider-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 339px;
+}
+
+.slider-wrap .slider-main {
+    position: absolute;
+    top: 0px;
+    width: 122%;
+    height: 339px;
+}
+
+.slider-main .item {
+    position: relative;
+    display: inline-block;
+    width: 260px;
+    height: 340px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.slider-main .item .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slider-main .item .text img {
+    width: 200px;
+    height: 200px;
+    border-radius: 4%;
+}
+
+.prev {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    translate: transform(-50%, -50%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    translate: transform(-50%, -50%);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    color: black;
+    border: none;    
+    cursor: pointer;
+}
+
+.item-5 {
+    grid-area: famous;
+}
+
+.item-6 {
+    grid-area: checkout;
+}
+
+
+
+

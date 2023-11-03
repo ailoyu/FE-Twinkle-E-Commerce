@@ -22,6 +22,7 @@ import { AdminEditUserComponent } from './components/admin/admin-edit-user/admin
 import { AdminListProvidersComponent } from './components/admin/admin-list-providers/admin-list-providers.component';
 import { AdminEditProviderComponent } from './components/admin/admin-edit-provider/admin-edit-provider.component';
 import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
+import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -55,6 +56,7 @@ const routes: Routes = [
 
 
       { path: 'list-categories', component: AdminListCategoriesComponent},
+      { path: 'panel', component: AdminPanelComponent},
 
       { path: 'list-users', component: AdminListUsersComponent },
       { path: 'edit-users', component: AdminEditUserComponent },

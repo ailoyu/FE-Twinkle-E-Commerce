@@ -43,6 +43,7 @@ import { AdminEditProviderComponent } from './components/admin/admin-edit-provid
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
 import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
+import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 
 
 
@@ -75,6 +76,7 @@ import { BestSellersComponent } from './components/user/best-sellers/best-seller
          NextDirective,
          PrevDirective,
          BestSellersComponent,
+         AdminPanelComponent,
   ],
   imports: [
     ReactiveFormsModule,
