@@ -1,6 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'"
-  >
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark" [ngClass]="navbarfixed?'fixed':'nofixed'">
     <div class="container">
       <div>
         <a class="navbar-brand" routerLink="/" routerLinkActive="active">
@@ -49,7 +48,7 @@
                   {{loginResponse.fullname}}
                 </button>
                 <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
-                  <li *ngIf="loginResponse?.role_id === 2" routerLink="/admin/edit-products" routerLinkActive="active">Trang quản trị</li>
+                  <li *ngIf="loginResponse?.role_id === 2" routerLink="/admin/panel" routerLinkActive="active">Trang quản trị</li>
                   <li routerLink="/info" routerLinkActive="active">Thông tin tài khoản</li>
                   <li routerLink="/order-history" routerLinkActive="active">Lịch sử đơn hàng</li>
                   <li routerLink="/change-password" routerLinkActive="active">Đổi mật khẩu</li>

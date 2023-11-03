@@ -44,6 +44,7 @@ import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
 import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
+import { CarouselComponent } from './components/admin/carousel/carousel.component';
 
 
 
@@ -77,6 +78,7 @@ import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.
          PrevDirective,
          BestSellersComponent,
          AdminPanelComponent,
+         CarouselComponent,
   ],
   imports: [
     ReactiveFormsModule,

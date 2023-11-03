@@ -76,42 +76,45 @@ span {
 .product-shoes {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 140px;
     width: 100%;
-    margin-top: 34px;
+    height: 340px;
+    margin-bottom: 40px;
 }
 
 .product-shoes .container-fluid {
-    padding: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
 }
 
 .container-fluid .slider-wrap {
     position: relative;
     overflow: hidden;
-    height: 339px;
+    height: 100%;
 }
 
 .slider-wrap .slider-main {
     position: absolute;
     top: 0px;
-    width: 200%;
-    height: 339px;
+    width: 100%;
+    height: 100%;
 }
+
+
 
 .slider-main .item {
     position: relative;
     display: inline-block;
     width: 300px;
-    height: 339px;
+    height: 100%;
     background-color: transparent;
     color: #fff;
-    margin-right: 16px;
+    margin: 0px 12px;
 }
 
 
 .slider-main .item .text {
     position: absolute;
-    padding-right: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -119,15 +122,16 @@ span {
 
 .slider-main .item .text img {
     width: 300px;
-    height: 339px;
+    height: 100%;
     border-radius: 4%;
+    object-fit: cover;
 }
 
 .prev {
     position: absolute;
     left: 5%;
-    top: 50%;
-    translate: transform(-50%, -50%);
+    top: 45%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -140,8 +144,8 @@ span {
 .next {
     position: absolute;
     right: 5%;
-    top: 50%;
-    translate: transform(-50%, -50%);
+    top: 45%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -172,3 +176,14 @@ span {
         opacity: 1;
     }
 }
+
+
+/* CSS cho phần tử có thể kéo */
+.item[draggable="true"] {
+    cursor: grab;
+  }
+  
+  /* CSS cho mục tiêu có thể kéo qua */
+  .product-shoes {
+    border: 2px dashed #ccc; /* Đổi màu và đường kẻ tùy ý */
+  }

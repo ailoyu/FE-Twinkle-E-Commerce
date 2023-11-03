@@ -26,6 +26,64 @@
     grid-area: sidebar;
 }
 
+.dashboard {
+    display: flex;
+    margin-top: 20px;
+  
+    .dashboard-sidebar {
+      width: 240px;
+      background-color: #007bff;
+      padding: 20px;
+      animation: slide-in 0.5s ease-in-out;
+      height: 640px;
+      margin-top: 94px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      }
+      
+      @keyframes slide-in {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+      }
+      
+      @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+      }
+      
+      .dashboard-sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+  
+      
+      .dashboard-sidebar li {
+        margin-bottom: 20px;
+        color: #fff;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+        font-size: 18px;
+      }
+      
+      .dashboard-sidebar li:hover {
+        color: #e3e3e3;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    
+  
+  }
+  
+
+
 .item-2 {
     grid-area: banner;
     // margin: 20px;
@@ -40,38 +98,72 @@
 }
 
 // Slider section
+span {
+    font-size: 30px;
+    text-align: left;
+    color: #ffffff;
+}
 .product-shoes {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 300px;
+    height: 200px;
+}
+
+.item-3 .item i {
+    font-size: 50px;
+}
+
+.item-3 .product-shoes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 120px;
 }
 
 .product-shoes .container-fluid {
-    padding: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
 }
 
 .container-fluid .slider-wrap {
     position: relative;
     overflow: hidden;
-    height: 339px;
+    height: 100%;
 }
 
 .slider-wrap .slider-main {
     position: absolute;
     top: 0px;
-    width: 122%;
-    height: 339px;
+    width: 100%;
+    height: 100%;
 }
+
+
 
 .slider-main .item {
     position: relative;
     display: inline-block;
-    width: 260px;
-    height: 340px;
+    width: 235px;
+    height: 100%;
     background-color: transparent;
     color: #fff;
+    margin: 0px 12px;
 }
+
+.item-3 .slider-main .item {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100%;
+    background-color: transparent;
+    color: #fff;
+    margin: 0px 12px;
+    background-color: red;
+    text-align: center;
+}
+
 
 .slider-main .item .text {
     position: absolute;
@@ -84,13 +176,14 @@
     width: 200px;
     height: 200px;
     border-radius: 4%;
+    object-fit: cover;
 }
 
 .prev {
     position: absolute;
     left: 5%;
-    top: 50%;
-    translate: transform(-50%, -50%);
+    top: 45%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -103,8 +196,8 @@
 .next {
     position: absolute;
     right: 5%;
-    top: 50%;
-    translate: transform(-50%, -50%);
+    top: 45%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     width: 40px;
     height: 40px;
