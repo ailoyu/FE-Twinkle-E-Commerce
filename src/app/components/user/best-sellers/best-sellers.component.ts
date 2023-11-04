@@ -1,10 +1,5 @@
-// import { Component } from '@angular/core';
-import { Component, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
-
-
-
-
-
+import { Component } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, CdkDragEnd} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-best-sellers',
@@ -12,21 +7,26 @@ import { Component, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
   styleUrls: ['./best-sellers.component.scss'],
 })
 export class BestSellersComponent {
-  onDragStart(event: DragEvent) {
-    // Bắt đầu kéo - thiết lập loại dữ liệu bạn đang kéo
-    event.dataTransfer?.setData('text', 'dragging');
-  }
+  // nikeItems = [
+  //   { image: './assets/images/shoes-1.jpg' },
+  //   { image: './assets/images/shoes-2.jpg' },
+  //   { image: './assets/images/shoes-3.jpg' },
+  //   { image: './assets/images/shoes-4.jpg' },
+  //   { image: './assets/images/shoes-5.jpg' },
+  //   { image: './assets/images/shoes-6.jpg' },
+  //   { image: './assets/images/shoes-7.jpg' },
+  // ];
 
-  onDragOver(event: DragEvent) {
-    // Khi kéo qua phần tử
-    event.preventDefault();
-  }
+  // onDragStart(event: CdkDragEvent) {
+  //   // Handle drag start logic
+  // }
 
-  onDrop(event: DragEvent) {
-    // Khi thả phần tử
-    const data = event.dataTransfer?.getData('text');
-    if (data === 'dragging') {
-      // Thực hiện logic kéo slide ở đây
-    }
-  }
+  // onDragEnd(event: CdkDragEvent) {
+  //   // Handle drag end logic
+  // }
+
+  // onDrop(event: CdkDragDrop<any[]>) {
+  //   // Handle drop logic here
+  //   moveItemInArray(this.nikeItems, event.previousIndex, event.currentIndex);
+  // }
 }

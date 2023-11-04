@@ -2,160 +2,30 @@
 <div class="container edit-overall twinkle">
     <h2 data-text="Best-Sellers">Best-Sellers</h2>
     <h3 data-text="Shoes-Collection">Shoes-Collection</h3>
-    <!-- This is the content of image slider shoes -->
+    <!-- This is the content of the image slider for shoes -->
     <!-- Nike -->
     <span>Nike</span>
-    <div class="nike">
-        <div class="product-shoes" (dragstart)="onDragStart($event)" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+    <div cdkDrag>
+        <div class="nike">
             <div class="container-fluid">
-            <div class="slider-wrap">
-                <div class="slider-main">
-                <div class="item" draggable="true">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item" draggable="true">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item" draggable="true">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item" draggable="true">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item" draggable="true">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item" draggable="true">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item" draggable="true">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
-                </div>
-                <div class="button-area">
-                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
-                </div>
-            </div>
-            </div>
-        </div> 
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item">
+    <div class="text">
+        <img alt="">
     </div>
+</div>
 
 
-
-    
-    <!-- Vans -->
-    <span>Vans</span>
-    <div class="vans">
-        <div class="product-shoes">
-            <div class="container-fluid">
-            <div class="slider-wrap">
-                <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
-                </div>
-                <div class="button-area">
-                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                    <div class="button-area">
+                        <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                        <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div> 
+        </div>
     </div>
-
-    <!-- Converse -->
-    <span>Converse</span>
-    <div class="converse">
-        <div class="product-shoes">
-            <div class="container-fluid">
-            <div class="slider-wrap">
-                <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
-                </div>
-                <div class="button-area">
-                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
-                </div>
-            </div>
-            </div>
-        </div> 
-    </div>
-
-    <!-- Puma -->
-    <span>Puma</span>
-    <div class="puma">
-        <div class="product-shoes">
-            <div class="container-fluid">
-            <div class="slider-wrap">
-                <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
-                </div>
-                <div class="button-area">
-                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
-                </div>
-            </div>
-            </div>
-        </div> 
-    </div>
+    <!-- ... other brands and their items ... -->
 </div>
 <app-footer></app-footer>
