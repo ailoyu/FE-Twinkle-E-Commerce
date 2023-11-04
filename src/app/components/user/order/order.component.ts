@@ -163,7 +163,8 @@ export class OrderComponent implements OnInit{
         debugger   
         // this.cartService.clearCart();    
         alert('Đặt hàng thành công! Chuyển tới trang thanh toán VNPAY');
-        window.location.href = response.payment_method;
+        var paymentMethodUrl = response.payment_method;
+        window.open(paymentMethodUrl, '_blank');
         console.log('Đặt hàng thành công');
       },
       complete: () => {
