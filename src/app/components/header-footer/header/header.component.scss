@@ -75,7 +75,6 @@ ul {
   }
   
 
-
   .dropdown-toggle {
     // padding: 10px 0px 10px 40px;
     color: #333;
@@ -83,10 +82,11 @@ ul {
     font-size: 18px;
     border-radius: 30px;
     width: 200px;
-    text-align: left;
+    // text-align: left;
+    text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    // max-width: 200px;
   }
 
   .dropdown-toggle::after {
