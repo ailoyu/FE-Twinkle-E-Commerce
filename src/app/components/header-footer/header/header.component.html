@@ -48,11 +48,11 @@
                   {{loginResponse.fullname}}
                 </button>
                 <ul class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenuButton">
-                  <li *ngIf="loginResponse?.role_id === 2" routerLink="/admin/panel" routerLinkActive="active">Trang quản trị</li>
-                  <li routerLink="/info" routerLinkActive="active">Thông tin tài khoản</li>
-                  <li routerLink="/order-history" routerLinkActive="active">Lịch sử đơn hàng</li>
-                  <li routerLink="/change-password" routerLinkActive="active">Đổi mật khẩu</li>
-                  <li (click)="signOut()">Đăng xuất</li>
+                  <li *ngIf="loginResponse?.role_id === 2" routerLink="/admin/edit-products" routerLinkActive="active">Admin Panel</li>
+                  <li routerLink="/info" routerLinkActive="active">Profile</li>
+                  <li routerLink="/order-history" routerLinkActive="active">Order history</li>
+                  <li routerLink="/change-password" routerLinkActive="active">Change password</li>
+                  <li (click)="signOut()">Sign out</li>
                 </ul>
               </div>
             </li>
@@ -60,10 +60,10 @@
           <ng-container *ngIf="!loginResponse">
             
               <li class="nav-item">
-                <a class="nav-link" routerLink="/login" routerLinkActive="active">Đăng nhập</a>
+                <a class="nav-link" routerLink="/login" routerLinkActive="active">Sign in</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/register" routerLinkActive="active">Đăng ký</a>
+                <a class="nav-link" routerLink="/register" routerLinkActive="active">Sign up</a>
               </li>                          
             </ng-container>
       </ul>

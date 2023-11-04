@@ -1,32 +1,67 @@
-import { Component } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, CdkDragEnd} from '@angular/cdk/drag-drop';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-best-sellers',
   templateUrl: './best-sellers.component.html',
   styleUrls: ['./best-sellers.component.scss'],
 })
-export class BestSellersComponent {
-  // nikeItems = [
-  //   { image: './assets/images/shoes-1.jpg' },
-  //   { image: './assets/images/shoes-2.jpg' },
-  //   { image: './assets/images/shoes-3.jpg' },
-  //   { image: './assets/images/shoes-4.jpg' },
-  //   { image: './assets/images/shoes-5.jpg' },
-  //   { image: './assets/images/shoes-6.jpg' },
-  //   { image: './assets/images/shoes-7.jpg' },
-  // ];
+export class BestSellersComponent implements OnInit {
+  
+  nikes: any[] = [];
+  converses: any[] = [];
+  pumas: any[] = [];
+  vans: any[] = [];
+  newBalances: any[] = [];
+ 
+  constructor(
+    private productService: ProductService,
+    private router: Router
+  ){
 
-  // onDragStart(event: CdkDragEvent) {
-  //   // Handle drag start logic
-  // }
+  }
+    
 
-  // onDragEnd(event: CdkDragEvent) {
-  //   // Handle drag end logic
-  // }
+  ngOnInit(): void {
+    this.getProductByBrand("Nike");
+    this.getProductByBrand("Converse");
+    this.getProductByBrand("Puma");
+    this.getProductByBrand("Vans");
+    this.getProductByBrand("New Balance");
+  }
 
-  // onDrop(event: CdkDragDrop<any[]>) {
-  //   // Handle drop logic here
-  //   moveItemInArray(this.nikeItems, event.previousIndex, event.currentIndex);
-  // }
+  getProductByBrand(brand: string){
+    this.productService.getProductByBrand(brand).subscribe({
+      next: (response: any) => {
+        debugger
+        if(brand === "Nike"){
+          this.nikes = response;
+        } else if(brand === "Converse"){
+          this.converses = response;
+        } else if(brand === "Puma"){
+          this.pumas = response;
+        } else if(brand === "Vans"){
+          this.vans = response;
+        } else if(brand === "New Balance"){
+          this.newBalances = response;
+        } 
+      },
+      complete: () => {
+        debugger;
+      },
+      error: (error: any) => {
+        debugger
+        console.error('Lỗi bắt dữ liệu detail product', error);
+      }
+    });
+  }
+
+
+  onProductClick(productId: number) {
+    debugger
+    // Điều hướng đến trang detail-product với productId là tham số
+    this.router.navigate(['/detail-product', productId]);
+  }
+  
 }

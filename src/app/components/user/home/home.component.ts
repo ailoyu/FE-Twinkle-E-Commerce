@@ -13,6 +13,9 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class HomeComponent implements OnInit{
 
+  // apiPrefix: string = "http://localhost:4200/";
+  apiPrefix: string = "https://twinklee.netlify.app/";
+
   products: Product[] = [];
   currentPage: number = 1;
   itemsPerPage: number = 12; // 10 items/ 1 trang
