@@ -14,7 +14,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class AdminListProductsComponent {
   products: Product[] = [];
   currentPage: number = 1;
-  itemsPerPage: number = 12; // 10 items/ 1 trang
+  itemsPerPage: number = 5; // 10 items/ 1 trang
   pages: number [] = [];
   totalPages: number = 0;
   visiblePages: number [] = [];

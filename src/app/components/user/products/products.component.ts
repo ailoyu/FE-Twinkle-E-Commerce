@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit{
   
   products: Product[] = [];
   currentPage: number = 1;
-  itemsPerPage: number = 12; // 10 items/ 1 trang
+  itemsPerPage: number = 9 // 10 items/ 1 trang
   pages: number [] = [];
   totalPages: number = 0;
   visiblePages: number [] = [];
@@ -75,7 +75,7 @@ export class ProductsComponent implements OnInit{
 
   searchProducts(){
     this.currentPage = 1;
-    this.itemsPerPage = 12;
+    this.itemsPerPage = 9;
     debugger
     
     this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);

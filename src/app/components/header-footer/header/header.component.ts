@@ -8,6 +8,7 @@ import { LoginResponse } from 'src/app/responses/user/login.response';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
+import { VNPayService } from 'src/app/service/vnpay.service';
 
 
 @Component({
@@ -70,6 +71,7 @@ onScroll(event: Event) {
   constructor(private tokenService: TokenService,
     private userService: UserService,
     private cartService: CartService,
+    private vnPayService: VNPayService,
     private router: Router){
     }
     
@@ -119,5 +121,17 @@ onScroll(event: Event) {
     this.loginResponse = this.userService.getUserResponseFromLocalStorage();  
     this.cartService.clearCart();
     location.reload();
+  }
+
+  payment() {
+    this.vnPayService.getPayment(10000, 2).subscribe({
+      next: (response: string) => {
+        debugger
+        window.location.href = response;
+      },
+      error: (error) => {
+        debugger
+      },
+    });
   }
 }
