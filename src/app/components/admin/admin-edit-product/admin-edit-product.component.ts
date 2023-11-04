@@ -284,7 +284,7 @@ deleteImage(image: { file: File, base64: string }) {
       next: (response : any) => {
         debugger
         alert("Cập nhật sản phẩm thành công");
-        this.router.navigate(['/admin/edit-products', response.input_orders.detailInputOrders[0].product.id]);
+        location.reload();
         this.isLoading = false;
       },
       complete: () => {

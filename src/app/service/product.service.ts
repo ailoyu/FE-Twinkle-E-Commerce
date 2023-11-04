@@ -60,6 +60,10 @@ export class ProductService{
         return this.http.get(`${environment.apiBaseUrl}/products/products-from-category/${productId}`);
     }
 
+    getProductByBrand(brand: string){
+        return this.http.get(`${environment.apiBaseUrl}/products/products-from-brand/${brand}`);
+    }
+
 
 
 

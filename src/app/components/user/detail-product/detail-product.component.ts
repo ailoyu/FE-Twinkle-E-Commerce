@@ -149,5 +149,11 @@ export class DetailProductComponent implements OnInit{
       alert('Không thể thêm sản phẩm vào giỏ hàng vì product là null');
     }
   }
+
+  onProductClick(productId: number) {
+    debugger
+    // Điều hướng đến trang detail-product với productId là tham số
+    this.router.navigate(['/detail-product', productId]);
+  }
   
 }

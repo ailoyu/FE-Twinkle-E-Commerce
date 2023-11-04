@@ -10,102 +10,8 @@
             <div class="container-fluid">
             <div class="slider-wrap">
                 <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
-                </div>
-                <div class="button-area">
-                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
-                </div>
-            </div>
-            </div>
-        </div> 
-    </div>
-
-    <!-- Adidas -->
-    <span>Adidas</span>
-    <div class="adidas">
-        <div class="product-shoes">
-            <div class="container-fluid">
-            <div class="slider-wrap">
-                <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
-                </div>
-                <div class="button-area">
-                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
-                </div>
-            </div>
-            </div>
-        </div> 
-    </div>
-
-    <!-- Vans -->
-    <span>Vans</span>
-    <div class="adidas">
-        <div class="product-shoes">
-            <div class="container-fluid">
-            <div class="slider-wrap">
-                <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
+                <div class="item" *ngFor="let nike of nikes">
+                    <div class="text" (click)="onProductClick(nike.id)"><img [src]="nike.thumbnail" alt=""></div>
                 </div>
                 </div>
                 <div class="button-area">
@@ -124,27 +30,29 @@
             <div class="container-fluid">
             <div class="slider-wrap">
                 <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
+                    <div class="item" *ngFor="let converse of converses">
+                        <div class="text" (click)="onProductClick(converse.id)"><img [src]="converse.thumbnail" alt=""></div>
+                    </div>
                 </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
+                <div class="button-area">
+                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
                 </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
+            </div>
+            </div>
+        </div> 
+    </div>
+
+    <!-- Vans -->
+    <span>Vans</span>
+    <div class="adidas">
+        <div class="product-shoes">
+            <div class="container-fluid">
+            <div class="slider-wrap">
+                <div class="slider-main">
+                    <div class="item" *ngFor="let van of vans">
+                        <div class="text" (click)="onProductClick(van.id)"><img [src]="van.thumbnail" alt=""></div>
+                    </div>
                 </div>
                 <div class="button-area">
                 <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
@@ -162,27 +70,9 @@
             <div class="container-fluid">
             <div class="slider-wrap">
                 <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
+                    <div class="item" *ngFor="let puma of pumas">
+                        <div class="text" (click)="onProductClick(puma.id)"><img [src]="puma.thumbnail" alt=""></div>
+                    </div>
                 </div>
                 <div class="button-area">
                 <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
@@ -200,27 +90,9 @@
             <div class="container-fluid">
             <div class="slider-wrap">
                 <div class="slider-main">
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-1.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-2.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-3.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-4.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-5.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-6.jpg" alt=""></div>
-                </div>
-                <div class="item">
-                    <div class="text"><img src="./assets/images/shoes-7.jpg" alt=""></div>
-                </div>
+                    <div class="item" *ngFor="let newBalance of newBalances">
+                        <div class="text" (click)="onProductClick(newBalance.id)"><img [src]="newBalance.thumbnail" alt=""></div>
+                    </div>
                 </div>
                 <div class="button-area">
                 <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
