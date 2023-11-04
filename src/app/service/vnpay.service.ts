@@ -20,7 +20,7 @@ export class VNPayService {
     let params = new HttpParams()
       .set('price', price.toString())
       .set('userId', userId.toString());
-    return this.http.get(this.getFullUrl('vn_pay/pay'), {
+    return this.http.get(this.getFullUrl('products/pay'), {
       params,
       responseType: 'text', // Yêu cầu response dưới dạng văn bản
     });

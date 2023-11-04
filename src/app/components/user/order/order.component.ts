@@ -162,8 +162,8 @@ export class OrderComponent implements OnInit{
       next: (response) => {            
         debugger   
         // this.cartService.clearCart();    
-        alert('Đặt hàng thành công');
-        this.router.navigate(['/order-detail']); 
+        alert('Đặt hàng thành công! Chuyển tới trang thanh toán VNPAY');
+        window.location.href = response.payment_method;
         console.log('Đặt hàng thành công');
       },
       complete: () => {
