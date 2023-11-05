@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
 import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/product';
@@ -25,10 +25,13 @@ export class HomeComponent implements OnInit{
 
   constructor(private productService: ProductService,
     private el: ElementRef,
-    private router: Router){}
+    private router: Router){
+      
+    }
 
   ngOnInit(): void {
-  
+    
+
   }
 
   
