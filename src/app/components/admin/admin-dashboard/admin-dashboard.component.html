@@ -4,6 +4,7 @@
       <li><a routerLink="/admin/panel" routerLinkActive="active">Trang quản trị</a></li>
       <li><a routerLink="/admin/order-confirm/pending" routerLinkActive="active">Quản lý đơn hàng</a></li>
       <li><a routerLink="/admin/list-categories" routerLinkActive="active">Quản lý thể loại</a></li>
+      <li><a routerLink="/admin/list-customers" routerLinkActive="active">Quản lý người mua hàng</a></li>
       <li>
         <a (click)="toggleSubMenu1()" routerLinkActive="active" >+ Quản lý tài khoản</a>
         <ul *ngIf="subMenuVisible1" style="padding-left: 5px; margin-top: 10px;">
@@ -25,6 +26,6 @@
           <li><a routerLink="/admin/edit-products" style="font-size: 20px; font-weight: normal" routerLinkActive="active">- Thêm mới sản phẩm</a></li>
         </ul>
       </li>
-      <li><a routerLink="#" routerLinkActive="active">Thống kê doanh thu</a></li>
+      <li><a routerLink="/admin/sales-analytics" routerLinkActive="active">Thống kê doanh thu</a></li>
     </ul>
   </div>

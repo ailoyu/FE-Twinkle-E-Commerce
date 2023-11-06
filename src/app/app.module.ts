@@ -45,6 +45,9 @@ import { PrevDirective } from './prev.directive';
 import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 import { CarouselComponent } from './components/admin/carousel/carousel.component';
+import { AdminListCustomersComponent } from './components/admin/admin-list-customers/admin-list-customers.component';
+import { AdminEditCustomerComponent } from './components/admin/admin-edit-customer/admin-edit-customer.component';
+import { SalesAnalyticsComponent } from './components/admin/sales-analytics/sales-analytics.component';
 
 
 @NgModule({
@@ -77,6 +80,9 @@ import { CarouselComponent } from './components/admin/carousel/carousel.componen
     BestSellersComponent,
     AdminPanelComponent,
     CarouselComponent,
+    AdminListCustomersComponent,
+    AdminEditCustomerComponent,
+    SalesAnalyticsComponent,
   ],
   imports: [
     ReactiveFormsModule,
