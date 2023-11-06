@@ -10,11 +10,14 @@ export class SalesAnalyticsComponent implements OnInit  {
   title = 'chartDemo';
 
   barChart: any;
+  pieChart: any;
+
 
   constructor() { }
 
   ngOnInit() 
   {
+    // bar chart
     var myChart = new Chart("myChart", {
       type: 'bar',
       data: {
@@ -44,7 +47,20 @@ export class SalesAnalyticsComponent implements OnInit  {
           }
       }
   });
-    //
-    
+    // pie chart
+    var pieChart = new Chart("pieChart", {
+      type: 'pie',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: ["#FF5733", "#339FFF", "#FFD933", "#33FF64", "#A433FF", "#FF9333"],
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      }
+    });
   }
 }

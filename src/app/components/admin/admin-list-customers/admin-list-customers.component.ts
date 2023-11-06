@@ -153,7 +153,7 @@ export class AdminListCustomersComponent {
    onProductClick(productId: number) {
     debugger
     // Điều hướng đến trang detail-product với productId là tham số
-    this.router.navigate(['/admin/edit-products', productId]);
+    this.router.navigate(['/admin/edit-customers', productId]);
   }
 
 
