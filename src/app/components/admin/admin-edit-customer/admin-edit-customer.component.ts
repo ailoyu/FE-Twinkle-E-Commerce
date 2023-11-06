@@ -29,6 +29,7 @@ export class AdminEditCustomerComponent implements OnInit {
   loginResponse$!: Observable<LoginResponse> | null;
   loginResponse!: LoginResponse | null;
   getOrder: any[] = [];
+  totalValueOfOrders: number = 0;
 
   selectedOrder: number | null = null;
 
@@ -59,6 +60,13 @@ export class AdminEditCustomerComponent implements OnInit {
             orderDate: this.parseDate(order.orderDate),
             shippingDate: this.parseDate(order.shippingDate)
           }));
+          for (const order of orders) {
+            let totalValue = 0;
+            for (const orderDetail of order.orderDetails) {
+              totalValue += orderDetail.productPrice * orderDetail.numberOfProducts;
+            }
+            this.totalValueOfOrders += totalValue;
+          }
           debugger
           console.log(this.getOrder);
         });
