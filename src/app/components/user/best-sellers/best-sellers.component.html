@@ -4,6 +4,7 @@
     <h3 data-text="Shoes-Collection">Shoes-Collection</h3>
     <!-- This is the content of the image slider for shoes -->
     <!-- Nike -->
+    <div class="nike" *ngIf="nikes">
     <span>Nike</span>
     <div class="nike">
         <div class="product-shoes">
@@ -22,9 +23,34 @@
             </div>
         </div>
     </div> 
+</div>
+
+
+    <!-- Nike -->
+    <div class="nike" *ngIf="adidases">
+    <span>Adidas</span>
+    <div class="nike">
+        <div class="product-shoes">
+            <div class="container-fluid">
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item" *ngFor="let adidas of adidases">
+                            <div class="text" (click)="onProductClick(adidas.id)"><img [src]="adidas.thumbnail" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                        <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                        <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
 
 
     <!-- Converse -->
+    <div class="nike" *ngIf="converses">
     <span>Converse</span>
     <div class="converse">
         <div class="product-shoes">
@@ -43,8 +69,10 @@
             </div>
         </div>
     </div>
+    </div>
 
     <!-- Vans -->
+    <div class="nike" *ngIf="vans">
     <span>Vans</span>
     <div class="vans">
         <div class="product-shoes">
@@ -63,8 +91,10 @@
             </div>
         </div> 
     </div>
+    </div>
 
     <!-- Puma -->
+    <div class="nike" *ngIf="pumas">
     <span>Puma</span>
     <div class="puma">
         <div class="product-shoes">
@@ -83,8 +113,33 @@
             </div>
         </div> 
     </div>
+    </div>
+
+    <div class="nike" *ngIf="reeboks">
+        <span>Reebok</span>
+        <div class="puma">
+            <div class="product-shoes">
+                <div class="container-fluid">
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item" *ngFor="let reebok of reeboks">
+                            <div class="text" (click)="onProductClick(reebok.id)"><img [src]="reebok.thumbnail" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                    <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                    <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+                </div>
+            </div> 
+        </div>
+        </div>
+
+
 
     <!-- New Balance -->
+    <div class="nike" *ngIf="newBalances">
     <span>New Balance</span>
     <div class="new-balance">
         <div class="product-shoes">
@@ -103,5 +158,6 @@
             </div>
         </div> 
     </div>
+</div>
 </div>
 <app-footer></app-footer>
