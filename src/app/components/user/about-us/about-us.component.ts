@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 
+
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',

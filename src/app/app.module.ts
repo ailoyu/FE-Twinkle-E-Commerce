@@ -45,6 +45,7 @@ import { PrevDirective } from './prev.directive';
 import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 import { CarouselComponent } from './components/admin/carousel/carousel.component';
+import { AnimatedCursorsComponent } from './components/admin/animated-cursors/animated-cursors.component';
 
 
 @NgModule({
@@ -77,6 +78,7 @@ import { CarouselComponent } from './components/admin/carousel/carousel.componen
     BestSellersComponent,
     AdminPanelComponent,
     CarouselComponent,
+    AnimatedCursorsComponent,
   ],
   imports: [
     ReactiveFormsModule,
