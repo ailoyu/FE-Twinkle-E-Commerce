@@ -46,11 +46,10 @@
             </select>
 
             <select class="form-control product-category"
-            [(ngModel)]="orderBy">
-                <option value="asc">Sort by price</option>
-                <option value="desc">Price: High-Low</option>
-                <option value="asc">Price: Low-High</option>
-            </select>
+              [(ngModel)]="selectedSize">
+              <option [value]="0">Size</option>
+              <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
+          </select>
 
             
             <button class="btn btn-primary ml-2" (click)="searchProducts()">Search</button>   
