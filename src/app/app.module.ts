@@ -47,10 +47,8 @@ import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.
 import { CarouselComponent } from './components/admin/carousel/carousel.component';
 
 
-
 @NgModule({
   declarations: [
-    
     HomeComponent,
     HeaderComponent,
     FooterComponent,

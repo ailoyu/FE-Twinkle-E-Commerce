@@ -13,6 +13,7 @@ import { ProductService } from 'src/app/service/product.service';
 })
 export class ProductsComponent implements OnInit{
 
+
   showFilter = false;
 
   
@@ -130,4 +131,7 @@ export class ProductsComponent implements OnInit{
     // Điều hướng đến trang detail-product với productId là tham số
     this.router.navigate(['/detail-product', productId]);
   }
+
+
+  
 }

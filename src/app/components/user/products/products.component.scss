@@ -154,13 +154,18 @@ button {
 
 .product-image {
   width: 100%;
-  height: auto;
+  height: 430px;
   margin-bottom: 10px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .product-name {
   color: white;
+  height: 70px;
+  margin-top: 8px;
 }
+
 
 .product-description{
   color: rgb(173, 178, 203);
@@ -170,10 +175,16 @@ button {
   overflow: hidden;
 }
 
-.product-description:hover {
-  font-size: 18px;
-  font-weight: bold;
+.product-description::before {
+  width: 500px;
+  height: 500px;
+  content: "{{product.description}}"
 }
+
+// .product-description:hover {
+//   font-size: 18px;
+//   font-weight: bold;
+// }
 
 .product-warranty {
   color: rgb(242, 126, 212);

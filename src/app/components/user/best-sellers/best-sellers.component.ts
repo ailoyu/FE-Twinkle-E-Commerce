@@ -14,7 +14,7 @@ export class BestSellersComponent implements OnInit {
   pumas: any[] = [];
   vans: any[] = [];
   newBalances: any[] = [];
- 
+
   constructor(
     private productService: ProductService,
     private router: Router

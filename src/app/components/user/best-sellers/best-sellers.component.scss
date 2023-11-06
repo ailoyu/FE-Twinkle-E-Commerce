@@ -81,6 +81,10 @@ span {
     margin-bottom: 40px;
 }
 
+.new-balance .product-shoes {
+    margin-bottom: 0px;
+}
+
 .product-shoes .container-fluid {
     width: 100%;
     height: 100%;
@@ -113,6 +117,14 @@ span {
 }
 
 
+p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    color: red;
+}
+
 .slider-main .item .text {
     position: absolute;
     top: 50%;
@@ -129,28 +141,28 @@ span {
 
 .prev {
     position: absolute;
-    left: 5%;
-    top: 45%;
+    left: 2%;
+    top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: #ffffff;
-    color: black;
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    color: white;
     border: none;
     cursor: pointer;
 }
 
 .next {
     position: absolute;
-    right: 5%;
-    top: 45%;
+    right: -1%;
+    top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: #ffffff;
-    color: black;
+    background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+    color: white;
     border: none;    
     cursor: pointer;
 }
@@ -181,9 +193,10 @@ span {
 /* CSS cho phần tử có thể kéo */
 .item[draggable="true"] {
     cursor: grab;
-  }
-  
-  /* CSS cho mục tiêu có thể kéo qua */
-  .product-shoes {
-    border: 2px dashed #ccc; /* Đổi màu và đường kẻ tùy ý */
-  }
+}
+
+/* CSS cho mục tiêu có thể kéo qua */
+.product-shoes {
+// border: 2px dashed #ccc; /* Đổi màu và đường kẻ tùy ý */
+}
+

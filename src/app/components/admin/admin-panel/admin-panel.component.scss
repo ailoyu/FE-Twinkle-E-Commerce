@@ -1,8 +1,9 @@
 .item {
-    background-color: gold;
-    border: 1px solid grey;
+    background-color: #232323;
+    // border: 1px solid grey;
     min-height: 50px;
     font-weight: bold;
+    border-radius: 10px;
 }
 
 
@@ -10,9 +11,9 @@
     display: grid;
     // grid-template-columns: repeat(3 , 1fr);
     // grid-template-columns: 300px 100px 200px;
-    grid-template-columns: 300px auto 400px;
-    grid-template-rows: 300px 200px 400px 350px;
-    column-gap: 20px;
+    grid-template-columns: 300px 800px auto;
+    grid-template-rows: 600px 200px 351px 350px;
+    column-gap: 40px;
     row-gap: 10px;
     margin-right: 20px;
     grid-template-areas: 
@@ -31,7 +32,8 @@
     margin-top: 20px;
 
     .dashboard-sidebar {
-        width: 240px;
+        // width: 240px;
+        width: 300px;
         background-color: #007bff;
         padding: 20px;
         animation: slide-in 0.5s ease-in-out;
@@ -85,13 +87,16 @@
 .item-2 {
     grid-area: banner;
     // margin: 20px;
+    position: relative;
 }
 
 .carousel-container{
     position: relative;
-    margin: auto;
-    text-align: center;
-    width: 700px;
+    // margin: auto;
+    // text-align: center;
+    // width: 700px;
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
     box-shadow: 0 8px 16px #dce1e1;
 }
@@ -197,24 +202,15 @@
 
 .item-3 {
     grid-area: category;
-    margin-right: -10px;
-}
-
-.item-4 {
-    grid-area: available;
+    margin-right: -15px;
 }
 
 // Slider section
-span {
-    font-size: 30px;
-    text-align: left;
-    color: #ffffff;
-}
-.product-shoes {
+.item-3 .product-shoes {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 200px;
+    height: 110px;
 }
 
 .item-3 .item i {
@@ -228,19 +224,19 @@ span {
     height: 120px;
 }
 
-.product-shoes .container-fluid {
+.item-3 .product-shoes .container-fluid {
     width: 100%;
     height: 100%;
     padding: 0;
 }
 
-.container-fluid .slider-wrap {
+.item-3 .container-fluid .slider-wrap {
     position: relative;
     overflow: hidden;
     height: 100%;
 }
 
-.slider-wrap .slider-main {
+.item-3 .slider-wrap .slider-main {
     position: absolute;
     top: 0px;
     width: 100%;
@@ -249,7 +245,7 @@ span {
 
 
 
-.slider-main .item {
+.item-3 .slider-main .item {
     position: relative;
     display: inline-block;
     width: 235px;
@@ -266,27 +262,26 @@ span {
     height: 100%;
     background-color: transparent;
     color: #fff;
-    margin: 0px 12px;
     background-color: red;
     text-align: center;
 }
 
 
-.slider-main .item .text {
+.item-3 .slider-main .item .text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.slider-main .item .text img {
+.item-3 .slider-main .item .text img {
     width: 200px;
-    height: 200px;
+    height: 110px;
     border-radius: 4%;
     object-fit: cover;
 }
 
-.prev {
+.item-3 .prev {
     position: absolute;
     left: 5%;
     top: 45%;
@@ -300,7 +295,7 @@ span {
     cursor: pointer;
 }
 
-.next {
+.item-3 .next {
     position: absolute;
     right: 5%;
     top: 45%;
@@ -314,8 +309,140 @@ span {
     cursor: pointer;
 }
 
+.item-4 {
+    grid-area: available;
+    padding-top: 40px;
+    // background-color: #232323;
+    margin-right: -15px;
+}
+
+// Slider section
+.item-4 .product-shoes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 310px;
+}
+
+.item-4 .product-shoes .container-fluid {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.item-4 .container-fluid .slider-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.item-4 .slider-wrap .slider-main {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.item-4 .slider-main .item {
+    position: relative;
+    display: inline-block;
+    width: 235px;
+    height: 100%;
+    background-color: transparent;
+    color: #fff;
+}
+
+.item-4 .slider-main .item {
+    position: relative;
+    display: inline-block;
+    width: 271px;
+    height: 100%;
+}
+
+
+.item-4 .slider-main .item .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3c3c3c;
+    border-radius: 10px;
+    padding: 15px 15px 5px 15px;
+    margin-top: 15px;
+}
+
+.item-4 .slider-main .item .text img {
+    width: 220px;
+    height: 110px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.item-4 .text p {
+    margin: 10px 0px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.item-4 .small-content {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.item-4 .small-content i {
+    font-size: 1rem;
+    padding-right: 4px;
+    margin-bottom: 20px;
+}
+
+// .item-4 .small-content  .fa-heart,
+// .fa-percent {
+//     color: orange;
+// }
+
+.item-4 h4 {
+    position: absolute;
+    left: 2%;
+    top: 1%;
+    color: #dfdfdf;
+}
+
+.item-4 .prev {
+    position: absolute;
+    right: 6%;
+    top: 6%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.item-4 .next {
+    position: absolute;
+    right: 0%;
+    top: 6%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    color: black;
+    border: none;    
+    cursor: pointer;
+}
+
 .item-5 {
     grid-area: famous;
+    margin-right: -15px;
 }
 
 .item-6 {
