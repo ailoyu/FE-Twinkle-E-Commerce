@@ -1,8 +1,7 @@
-// .container {
-//   position: relative;
-//   // width: 100%;
-//   // height: 120vh;
-// }
+.container {
+  height: 100%;
+  padding: 0px 0px;
+}
 
 .bubbles {
   position: relative;
@@ -368,79 +367,236 @@
     }
   }
 
+.box-father {
+  text-align: center;
+}
 
-.section-progress {
+.box-father a {
+  margin: 40px 80px;
+}
+
+.filter-button {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  font-size: 2rem;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.125em solid;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+  0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  transition: background-color 100ms linear;
+}
+
+.filter-button::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1.5em);
+  opacity: 0.7;
+}
+
+.filter-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
+  opacity: 0;
+  background-color: var(--clr-neon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.filter-button:hover::before,
+.filter-button:focus::before {
+  opacity: 1;
+}
+
+.filter-button:hover::after,
+.filter-button:focus::before {
+  opacity: 1;
+}
+
+.water {
+  width: 60%;
+  margin-left: 20%;
+  height: 700px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eff0f4;
+  border-radius: 100px;
+}
+
+.water .container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 40px 60px;
+  padding: 0px 0px;
 }
 
-.section-progress .progress {
+.water .container .drop {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
+  25px 35px 20px rgba(0, 0, 0, 0.05),
+  25px 30px 30px rgba(0, 0, 0, 0.05),
+  inset -20px -20px 25px rgba(225, 225, 225, 0.9);
+  transition: 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.water .container .drop:nth-child(1) {
+  border-radius: 35% 65% 32% 68% / 45% 38% 62% 55%;
+}
+
+.water .container .drop:nth-child(2) {
+  border-radius: 30% 70% 70% 30% / 75% 28% 72% 25%; 
+}
+
+.water .container .drop:nth-child(3) {
+  border-radius: 11% 89% 44% 56% / 85% 61% 39% 15%;
+}
+
+.water .container .drop:nth-child(4) {
+  border-radius: 80% 20% 11% 89% / 26% 23% 77% 74%;
+}
+
+.water .container .drop:hover {
   border-radius: 50%;
+  width: 320px;
+  height: 320px;
+}
+
+.water .container .drop::before {
+  content:"";
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+
+.water .container .drop::after {
+  content:"";
+  position: absolute;
+  top: 50px;
+  left: 90px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.water .container .drop .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 40px;
+  gap: 15px;
+}
+
+.water .container .drop .content h2 {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: #eff0f4;
+  border-radius: 50%;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+  inset -2px -5px 10px rgba(255, 255, 255, 1),
+  15px 15px 10px rgba(0, 0, 0, 0.05),
+  15px 10px 10px rgba(0, 0, 0, 0.025);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: var(--clr);
+  transition: 0.4s linear;
+}
+
+.water .container .drop .content h2:hover {
+  font-weight: bold;
+  transition: 0.4s linear;
+  font-size: 40px;
+  width: 90px;
+  height: 90px;
+}
+
+.water .container .drop .content p {
+  font-size: 20px;
+  color: (--clr);
+  font-weight: bold;
+  transition: 0.4s linear;
+}
+
+.water .container .drop .content p:hover {
+  color: #e43a19;
+  transition: 0.4s linear;
+  font-size: 30px;
+}
+
+.water .container .drop .content a {
+  position: relative;
+  padding: 10px 25px;
+  background: var(--clr);
+  text-decoration: none;
   color: #fff;
-  background: #444 linear-gradient(to right, transparent 50%, var(--clr) 0);
-}
-
-.section-progress .progress h3 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.5em;
-  z-index: 1;
+  border-radius: 25px;
   font-weight: 500;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.025);
+  opacity: 0.75;
+  transition: 0.5s;
 }
 
-.section-progress .progress h3 span {
-  font-size: 0.65em;
-  font-weight: 400;
+.water .container .drop .content a:hover {
+  opacity: 1;
+  // font-weight: bold;
 }
 
 
-.section-progress .progress h4 {
+.water .container .drop .content a::before {
+  content:"";
   position: absolute;
-  top: 62%;
+  top: 8px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
-  font-weight: 500;
-  color: var(--clr);
-  text-transform: uppercase;
-} 
-
-.section-progress .progress::before {
-  content: "";
-  display: block;
-  height: 100%;
-  margin-left: 50%;
-  transform-origin: left;
-  border-radius: 0 100% 100% 0/50%;
+  width: 65%;
+  height: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.5);
 }
-
-.section-progress .progress::after {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: 50%;
-  background: #222;
-}
-
-.section-progress .progress::before {
-  background: var(--clr);
-  transform: rotate(calc(((var(--i) - 50) * 0.01turn)));
-}
-
-
-// .section-progress .progress.left::before {
-//   background: #444;
-//   transform: rotate(calc(((var(--i) - 0) * 0.01turn )));
-// }
-
-
-

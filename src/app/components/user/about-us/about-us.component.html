@@ -71,7 +71,7 @@
             <div class="back">
               <img src="./assets/images/waving-hand.png" alt="">
               <h1>Ngô <span>Quốc Ân</span></h1>
-              <p>I'm a web front-end developer currently working <span>@microsoft</span> to make websites.</p>
+              <p>I'm a Front-end developer and make this website.</p>
               <div class="row">
                 <div class="col">
                   <h2>12k</h2>
@@ -140,25 +140,79 @@
         </div>
       </div>   
   </div>
-
-  
+  <div class="box-father">
+    <a class="filter-button" (click)="toggleColorTable()">Experiences</a>
+    <a class="filter-button" (click)="toggleColorTable2()">Experiences</a>
+  </div>
+  <div class="water" *ngIf="isColorTableVisible" #colorTable>
+    <div class="container">
+      <div class="drop" style="--clr:#ff0f5b;">
+        <div class="content">
+          <h2>80%</h2>
+          <p>Html</p>
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#be04fe;">
+        <div class="content">
+          <h2>70%</h2>
+          <p>Css</p>
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#01b4ff;">
+        <div class="content">
+          <h2>80%</h2>
+          <p>Javascript</p>  
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#0e2431;">
+        <div class="content">
+          <h2>30%</h2>
+          <p>Back-end</p>  
+          <a href="#">Research More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="water" *ngIf="isColorTable2Visible" #colorTable2>
+    <div class="container">
+      <div class="drop" style="--clr:#ff0f5b;">
+        <div class="content">
+          <h2>60%</h2>
+          <p>Html</p>
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#be04fe;">
+        <div class="content">
+          <h2>40%</h2>
+          <p>Css</p>
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#01b4ff;">
+        <div class="content">
+          <h2>80%</h2>
+          <p>Javascript</p>  
+          <a href="#">Research More</a>
+        </div>
+      </div>
+      <div class="drop" style="--clr:#0e2431;">
+        <div class="content">
+          <h2>80%</h2>
+          <p>Back-end</p>  
+          <a href="#">Research More</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>  
+
+
+
+
+
 <app-footer></app-footer>
-<div class="section-progress">
-  <div class="progress" style="--i:85; --clr:#43f94a;">
-    <h3>85<span>%</span></h3>
-    <h4>Html</h4>
-  </div>
-  <div class="progress" style="--i:62; --clr:#2ccde9;">
-    <h3>62<span>%</span></h3>
-    <h4>Css</h4>
-  </div>
-  <div class="progress less" style="--i:35; --clr:#fb297b;">
-    <h3>35<span>%</span></h3>
-    <h4>Javascript</h4>
-  </div>
-  <div class="progress" style="--i:78; --clr:#ffe047;">
-    <h3>78<span>%</span></h3>
-    <h4>Back-end</h4>
-  </div>
-</div>
+
