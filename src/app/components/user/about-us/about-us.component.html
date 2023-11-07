@@ -1,6 +1,6 @@
 <app-header></app-header>  
 <app-animated-cursors></app-animated-cursors>
-<div class="container twinkle">
+<div class="container edit-overall twinkle">
   <!-- Background animation "bubbles" -->
   <div class="bubbles">
     <!-- Bubbles-Left -->
@@ -46,11 +46,14 @@
   </div>
 
   <!-- Text "Distortion" animation effects -->
-  <div class="text-animation">
-    <video class="right-to-left" autoplay loop src="https://res.cloudinary.com/dxctlgwec/video/upload/v1699231889/xvnwf7wfkalzrht6ud4t.mp4"></video>
-    <!-- <h2><span>P</span>articles Di<span>st</span>ortion Effects</h2> -->
-    <h2><span>W</span>e Are <span>The </span>Legendary</h2>
-  </div>
+    <div class="text-animation">
+      <!-- <div class="content"> -->
+        <!-- <span class="border-line"></span> -->
+        <!-- https://www.youtube.com/watch?v=rWQeqH526KA&ab_channel=OnlineTutorials -->
+        <video class="right-to-left" autoplay loop src="https://res.cloudinary.com/dxctlgwec/video/upload/v1699231889/xvnwf7wfkalzrht6ud4t.mp4"></video>
+        <h2><span>W</span>e Are <span>The </span>Legendary</h2>
+      <!-- </div> -->
+    </div>
   
     <!-- Profile card content -->
   <div class="profile-card">
@@ -137,13 +140,25 @@
         </div>
       </div>   
   </div>
+
+  
 </div>  
 <app-footer></app-footer>
-
-
-
-
-
-
-
-
+<div class="section-progress">
+  <div class="progress" style="--i:85; --clr:#43f94a;">
+    <h3>85<span>%</span></h3>
+    <h4>Html</h4>
+  </div>
+  <div class="progress" style="--i:62; --clr:#2ccde9;">
+    <h3>62<span>%</span></h3>
+    <h4>Css</h4>
+  </div>
+  <div class="progress less" style="--i:35; --clr:#fb297b;">
+    <h3>35<span>%</span></h3>
+    <h4>Javascript</h4>
+  </div>
+  <div class="progress" style="--i:78; --clr:#ffe047;">
+    <h3>78<span>%</span></h3>
+    <h4>Back-end</h4>
+  </div>
+</div>

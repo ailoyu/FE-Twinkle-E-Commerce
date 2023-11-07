@@ -27,15 +27,13 @@
         </li>
       </ul>
     
-    <div class="row twinkle"  *ngFor="let order of getOrder">
+    <div class="row twinkle" style="padding-left: 30px;"  *ngFor="let order of getOrder">
         <div class="mt-2"></div>
-        <div  class="col-md-1">
         <th scope="col" class="text-start" *ngIf="order.status === 'Đã hủy'">
             <input type="checkbox" id="checkbox_{{order.id}}" 
               name="foo" [value]="order.id" class="styled-checkbox"
               (change)="toggleSelection(order.id)">
           </th>
-        </div>
         <div class="col-md-11">
         <table >
             <thead>

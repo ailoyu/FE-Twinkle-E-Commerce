@@ -82,6 +82,5 @@ export class AdminPanelComponent implements OnInit{
       imageAlt: 'person2',
     },
   ]
-
-
 }
+

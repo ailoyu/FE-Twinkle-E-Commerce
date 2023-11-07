@@ -18,11 +18,13 @@ body {
 }
 
 
-// Using for the products.component.scss
+
 :root {
+    // Using for the products.component.scss
     --clr-neon: hsl(317 100% 54%);
     --clr-bg: hsl(323 21% 16%);
 }
+
 
 /* Thay đổi màu sắc của .cursor khi di chuột vào bất kỳ phần tử nào trên trang */
 // body:hover .cursor {
@@ -38,3 +40,9 @@ body {
 // }
 
 
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";

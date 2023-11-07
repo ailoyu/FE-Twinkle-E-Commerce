@@ -1,0 +1,48 @@
+.dashboard {
+    display: flex;
+    margin-top: 20px;
+}
+
+.twinkle{
+    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
+  }
+  @keyframes slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+.container {
+    color: white;
+}
+.confirmation-container {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 600px;            
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.confirmation-container h1 {
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.confirmation-container p {
+  font-size: 18px;
+  text-align: center;
+}
+

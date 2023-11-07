@@ -23,6 +23,9 @@ import { AdminListProvidersComponent } from './components/admin/admin-list-provi
 import { AdminEditProviderComponent } from './components/admin/admin-edit-provider/admin-edit-provider.component';
 import { BestSellersComponent } from './components/user/best-sellers/best-sellers.component';
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
+import { AdminListCustomersComponent } from './components/admin/admin-list-customers/admin-list-customers.component';
+import { AdminEditCustomerComponent } from './components/admin/admin-edit-customer/admin-edit-customer.component';
+import { SalesAnalyticsComponent } from './components/admin/sales-analytics/sales-analytics.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -60,6 +63,11 @@ const routes: Routes = [
 
       { path: 'list-users', component: AdminListUsersComponent },
       { path: 'edit-users', component: AdminEditUserComponent },
+
+      { path: 'list-customers', component: AdminListCustomersComponent},
+      { path: 'edit-customers/:id', component: AdminEditCustomerComponent },
+
+      { path: 'sales-analytics', component: SalesAnalyticsComponent}
     ]
   },
 

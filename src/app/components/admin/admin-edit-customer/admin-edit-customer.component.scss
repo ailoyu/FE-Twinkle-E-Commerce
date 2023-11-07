@@ -4,7 +4,7 @@
 .confirmation-container {
     margin: 50px auto;
     padding: 20px;
-    max-width: 600px;            
+    max-width: 700px;            
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
 }
@@ -295,97 +295,3 @@ tfoot tr td h4 {
   }
 }
 
-
-// Responsive
-// Mobile & tablet: width < 1024px
-// @media only screen and (max-width: 63.9375em) {
-
-// }
-
-// Mobile: width < 768px
-// @media only screen and (max-width: 46.1875em) {
-// .dashboard {
-//   height: 104vh;
-//   margin-top: 0px;
-//   position: relative;
-//   top: 0;
-//   left: 0;
-//   z-index: 1;
-//   width: 100%;
-// }
-
-// .dashboard-sidebar {
-//   width: 100% !important;
-//   height: 172px !important;
-//   position: absolute;
-//   top: 0px !important;
-//   margin-top: 0px!important;
-//   z-index: 10;
-//   border-top-left-radius: 20px;
-//   border-bottom-left-radius: 20px;
-// }
-
-// .dashboard-sidebar ul {
-//   text-align: center;
-// }
-
-// .dashboard-sidebar ul li {
-//   font-size: 20px !important;
-//   font-weight: bold;
-//   text-align: center;
-// }
-
-// .dashboard-sidebar ul li a {
-//   font-size: 18px!important;
-//   margin-bottom: 40px!important;
-// }
-
-// // .container {
-// //   position: inherit;
-// // }
-
-// // .confirmation .container {
-// //   position: absolute;
-// //   top: 176px !important;
-// //   left: 2%;
-// //   width: 96%;
-// //   z-index: 10;
-// // }
-
-// // .row {
-// //   position: relative;
-// //   top: 0;
-// //   left: 0;
-// //   z-index: 10;
-// //   width: 100%;
-// //   display: none;
-// // }
-
-// // table {
-// //   position: absolute;
-// //   top: 0;
-// //   left: 2%;
-// //   z-index: 100;
-// //   width: 96%;
-// // }
-
-// }
-
-// Table: width >= 768px and width < 1024px
-// @media screen and (min-width: 46.25em) and (max-width: 63.9375em) {
-// .dashboard-sidebar {
-//   width: 204px!important;
-// }
-
-// .dashboard {
-//   height: 77vh;
-// }
-
-// .container {
-//   width: 500px;
-// }
-
-// .dashboard-sidebar li:hover { 
-//   display: none;
-// }
-// }

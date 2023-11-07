@@ -178,13 +178,12 @@ button {
 .product-description::before {
   width: 500px;
   height: 500px;
-  content: "{{product.description}}"
 }
 
-// .product-description:hover {
-//   font-size: 18px;
-//   font-weight: bold;
-// }
+.product-description:hover {
+  font-size: 18px;
+  font-weight: bold;
+}
 
 .product-warranty {
   color: rgb(242, 126, 212);

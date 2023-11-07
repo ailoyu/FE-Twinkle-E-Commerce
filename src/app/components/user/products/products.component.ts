@@ -5,6 +5,7 @@ import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/product';
 import { CategoryService } from 'src/app/service/category.service';
 import { ProductService } from 'src/app/service/product.service';
+import { ProviderService } from 'src/app/service/provider.service';
 
 @Component({
   selector: 'app-products',
@@ -27,19 +28,39 @@ export class ProductsComponent implements OnInit{
   categories: Category[] = []; // Dữ liệu động từ CategoryService
   selectedCategoryId: number = 0; // Giá trị category được chọn
   selectedPriceRate: string = "";
+  selectedProvider: string = "";
   orderBy: string = "asc";
   selectedSize: number = 0;
   sizes: number[] = [];
+  providers: any[] = [];
 
   constructor(private productService :ProductService,
     private categoryService: CategoryService,
+    private providerService: ProviderService,
     private router: Router
     ){}
 
   ngOnInit() {
-      this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
+      this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.selectedProvider, this.currentPage, this.itemsPerPage);
       this.getCategories();
       this.getAvailableSizes();
+      this.getAllProviders();
+  }
+  
+  getAllProviders(){
+    this.providerService.getAllProviders().subscribe({
+      next: (response: any) => {
+        debugger 
+        this.providers = response;
+      },
+      complete: () => {
+        debugger;
+      },
+      error: (error: any) => {
+        debugger;
+        
+      }
+    })
   }
 
   getAvailableSizes(){
@@ -79,11 +100,11 @@ export class ProductsComponent implements OnInit{
     this.itemsPerPage = 9;
     debugger
     
-    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
+    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.selectedProvider, this.currentPage, this.itemsPerPage);
   }
 
-  getProducts(keyword: string, selectedCategoryId: number, selectedSize: number, orderBy: string, selectedPriceRate: string, page: number, limit: number){
-    this.productService.getProducts(keyword, selectedCategoryId, selectedSize, orderBy, selectedPriceRate, page, limit).subscribe({
+  getProducts(keyword: string, selectedCategoryId: number, selectedSize: number, orderBy: string, selectedPriceRate: string, selectedProvider: string, page: number, limit: number){
+    this.productService.getProducts(keyword, selectedCategoryId, selectedSize, orderBy, selectedPriceRate, selectedProvider,  page, limit).subscribe({
       next: (response: any) => {
         
         response.products.forEach((product : Product) => {
@@ -108,7 +129,7 @@ export class ProductsComponent implements OnInit{
   onPageChange(page: number){
     debugger;
     this.currentPage = page;
-    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.currentPage, this.itemsPerPage);
+    this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.selectedProvider, this.currentPage, this.itemsPerPage);
   }
   
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router'; // Import Router
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-dashboard.component.scss']
 })
 export class AdminDashboardComponent {
+  
+
 
   subMenuVisible = false;
 

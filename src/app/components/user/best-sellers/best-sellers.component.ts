@@ -14,6 +14,8 @@ export class BestSellersComponent implements OnInit {
   pumas: any[] = [];
   vans: any[] = [];
   newBalances: any[] = [];
+  adidases: any[] = [];
+  reeboks: any[] = [];
 
   constructor(
     private productService: ProductService,
@@ -29,6 +31,9 @@ export class BestSellersComponent implements OnInit {
     this.getProductByBrand("Puma");
     this.getProductByBrand("Vans");
     this.getProductByBrand("New Balance");
+    this.getProductByBrand("Adidas");
+    this.getProductByBrand("Reebok");
+
   }
 
   getProductByBrand(brand: string){
@@ -45,7 +50,11 @@ export class BestSellersComponent implements OnInit {
           this.vans = response;
         } else if(brand === "New Balance"){
           this.newBalances = response;
-        } 
+        } else if(brand == "Adidas"){
+          this.adidases = response;
+        } else if(brand == "Reebok"){
+          this.reeboks = response;
+        }
       },
       complete: () => {
         debugger;

@@ -46,6 +46,9 @@ import { BestSellersComponent } from './components/user/best-sellers/best-seller
 import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.component';
 import { CarouselComponent } from './components/admin/carousel/carousel.component';
 import { AnimatedCursorsComponent } from './components/admin/animated-cursors/animated-cursors.component';
+import { AdminListCustomersComponent } from './components/admin/admin-list-customers/admin-list-customers.component';
+import { AdminEditCustomerComponent } from './components/admin/admin-edit-customer/admin-edit-customer.component';
+import { SalesAnalyticsComponent } from './components/admin/sales-analytics/sales-analytics.component';
 
 
 @NgModule({
@@ -79,6 +82,9 @@ import { AnimatedCursorsComponent } from './components/admin/animated-cursors/an
     AdminPanelComponent,
     CarouselComponent,
     AnimatedCursorsComponent,
+    AdminListCustomersComponent,
+    AdminEditCustomerComponent,
+    SalesAnalyticsComponent,
   ],
   imports: [
     ReactiveFormsModule,

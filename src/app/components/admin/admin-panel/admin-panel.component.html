@@ -1,3 +1,6 @@
+<!-- https://www.youtube.com/watch?v=ECTIE39k-_0&t=578s&ab_channel=OnlineTutorials
+https://www.youtube.com/watch?v=sDpfRFUcxY4&ab_channel=OnlineTutorials -->
+
 <app-header></app-header>
 <app-animated-cursors></app-animated-cursors>
 
@@ -7,66 +10,99 @@
             <app-admin-dashboard></app-admin-dashboard>
         </div>
     </div>
+
     <div class="item-2 item">
         <!-- Three function include: hide button controls, auto slide and custom interval -->
-        <app-carousel [images]="imagesnicexu" [controls]="false" [autoSlide]="true" [slideInterval]="3000"></app-carousel> 
+        <app-carousel [images]="imagesnicexu" [controls]="false" [autoSlide]="true" [slideInterval]="3000"></app-carousel>   
     </div>
 
     <div class="item-3 item">
-            <a href="">View all</a>
-            <div class="product-shoes">
-                <div class="container-fluid">
-                <div class="slider-wrap">
-                    <div class="slider-main">
-                    <div class="item">
-                        <i class="fa-solid fa-person-running"></i>
-                    </div>
+        <!-- This is the content of image slider shoes -->
+    <div class="product-shoes">
+        <div class="container-fluid">
+        <div class="slider-wrap">
+            <div class="slider-main">
+                <div class="item">
                     <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
                         <p>Running</p>
                     </div>
-                    <div class="item">
-                        <i class="fa-solid fa-dumbbell"></i>
-                        <p>Gym</p>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <p>Dumbbell</p>
                     </div>
-                    <div class="item">
-                        <i class="fa-solid fa-basketball"></i>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-basketball"></i>
+                        </div>
                         <p>Basketball</p>
                     </div>
-                    <div class="item">
-                        <i class="fa-solid fa-football"></i>
-                        <p>Football</p>
-                    </div>
-                    <div class="item">
-                        <i class="fa-solid fa-baseball"></i>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-baseball"></i>
+                        </div>
                         <p>Baseball</p>
                     </div>
-                    <div class="item">
-                        <i class="fa-solid fa-baseball"></i>
-                        <p>Baseball</p>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-regular fa-futbol"></i>
+                        </div>
+                        <p>Futbol</p>
                     </div>
-                    <div class="item">
-                        <i class="fa-regular fa-futbol"></i>
-                        <p>Football</p>
-                    </div>
-                    <div class="item">
-                        <i class="fa-solid fa-person-walking"></i>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-person-walking"></i>
+                        </div>
                         <p>Walking</p>
                     </div>
-                    <div class="item">
-                        <i class="fa-solid fa-person-walking"></i>
-                        <p>Dancing</p>
-                    </div>
-                    </div>
-                    <div class="button-area">
-                        <h4>Famous</h4>
-                        <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                        <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <p>Running</p>
                     </div>
                 </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <p>Running</p>
+                    </div>
                 </div>
-            </div> 
-
+            </div>
+            <div class="button-area">
+            <h4>Category</h4>
+                <button type="button" class="prev" appPrev>
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+                <button 
+                type="button" class="next" appNext>
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>  
     </div>
+
+
     <div class="item-4 item">
         <!-- This is the content of image slider shoes -->
     <div class="product-shoes">
@@ -75,7 +111,7 @@
             <div class="slider-main">
             <div class="item">
                 <div class="text">
-                    <img src="./assets/images/shoes-1.jpg" alt="">
+                    <img src="./assets/images/model-1.jpg" alt="">
                     <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
                     <div class="small-content">
                         <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
@@ -86,7 +122,7 @@
             </div>
             <div class="item">
                 <div class="text">
-                    <img src="./assets/images/shoes-2.jpg" alt="">
+                    <img src="./assets/images/model-2.jpg" alt="">
                     <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
                     <div class="small-content">
                         <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
@@ -97,7 +133,7 @@
             </div>
             <div class="item">
                 <div class="text">
-                    <img src="./assets/images/shoes-3.jpg" alt="">
+                    <img src="./assets/images/model-2.jpg" alt="">
                     <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
                     <div class="small-content">
                         <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
@@ -160,16 +196,27 @@
         </div>
     </div>  
     </div>
+
     <div class="item-5 item">
         <div class="top">
-            <h4>Famous</h4>
+            <p>Famous Shoes</p>
             <a href="">View all</a>
         </div>
-        <div class="bottom"></div>
+        <div class="bottom">
+            <div class="section">
+                <div class="left"><img src="./assets/images/model-1.jpg" alt=""></div>
+                <div class="right">
+                    <h5>Nike</h5>
+                    <div class="price"><span>$7.59</span></div>
+                    <button>Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="item-6 item">Item-6
 
     </div>
-    <div class="item-6 item">Item-6</div>
 </div>
 
 <app-footer></app-footer>

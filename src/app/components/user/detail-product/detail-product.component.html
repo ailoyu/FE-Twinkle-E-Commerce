@@ -42,7 +42,7 @@
             <div class="product-details twinkle">
                 <h2>{{product?.name}}</h2>
                 <p>{{product?.description}}</p>
-                <p>{{product?.price | number: '.0-0' }} VND</p>
+                <p>${{product?.price}}</p>
                 <div class="product-actions">
                     <button class="btn btn-primary" (click)="addToCart()" >Thêm vào giỏ hàng</button>
                     <button class="btn btn-success" (click)="buyNow()">Mua ngay</button>
@@ -65,7 +65,7 @@
             </div>
         </div>
     <!-- Recommendation products -->
-    <h2 style="color:white">Recommend-Products</h2>
+    <h2 style="color:white">Other recommendations for your choice</h2>
         
     <!-- This is the content of image slider shoes -->
     <div class="product-shoes">

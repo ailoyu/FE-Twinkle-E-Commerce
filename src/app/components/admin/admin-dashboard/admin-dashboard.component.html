@@ -1,30 +1,71 @@
 <div class="dashboard-sidebar">
     <!-- Add your dashboard components here -->
     <ul>
-      <li><a routerLink="/admin/panel" routerLinkActive="active">Trang quản trị</a></li>
-      <li><a routerLink="/admin/order-confirm/pending" routerLinkActive="active">Quản lý đơn hàng</a></li>
-      <li><a routerLink="/admin/list-categories" routerLinkActive="active">Quản lý thể loại</a></li>
-      <li>
-        <a (click)="toggleSubMenu1()" routerLinkActive="active" >+ Quản lý tài khoản</a>
-        <ul *ngIf="subMenuVisible1" style="padding-left: 5px; margin-top: 10px;">
-          <li><a routerLink="/admin/list-users" style="font-size: 20px; font-weight: normal;" routerLinkActive="active">- Chỉnh sửa tài khoản</a></li>
-          <li><a routerLink="/admin/edit-users" style="font-size: 20px; font-weight: normal" routerLinkActive="active">- Thêm mới tài khoản</a></li>
-        </ul>
+      <li routerLink="/admin/panel" routerLinkActive="active-link">
+        <div class="menu-item">
+          <i class="fa-solid fa-house"></i><a>Trang quản trị</a>
+        </div>
       </li>
-      <li>
-        <a (click)="toggleSubMenu2()" routerLinkActive="active" >+ Quản lý nhà cung cấp</a>
-        <ul *ngIf="subMenuVisible2" style="padding-left: 5px; margin-top: 10px;">
-          <li><a routerLink="/admin/list-providers" style="font-size: 20px; font-weight: normal;" routerLinkActive="active">- Chỉnh sửa nhà cung cấp</a></li>
-          <li><a routerLink="/admin/edit-providers" style="font-size: 20px; font-weight: normal" routerLinkActive="active">- Thêm mới nhà cung cấp</a></li>
-        </ul>
+      <li  routerLink="/admin/order-confirm/pending"routerLinkActive="active-link">
+        <div class="menu-item">
+          <i class="fa-solid fa-cart-shopping"></i><a>Quản lý đơn hàng</a>
+        </div>
       </li>
-      <li>
-        <a (click)="toggleSubMenu()" routerLinkActive="active" >+ Quản lý sản phẩm</a>
-        <ul *ngIf="subMenuVisible" style="padding-left: 5px; margin-top: 10px;">
-          <li><a routerLink="/admin/list-products" style="font-size: 20px; font-weight: normal;" routerLinkActive="active">- Chỉnh sửa sản phẩm</a></li>
-          <li><a routerLink="/admin/edit-products" style="font-size: 20px; font-weight: normal" routerLinkActive="active">- Thêm mới sản phẩm</a></li>
-        </ul>
+
+      <li routerLink="/admin/list-categories" routerLinkActive="active-link">
+        <div class="menu-item">
+          <i class="fa-solid fa-gift"></i><a>Quản lý thể loại</a>
+        </div>
       </li>
-      <li><a routerLink="#" routerLinkActive="active">Thống kê doanh thu</a></li>
+
+      <li routerLink="/admin/list-customers" routerLinkActive="active-link">
+        <div class="menu-item">
+          <i class="fa-regular fa-user"></i><a>Quản lý khách hàng</a>
+        </div>
+      </li>
+
+
+        <li (click)="toggleSubMenu1()" routerLinkActive="active">
+          <div class="menu-item  manage-products">
+            <div class="logo">
+              <i class="fa-solid fa-ghost"></i><a>+ Quản lý tài khoản</a>
+            </div>
+            <ul *ngIf="subMenuVisible1">
+              <li routerLink="/admin/list-users" routerLinkActive="active-link-child"><a>- Chỉnh sửa tài khoản</a></li>
+              <li routerLink="/admin/edit-users" routerLinkActive="active-link-child"><a>- Thêm mới tài khoản</a></li>
+            </ul>
+          </div>
+        </li>
+
+
+      <li (click)="toggleSubMenu2()" routerLinkActive="active">
+        <div class="menu-item  manage-products">
+          <div class="logo">
+            <i class="fa-solid fa-truck-fast"></i><a>+ Quản lý nhà cung cấp</a>
+          </div>
+          <ul *ngIf="subMenuVisible2">
+            <li><a routerLink="/admin/list-providers" routerLinkActive="active-link-child">- Chỉnh sửa nhà cung cấp</a></li>
+            <li><a routerLink="/admin/edit-providers" routerLinkActive="active-link-child">- Thêm mới nhà cung cấp</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li (click)="toggleSubMenu()" routerLinkActive="active" >
+        <div class="menu-item manage-products">
+          <div class="logo">
+            <i class="fa-solid fa-inbox"></i><a>+ Quản lý sản phẩm</a>
+          </div>
+          <ul *ngIf="subMenuVisible">
+            <li><a routerLink="/admin/list-products" routerLinkActive="active-link-child">- Chỉnh sửa sản phẩm</a></li>
+            <li><a routerLink="/admin/edit-products" routerLinkActive="active-link-child">- Thêm mới sản phẩm</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li routerLink="/admin/sales-analytics" routerLinkActive="active-link">
+        <div class="menu-item">
+          <i class="fa-solid fa-money-bill"></i><a>Thống kê doanh thu</a>
+        </div>
+      </li>
     </ul>
   </div>
