@@ -83,8 +83,8 @@ export class SalesAnalyticsComponent implements OnInit  {
             {
               label: 'Quantity of each products',
               data: quantities,
-              backgroundColor: 'rgba(75, 192, 192, 0.2',
-              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: '#0196FD',
+              borderColor: '#0196FD',
               borderWidth: 1,
             },
           ],
@@ -102,6 +102,8 @@ export class SalesAnalyticsComponent implements OnInit  {
         },
       });
     });
+    
+
     
   }
 
