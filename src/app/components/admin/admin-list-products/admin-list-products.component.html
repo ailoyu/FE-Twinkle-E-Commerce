@@ -76,7 +76,7 @@
                 <td>
                     <strong>{{calculateTotalQuantity(product.quantity)}}</strong>
                   </td>
-                <td>${{product.price}}</td>
+                <td>${{product.price | number:'1.2-2'}}</td>
                 <td>{{product.category_name}}</td>
               </tr>
             </tbody>

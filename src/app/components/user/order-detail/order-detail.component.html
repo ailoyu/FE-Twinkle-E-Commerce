@@ -1,18 +1,18 @@
 <div class="container">
     <div class="confirmation-container edit-overall twinkle ">
-        <h1>Cảm ơn bạn đã đặt hàng và thanh toán thành công!</h1>
-        <p>Dưới đây là thông tin chi tiết về đơn hàng của bạn</p>    
-        <p>Ngoài ra, thông tin chi tiết về đơn hàng của bạn sẽ được gửi qua email!</p>
-        <p>Vui lòng kiểm tra email để xem thêm chi tiết <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Nhấn tại đây!</a></p> 
+        <h1>Thank you for your successful order and payment!</h1>
+         <p>Below are detailed information about your order</p>
+         <p>In addition, detailed information about your order will be sent via email!</p>
+         <p>Please check your email for more details <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Click here!</a ></p>
     </div>
     <div class="row twinkle">
         <table>
             <thead>
                 <tr>
-                    <th scope="col" class="text-start">Sản phẩm</th>
-                    <th scope="col">Số lượng</th>
-                    <th scope="col">Đơn giá</th>
-                    <th scope="col">Tổng giá</th>
+                    <th scope="col" class="text-start">Shoes</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Subtotal</th>
                   </tr>
             </thead>
             <tbody>
@@ -27,18 +27,18 @@
                         </div>
                     </td>
                     <td>{{ item.quantity }}</td>
-                    <td>{{ item.product.price | number: '.0-0'  }} VND</td>
-                    <td>{{ (item.product.price * item.quantity) | number: '.0-0'  }} VND</td>
+                    <td>${{ item.product.price | number:'1.2-2'   }}</td>
+                    <td>${{ (item.product.price * item.quantity) | number:'1.2-2'   }}</td>
                 </tr>
             </ng-container>
                 
             </tbody>
         </table>   
         <div class="text-start mt-3">
-            <h4 class="header-text text-end ">Tổng giá: {{ totalAmount | number: '.0-0' }} VND</h4>
+            <h4 class="header-text text-end ">Total: ${{ totalAmount | number:'1.2-2'  }}</h4>
         </div>
         <div class="text-center mt-3">
-           <button class="btn btn-gradient" type="button" (click)="returnHomePage()">Tiếp tục mua sắm</button>
+           <button class="btn btn-gradient" type="button" (click)="returnHomePage()">Continue shopping</button>
         </div> 
     </div>    
 </div>
