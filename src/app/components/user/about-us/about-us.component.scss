@@ -22,8 +22,7 @@
   animation-duration: calc(125s / var(--i));
 }
 
-.bubbles span:nth-child(even)
-{
+.bubbles span:nth-child(even) {
   background: #ff2d75;
   box-shadow: 0 0 0 10px #ff2d7544,
   0 0 50px #ff2d75,
