@@ -44,15 +44,15 @@
                         </div>
                     </td>
                     <td>{{orderDetail.numberOfProducts}}</td>
-                    <td>${{orderDetail.productPrice}}</td>
-                    <td>${{orderDetail.productPrice * orderDetail.numberOfProducts}}</td>
+                    <td>${{orderDetail.productPrice | number:'1.2-2'}}</td>
+                    <td>${{orderDetail.productPrice * orderDetail.numberOfProducts | number:'1.2-2'}}</td>
                 </tr>
             </table>
             </tbody>
             <tfoot *ngIf="selectedOrder === order.id">
                 <tr>
                     <td colspan="4" class="text-end">
-                        <h4 class="header-text">Tổng Đơn Hàng: ${{order.totalMoney}}</h4>
+                        <h4 class="header-text">Tổng Đơn Hàng: ${{order.totalMoney | number:'1.2-2'}}</h4>
                     </td>
                 </tr>
             </tfoot>

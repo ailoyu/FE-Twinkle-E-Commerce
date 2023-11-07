@@ -51,7 +51,7 @@ export class OrderComponent implements OnInit{
     private productService: ProductService,
     private orderService: OrderService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
   ){
     this.orderForm = this.fb.group({
       fullname: ['', Validators.required], // fullname là FormControl bắt buộc      
@@ -162,11 +162,19 @@ export class OrderComponent implements OnInit{
       next: (response) => {            
         debugger   
         // this.cartService.clearCart();    
-        alert('Đặt hàng thành công! Chuyển tới trang thanh toán VNPAY');
-        this.isLoading = false;
-        var paymentMethodUrl = response.payment_method;
-        window.open(paymentMethodUrl, '_blank');
-        this.router.navigate(['/'])
+        if(this.orderData.payment_method === "Chuyển Khoản"){
+          this.isLoading = false;
+          alert('Đặt hàng thành công! Chuyển tới trang thanh toán VNPAY');          
+          var paymentMethodUrl = response.payment_method;
+          window.open(paymentMethodUrl, '_blank');
+          this.router.navigate(['/'])
+        } else {
+          this.isLoading = false;
+          alert('Đặt hàng thành công!');
+          this.router.navigate(['/order-detail'])
+        }
+        
+        
         // console.log('Đặt hàng thành công');
       },
       complete: () => {

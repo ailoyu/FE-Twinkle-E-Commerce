@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js';
+import { DataAnalytics } from 'src/app/service/data-analytics.service';
+
 
 @Component({
   selector: 'app-sales-analytics',
@@ -13,54 +15,105 @@ export class SalesAnalyticsComponent implements OnInit  {
   pieChart: any;
 
 
-  constructor() { }
+  constructor(
+    private dataAnalytics: DataAnalytics
+  ) { }
 
   ngOnInit() 
   {
-    // bar chart
-    var myChart = new Chart("myChart", {
-      type: 'bar',
-      data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-              label: 'Data1',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor:"#0196FD",
-              borderColor: "#0196FD",
-              borderWidth: 1
-          },
-          {
-            label: 'Data2',
-            data: [19, 12, 5, 3, 1, 6],
-            backgroundColor:"#FFAF00",
-            borderColor: "#FFAF00",
-            borderWidth: 1
-        }]
-      },
-      options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-      }
-  });
-    // pie chart
-    var pieChart = new Chart("pieChart", {
-      type: 'pie',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: ["#FF5733", "#339FFF", "#FFD933", "#33FF64", "#A433FF", "#FF9333"],
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-      }
+    this.dataAnalytics.getCategoryStatistics().subscribe((data) => {
+      debugger
+      const labels = data.map((item) => `${item[0]} (${item[1]} pair of shoes)`);
+
+      const percentages = data.map((item) => item[2]);
+
+      const backgroundColors = this.generateRandomColors(data.length);
+
+      this.pieChart = new Chart('pieChart', {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: percentages,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
     });
+    this.dataAnalytics.getProviderStatistics().subscribe((data) => {
+      debugger
+      const labels = data.map((item) => `${item[0]} (${item[1]} pair of shoes)`);
+      const percentages = data.map((item) => item[2]);
+
+      const backgroundColors = this.generateRandomColors(data.length);
+
+      this.pieChart = new Chart('pieChart2', {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: percentages,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
+    });
+    this.dataAnalytics.getQuantityOfEachProductStatistics().subscribe((data) => {
+      debugger
+      console.log(data)
+      const products = data.map((item) => `${item[0]}: ${item[1]}`);
+      const quantities = data.map((item) => item[2]);
+      const barChart = new Chart('barChart', {
+        type: 'bar',
+        data: {
+          labels: products,
+          datasets: [
+            {
+              label: 'Quantity of each products',
+              data: quantities,
+              backgroundColor: '#0196FD',
+              borderColor: '#0196FD',
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    });
+    
+
+    
+  }
+
+
+  generateRandomColors(numColors: number) {
+    const colors = [];
+    for (let i = 0; i < numColors; i++) {
+      const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      colors.push(randomColor);
+    }
+    return colors;
   }
 }
