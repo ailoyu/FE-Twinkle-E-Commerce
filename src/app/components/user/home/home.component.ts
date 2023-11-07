@@ -12,7 +12,6 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-
   // apiPrefix: string = "http://localhost:4200/";
   apiPrefix: string = "https://twinklee.netlify.app/";
 

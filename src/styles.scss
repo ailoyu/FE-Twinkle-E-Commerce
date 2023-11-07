@@ -24,4 +24,17 @@ body {
     --clr-bg: hsl(323 21% 16%);
 }
 
+/* Thay đổi màu sắc của .cursor khi di chuột vào bất kỳ phần tử nào trên trang */
+// body:hover .cursor {
+//     border-color: rgb(255, 0, 0);
+//     background: rgb(255, 0, 0);
+// }
+
+
+/* Thay đổi màu sắc của .cursor::before khi di chuột vào bất kỳ phần tử nào trên trang */
+// body:hover .cursor::before {
+//     // background: rgb(255, 0, 0);
+//     background: blue;
+// }
+
 
