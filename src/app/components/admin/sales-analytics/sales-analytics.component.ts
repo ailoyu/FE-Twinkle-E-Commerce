@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js';
+import * as moment from 'moment';
 import { DataAnalytics } from 'src/app/service/data-analytics.service';
 
 
@@ -70,6 +71,146 @@ export class SalesAnalyticsComponent implements OnInit  {
         },
       });
     });
+    this.dataAnalytics.getOrderStatusStatistic().subscribe((data) => {
+      debugger
+      const labels = data.map((item) => `${item[0]} (${item[1]} đơn)`);
+      const percentages = data.map((item) => item[2]);
+
+      const backgroundColors = this.generateRandomColors(data.length);
+
+      this.pieChart = new Chart('pieChart3', {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: percentages,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
+    });
+    this.dataAnalytics.getPriceStatistics().subscribe((data) => {
+      debugger
+      const labels = data.map((item) => `${item[0]} (${item[1]} pair of shoes)`);
+      const percentages = data.map((item) => item[2]);
+
+      const backgroundColors = this.generateRandomColors(data.length);
+
+      this.pieChart = new Chart('pieChart4', {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: percentages,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
+    });
+    this.dataAnalytics.getRevenue().subscribe((data) => {
+      debugger
+      console.log(data)
+      const date  = data.map((item) => item.date);
+      const giaGoc = data.map((item) => item.value1);
+      const doanhThu = data.map((item) => item.value2);
+      const loiNhuan = data.map((item) => item.value3);
+      
+      
+      
+    
+      const barChart = new Chart('barChart3', { 
+        type: 'bar',
+        data: {
+          labels: date,
+          datasets: [
+            {
+              label: 'Giá gốc',
+              data: giaGoc,
+              backgroundColor: '#FA8072',
+              borderColor: '#FA8072',
+              borderWidth: 1,
+            },
+            {
+              label: 'Doanh thu',
+              data: doanhThu,
+              backgroundColor: '#0196FD',
+              borderColor: '#0196FD',
+              borderWidth: 1,
+            },
+            // {
+            //   label: 'Lợi nhuận',
+            //   data: loiNhuan2,
+            //   backgroundColor: '#ff9a3c',
+            //   borderColor: '#ff9a3c',
+            //   borderWidth: 1,
+            //   stack: 'Stack 0'
+            // },
+            {
+              label: 'Lợi nhuận',
+              data: loiNhuan,
+              backgroundColor: '#ff9a3c',
+              borderColor: '#ff9a3c',
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    });
+    this.dataAnalytics.getSizesStatistic().subscribe((data) => {
+      debugger
+      console.log(data)
+      const products = data.map((item) => `Size ${item[0]} (${item[2]}%)`);
+      const quantities = data.map((item) => item[1]);
+      const barChart = new Chart('barChart2', {
+        type: 'bar',
+        data: {
+          labels: products,
+          datasets: [
+            {
+              label: 'Quantity of size',
+              data: quantities,
+              backgroundColor: '#0196FD',
+              borderColor: '#0196FD',
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    });
     this.dataAnalytics.getQuantityOfEachProductStatistics().subscribe((data) => {
       debugger
       console.log(data)
@@ -81,10 +222,10 @@ export class SalesAnalyticsComponent implements OnInit  {
           labels: products,
           datasets: [
             {
-              label: 'Quantity of each products',
+              label: 'Quantity of product',
               data: quantities,
-              backgroundColor: '#0196FD',
-              borderColor: '#0196FD',
+              backgroundColor: '#ff9a3c',
+              borderColor: '#ff9a3c',
               borderWidth: 1,
             },
           ],

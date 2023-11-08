@@ -56,6 +56,8 @@
                   </td>
                 <td>{{user.address}}</td>
                 <td *ngIf="user.active">Active</td>
+                <td *ngIf="!user.active">Inactive</td>
+               
               </tr>
             </tbody>
           </table>
@@ -63,7 +65,7 @@
         
         <div class="text-center mt-3">
            <button class="btn btn-gradient" type="button"><a routerLink="/admin/edit-products" routerLinkActive="active">Thêm user</a></button>
-           <button class="btn btn-gradient" type="button" (click)="deleteSelectedProducts()">Vô hiệu hóa người dùng</button>
+           <button class="btn btn-gradient" type="button" (click)="deleteSelectedProducts()" style="width: 300px;">Kích hoạt/Vô hiệu hóa người dùng</button>
         </div> 
     </div>  
     

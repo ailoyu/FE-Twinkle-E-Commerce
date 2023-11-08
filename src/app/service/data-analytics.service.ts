@@ -20,6 +20,18 @@ export class DataAnalytics {
   getProviderStatistics(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiGetDataAnalytics}/provider-statistics`);
   }
+  getOrderStatusStatistic(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiGetDataAnalytics}/order-status-statistics`);
+  }
+  getSizesStatistic(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiGetDataAnalytics}/size-statistics`);
+  }
+  getRevenue(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiGetDataAnalytics}/revenue-statistics`);
+  }
+  getPriceStatistics(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiGetDataAnalytics}/price-statistics`);
+  }
   getQuantityOfEachProductStatistics(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiGetDataAnalytics}/product-statistics`);
   }

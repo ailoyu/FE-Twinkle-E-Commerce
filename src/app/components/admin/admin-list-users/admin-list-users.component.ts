@@ -189,7 +189,7 @@ export class AdminListUsersComponent {
     this.userService.deleteUsers(this.selectedIds)?.subscribe({
       next: (user) => {
         
-        alert("Xóa users thành công");
+        alert("Kích hoạt/vô hiệu hóa thành công");
         location.reload();
       },
       complete: () => {
