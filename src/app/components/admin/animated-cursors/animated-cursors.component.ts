@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-animated-cursors',
@@ -17,8 +17,8 @@ export class AnimatedCursorsComponent {
   onMouseMove(event:any){
     console.log('width' + event.pageX);
     console.log('height' + event.pageY);
-    this.refCursor.nativeElement.style.left = (event.pageX - 25) + "px";
-    this.refCursor.nativeElement.style.top = (event.pageY - 25) + "px";
+    this.refCursor.nativeElement.style.left = event.pageX  + "px";
+    this.refCursor.nativeElement.style.top = event.pageY  + "px";
   }
 }
 

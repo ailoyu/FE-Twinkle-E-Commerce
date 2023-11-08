@@ -18,33 +18,11 @@ body {
     margin-top: 120px!important;
 }
 
-// .hidden-cursor {
-//     cursor: none;
-// }
-
-
-
 :root {
     // Using for the products.component.scss
     --clr-neon: hsl(317 100% 54%);
     --clr-bg: hsl(323 21% 16%);
 }
-
-
-/* Thay đổi màu sắc của .cursor khi di chuột vào bất kỳ phần tử nào trên trang */
-// body:hover .cursor {
-//     border-color: rgb(255, 0, 0);
-//     background: rgb(255, 0, 0);
-// }
-
-
-/* Thay đổi màu sắc của .cursor::before khi di chuột vào bất kỳ phần tử nào trên trang */
-// body:hover .cursor::before {
-//     // background: rgb(255, 0, 0);
-//     background: blue;
-// }
-
-
 
 /* Importing Bootstrap SCSS file. */
 @import "./node_modules/bootstrap/scss/bootstrap";
