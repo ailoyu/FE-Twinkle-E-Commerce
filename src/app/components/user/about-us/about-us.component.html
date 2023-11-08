@@ -141,8 +141,8 @@
       </div>   
   </div>
   <div class="box-father">
-    <a class="filter-button" (click)="toggleColorTable()">Experiences</a>
-    <a class="filter-button" (click)="toggleColorTable2()">Experiences</a>
+    <a class="filter-button" (click)="toggleColorTable()" (click)="toggleFilterButtonBefore()" [ngClass]="{ 'button-before-hidden': !isFilterButtonBeforeVisible }">Experiences</a>
+    <a class="filter-button" (click)="toggleColorTable2()" (click)="toggleFilterButtonBefore()" [ngClass]="{ 'button-before-hidden': !isFilterButtonBeforeVisible }">Experiences</a>
   </div>
   <div class="water" *ngIf="isColorTableVisible" #colorTable>
     <div class="container">

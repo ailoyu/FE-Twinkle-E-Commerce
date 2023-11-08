@@ -406,6 +406,10 @@
   opacity: 0.7;
 }
 
+.button-before-hidden::before {
+  display: none;
+}
+
 .filter-button::after {
   content: "";
   position: absolute;

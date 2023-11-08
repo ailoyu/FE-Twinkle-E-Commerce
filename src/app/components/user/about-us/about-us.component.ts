@@ -7,25 +7,14 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./about-us.component.scss'],
 })
 export class AboutUsComponent {
-  // isColorTableVisible: boolean = false;
-  // @ViewChild('colorTable') colorTable!: ElementRef;
+  // Code ở dưới khi click vào button "Experiences" sẽ làm mất đèn ở dưới cụ thể class ".filter-button::before {}"
+  isFilterButtonBeforeVisible = true;
 
-  // constructor() {}
+  toggleFilterButtonBefore() {
+    this.isFilterButtonBeforeVisible = !this.isFilterButtonBeforeVisible;
+  }
 
-  // ngOnInit() {
-  //   // Không cần thực hiện bất kỳ thứ gì ở đây.
-  // }
-
-  // toggleColorTable() {
-  //   this.isColorTableVisible = !this.isColorTableVisible;
-  //   if (this.colorTable) {
-  //     if (this.isColorTableVisible) {
-  //       this.colorTable.nativeElement.style.display = 'block';
-  //     } else {
-  //       this.colorTable.nativeElement.style.display = 'none';
-  //     }
-  //   }
-  // }
+  // Code ở dưới khi click vào button "Experiences" hiện bảng màu trắng và khi click lại sẽ ẩn bảng màu trắng
   isColorTableVisible: boolean = false;
   isColorTable2Visible: boolean = false;
   @ViewChild('colorTable') colorTable!: ElementRef;
