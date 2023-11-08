@@ -6,6 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: none!important;
 }
 
 body {
@@ -16,6 +17,10 @@ body {
 .edit-overall {
     margin-top: 120px!important;
 }
+
+// .hidden-cursor {
+//     cursor: none;
+// }
 
 
 
