@@ -49,6 +49,10 @@ import { AnimatedCursorsComponent } from './components/admin/animated-cursors/an
 import { AdminListCustomersComponent } from './components/admin/admin-list-customers/admin-list-customers.component';
 import { AdminEditCustomerComponent } from './components/admin/admin-edit-customer/admin-edit-customer.component';
 import { SalesAnalyticsComponent } from './components/admin/sales-analytics/sales-analytics.component';
+import { AnimationLoadingPageComponent } from './components/admin/animation-loading-page/animation-loading-page.component';
+// animation-loading-service
+import { LoadingService } from 'src/app/service/loading.service';
+
 
 
 @NgModule({
@@ -85,6 +89,7 @@ import { SalesAnalyticsComponent } from './components/admin/sales-analytics/sale
     AdminListCustomersComponent,
     AdminEditCustomerComponent,
     SalesAnalyticsComponent,
+    AnimationLoadingPageComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -102,9 +107,11 @@ import { SalesAnalyticsComponent } from './components/admin/sales-analytics/sale
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
-      multi: true
+      multi: true,
     },
-    DatePipe
+    // animation-loading-service
+    LoadingService,
+    DatePipe,
   ],
   bootstrap: [
     // AppModule

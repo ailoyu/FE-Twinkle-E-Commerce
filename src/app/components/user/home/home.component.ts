@@ -5,6 +5,14 @@ import { Category } from 'src/app/model/category';
 import { Product } from 'src/app/model/product';
 import { CategoryService } from 'src/app/service/category.service';
 import { ProductService } from 'src/app/service/product.service';
+import { MatDialog } from '@angular/material/dialog';
+// import { LoadingService } from 'path-to-your-loading-service';
+import { LoadingService } from 'src/app/service/loading.service';
+
+
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -22,18 +30,16 @@ export class HomeComponent implements OnInit{
   selectedCategoryId: number = 0; // Giá trị category được chọn
 
 
-  constructor(private productService: ProductService,
+  constructor(
+    private productService: ProductService,
     private el: ElementRef,
-    private router: Router){
-      
-    }
+    private router: Router,
+    public loadingService: LoadingService, // Change private to public
+  ) {}
 
-  ngOnInit(): void {
+  // ngOnInit(): void {
     
-
-  }
-
-  
+  // }
 
   onProductClick(productId: number) {
     debugger
@@ -41,7 +47,15 @@ export class HomeComponent implements OnInit{
     this.router.navigate(['/detail-product', productId]);
   }
 
+  // code test phần animation-loading-page mỗi khi load trang home
+  ngOnInit(): void {
+    // Show loading animation when the component initializes
+    this.loadingService.show();
 
-  
-  
+    // Simulate an API call or any asynchronous operation
+    setTimeout(() => {
+      // Hide loading animation after the operation is complete
+      this.loadingService.hide();
+    }, 1500); // Adjust the time according to your needs
+  }
 }
