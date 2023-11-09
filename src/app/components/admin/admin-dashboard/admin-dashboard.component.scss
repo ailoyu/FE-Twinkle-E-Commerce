@@ -1,11 +1,9 @@
 .dashboard-sidebar {
   width: 300px;
-  // background-color: #f2f2f2;
-// background-color: white;
   background-color: #83580b;
   padding: 20px;
   animation: slide-in 0.5s ease-in-out;
-  height: 1200px;
+  height: 1818px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   font-weight: bold;
@@ -79,7 +77,7 @@
 }
 
 .dashboard-sidebar .menu-item:hover a {
-  color: yellow;
+  color: #ff022c;
   // font-weight: bold;
   transition: 0.3s linear;
 }

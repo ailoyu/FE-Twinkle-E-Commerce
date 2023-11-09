@@ -23,6 +23,10 @@ body {
     // Using for the products.component.scss
     --clr-neon: hsl(317 100% 54%);
     --clr-bg: hsl(323 21% 16%);
+    
+    // Using for the admin-panel.component.scss
+    --timing: 400ms;
+    --rotation: 20deg;
 }
 
 /* Importing Bootstrap SCSS file. */
