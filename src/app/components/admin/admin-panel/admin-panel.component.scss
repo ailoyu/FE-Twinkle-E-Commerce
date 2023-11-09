@@ -13,17 +13,17 @@
 }
 
 .product-description{
-    // color: rgb(173, 178, 203);
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-  
-  .product-description::before {
+    // margin-top: 18px;
+}
+
+.product-description::before {
     width: 500px;
     height: 500px;
-  }
+}
 
 
 .section {
