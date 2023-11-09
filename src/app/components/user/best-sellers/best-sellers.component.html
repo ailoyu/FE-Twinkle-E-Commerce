@@ -2,34 +2,35 @@
 <div class="container edit-overall twinkle">
     <h2 data-text="Best-Sellers">Best-Sellers</h2>
     <h3 data-text="Shoes-Collection">Shoes-Collection</h3>
+    
     <!-- This is the content of the image slider for shoes -->
     <!-- Nike -->
     <div class="nike" *ngIf="nikes.length > 0">
-    <span>Nike</span>
-    <div class="nike">
-        <div class="product-shoes">
-            <div class="container-fluid">
-                <div class="slider-wrap">
-                    <div class="slider-main">
-                        <div class="item" *ngFor="let nike of nikes">
-                            <div class="text" (click)="onProductClick(nike.id)"><img [src]="nike.thumbnail" alt=""></div>
+        <span>Nike</span>
+        <div class="nike">
+            <div class="product-shoes">
+                <div class="container-fluid">
+                    <div class="slider-wrap">
+                        <div class="slider-main">
+                            <div class="item" *ngFor="let nike of nikes">
+                                <div class="text" (click)="onProductClick(nike.id)"><img [src]="nike.thumbnail" alt=""></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="button-area">
-                        <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                        <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                        <div class="button-area">
+                            <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                            <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> 
-</div>
+        </div> 
+    </div>
 
 
-    <!-- Nike -->
-    <div class="nike" *ngIf="adidases.length > 0">
+    <!-- Adidas -->
+    <div class="adidas" *ngIf="adidases.length > 0">
     <span>Adidas</span>
-    <div class="nike">
+    <div class="adidas">
         <div class="product-shoes">
             <div class="container-fluid">
                 <div class="slider-wrap">
@@ -46,7 +47,7 @@
             </div>
         </div>
     </div> 
-</div>
+    </div>
 
 
     <!-- Converse -->
@@ -115,7 +116,8 @@
     </div>
     </div>
 
-    <div class="nike" *ngIf="reeboks.length > 0">
+    <!-- Reebok -->
+    <div class="reebok" *ngIf="reeboks.length > 0">
         <span>Reebok</span>
         <div class="puma">
             <div class="product-shoes">
@@ -134,30 +136,30 @@
                 </div>
             </div> 
         </div>
-        </div>
+    </div>
 
 
 
     <!-- New Balance -->
-    <div class="nike" *ngIf="newBalances.length > 0">
+    <div class="new-balance" *ngIf="newBalances.length > 0">
     <span>New Balance</span>
-    <div class="new-balance">
-        <div class="product-shoes">
-            <div class="container-fluid">
-            <div class="slider-wrap">
-                <div class="slider-main">
-                    <div class="item" *ngFor="let newBalance of newBalances">
-                        <div class="text" (click)="onProductClick(newBalance.id)"><img [src]="newBalance.thumbnail" alt=""></div>
+        <div class="new-balance">
+            <div class="product-shoes">
+                <div class="container-fluid">
+                <div class="slider-wrap">
+                    <div class="slider-main">
+                        <div class="item" *ngFor="let newBalance of newBalances">
+                            <div class="text" (click)="onProductClick(newBalance.id)"><img [src]="newBalance.thumbnail" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="button-area">
+                    <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
+                    <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
                     </div>
                 </div>
-                <div class="button-area">
-                <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
-                <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
                 </div>
-            </div>
-            </div>
-        </div> 
+            </div> 
+        </div>
     </div>
-</div>
 </div>
 <app-footer></app-footer>
