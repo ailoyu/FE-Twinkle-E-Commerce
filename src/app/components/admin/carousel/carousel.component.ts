@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CategoryService } from 'src/app/service/category.service';
+import { ProductService } from 'src/app/service/product.service';
 
 interface carouselImage {
   imageSrc: string;
@@ -78,6 +80,8 @@ export class CarouselComponent implements OnInit{
       imageAlt: 'person2',
     },
   ]
+
+  // imagesnicexu: {imageSrc: string, imageAlt: string}[] = [];
   
 }
 

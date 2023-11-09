@@ -53,10 +53,13 @@ export class ProductService{
         return this.http.post(this.apiInputOrder, product);
     }
 
-    getAllBestSellers(){
-
+    getAllBestSellers(): Observable<any>{
+        return this.http.get(`${environment.apiBaseUrl}/products/best-sellers`);
     }
 
+    getNewProducts(): Observable<any>{
+        return this.http.get(`${environment.apiBaseUrl}/products/new-products`);
+    }
 
     getProductByCategory(productId: number){
         return this.http.get(`${environment.apiBaseUrl}/products/products-from-category/${productId}`);

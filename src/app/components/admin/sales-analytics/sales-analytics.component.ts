@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'chart.js';
-import * as moment from 'moment';
 import { DataAnalytics } from 'src/app/service/data-analytics.service';
+import html2canvas from 'html2canvas';
+import {jsPDF} from 'jspdf'; // Import jsPDF
 
 
 @Component({
@@ -14,6 +15,64 @@ export class SalesAnalyticsComponent implements OnInit  {
 
   barChart: any;
   pieChart: any;
+
+  // exportChart(chartId: string, fileName: string) {
+  //   const chartContainer = document.getElementById(chartId);
+  //   if (chartContainer) {
+  //     html2canvas(chartContainer).then((canvas) => {
+  //       const dataUrl = canvas.toDataURL('image/png');
+  //       const a = document.createElement('a');
+  //       a.href = dataUrl;
+  //       a.download = `${fileName}.png`;
+  //       a.click();
+  //     });
+  //   }
+  // }
+
+  exportAllChartsPDF() {
+    const chartsToExport = [
+      'pieChart',
+      'pieChart2',
+      'pieChart3',
+      'pieChart4',
+      'barChart3',
+      'barChart2',
+      'barChart',
+    ];
+  
+    const pdf = new jsPDF('l', 'mm', 'a4'); // Create a new jsPDF instance
+    let currentY = 10;
+    const pageHeight = pdf.internal.pageSize.height;
+  
+    for (const chartId of chartsToExport) {
+      const chartContainer = document.getElementById(chartId);
+  
+      if (chartContainer) {
+        html2canvas(chartContainer).then((canvas) => {
+          const imgData = canvas.toDataURL('image/png');
+          const imgWidth = 190; // Define the width of the image in the PDF
+          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+  
+          if (currentY + imgHeight > pageHeight) {
+            pdf.addPage(); // Add a new page if the content exceeds the current page
+            currentY = 10;
+          }
+  
+          pdf.addImage(imgData, 'PNG', 10, currentY, imgWidth, imgHeight);
+          currentY += imgHeight + 10;
+  
+          if (chartId === chartsToExport[chartsToExport.length - 1]) {
+            pdf.save('all_charts.pdf'); // Save the PDF once all charts are added
+          }
+        });
+      }
+    }
+  }
+
+  
+  
+  
+  
 
 
   constructor(

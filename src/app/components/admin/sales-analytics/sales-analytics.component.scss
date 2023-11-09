@@ -3,6 +3,14 @@
     margin-top: 20px;
 }
 
+.btn-gradient {
+  background: linear-gradient(to right, rgb(225, 64, 180), rgb(126, 43, 237));
+  color: white;
+  border-radius: 30px;
+  width: 200px;
+  
+}
+
 .twinkle{
     animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
   }
@@ -33,6 +41,7 @@
     max-width: 600px;            
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
 
 .confirmation-container h1 {
@@ -44,5 +53,8 @@
 .confirmation-container p {
   font-size: 18px;
   text-align: center;
+}
+.confirmation-container button {
+  margin: 10px; /* Add some margin between the buttons for spacing */
 }
 

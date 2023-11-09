@@ -11,7 +11,7 @@
 <div class="row twinke" style="padding-left: 30px;">
     <h1 style="font-family: Oswald, sans-serif;
     padding-bottom: 10px;
-    text-align: center;">Tổng giá trị tất cả các đơn hàng: ${{totalValueOfOrders}}</h1>
+    text-align: center;">Tổng giá trị tất cả các đơn hàng: ${{totalValueOfOrders | number:'1.2-2'}}</h1>
 
     <table *ngFor="let order of getOrder" class="mb-3 twinkle">
         <thead>
@@ -52,15 +52,15 @@
                     </div>
                 </td>
                 <td>{{orderDetail.numberOfProducts}}</td>
-                <td>${{orderDetail.productPrice}}</td>
-                <td>${{orderDetail.productPrice * orderDetail.numberOfProducts}}</td>
+                <td>${{orderDetail.productPrice | number:'1.2-2'}}</td>
+                <td>${{orderDetail.productPrice * orderDetail.numberOfProducts | number:'1.2-2'}}</td>
             </tr>
         </table>
         </tbody>
         <tfoot *ngIf="selectedOrder === order.id">
             <tr>
                 <td colspan="4" class="text-end">
-                    <h4 class="header-text">Tổng Đơn Hàng: ${{order.totalMoney}}</h4>
+                    <h4 class="header-text">Tổng Đơn Hàng: ${{order.totalMoney | number:'1.2-2'}}</h4>
                 </td>
             </tr>
         </tfoot>

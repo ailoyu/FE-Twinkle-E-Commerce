@@ -18,7 +18,7 @@
         <div class="container-fluid">
         <div class="slider-wrap">
             <div class="slider-main">
-                <div class="item">
+                <!-- <div class="item">
                     <div class="content">
                         <div class="text">
                             <i class="fa-solid fa-person-running"></i>
@@ -31,7 +31,7 @@
                         <div class="text">
                             <i class="fa-solid fa-dumbbell"></i>
                         </div>
-                        <p>Dumbbell</p>
+                        <p>Training & Gym</p>
                     </div>
                 </div>
                 <div class="item">
@@ -55,7 +55,7 @@
                         <div class="text">
                             <i class="fa-regular fa-futbol"></i>
                         </div>
-                        <p>Futbol</p>
+                        <p>Football</p>
                     </div>
                 </div>
                 <div class="item">
@@ -71,17 +71,40 @@
                         <div class="text">
                             <i class="fa-solid fa-person-running"></i>
                         </div>
-                        <p>Running</p>
+                        <p>Dancing</p>
                     </div>
                 </div>
                 <div class="item">
                     <div class="content">
                         <div class="text">
-                            <i class="fa-solid fa-person-running"></i>
+                            <i class="fa-solid fa-football"></i>
                         </div>
-                        <p>Running</p>
+                        <p>American football</p>
                     </div>
                 </div>
+                <div class="item">
+                    <div class="content">
+                        <div class="text">
+                            <i class="fas fa-tennis"></i>
+                        </div>
+                        <p>Tennis</p>
+                    </div>
+                </div> -->
+                <div class="item" *ngFor="let category of categories">
+                    <div class="content">
+                      <div class="text">
+                        <i class="fa-solid fa-person-running" *ngIf="category.name === 'Running'"></i>
+                        <i class="fa-solid fa-dumbbell" *ngIf="category.name === 'Training & Gym'"></i>
+                        <i class="fa-solid fa-basketball" *ngIf="category.name === 'Basketball'"></i>
+                        <i class="fa-solid fa-baseball" *ngIf="category.name === 'Baseball'"></i>
+                        <i class="fa-regular fa-futbol" *ngIf="category.name === 'Football'"></i>
+                        <i class="fa-solid fa-person-walking" *ngIf="category.name === 'Walking'"></i>
+                        <i class="fa-solid fa-football" *ngIf="category.name === 'American Football'"></i>
+                        <i class="fa-solid fa-yoga" *ngIf="category.name === 'Yoga'"></i>
+                      </div>
+                      <p>{{category.name}}</p>
+                    </div>
+                  </div>                  
             </div>
             <div class="button-area">
             <h4>Category</h4>
@@ -105,78 +128,12 @@
         <div class="container-fluid">
         <div class="slider-wrap">
             <div class="slider-main">
-            <div class="item">
-                <div class="text">
-                    <img src="./assets/images/model-1.jpg" alt="">
-                    <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
+            <div class="item" *ngFor="let product of newProducts">
+                <div class="text" (click)="onProductClick(product.id)">
+                    <img src="{{product.thumbnail}}" alt="">
+                    <h5 class="product-description">{{product.name}} </h5>
                     <div class="small-content">
-                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
-                        <div class="heart"><i class="fa-solid fa-heart" style="color:#f97b16"></i>456k</div>
-                        <div class="percent"><i class="fa-solid fa-percent" style="color:#f97b16"></i>5,653</div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text">
-                    <img src="./assets/images/model-2.jpg" alt="">
-                    <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
-                    <div class="small-content">
-                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
-                        <div class="heart"><i class="fa-solid fa-heart" style="color:#f97b16"></i>456k</div>
-                        <div class="percent"><i class="fa-solid fa-percent" style="color:#f97b16"></i>5,653</div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text">
-                    <img src="./assets/images/model-2.jpg" alt="">
-                    <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
-                    <div class="small-content">
-                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
-                        <div class="heart"><i class="fa-solid fa-heart" style="color:#f97b16"></i>456k</div>
-                        <div class="percent"><i class="fa-solid fa-percent" style="color:#f97b16"></i>5,653</div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text">
-                    <img src="./assets/images/shoes-4.jpg" alt="">
-                    <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
-                    <div class="small-content">
-                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
-                        <div class="heart"><i class="fa-solid fa-heart" style="color:#f97b16"></i>456k</div>
-                        <div class="percent"><i class="fa-solid fa-percent" style="color:#f97b16"></i>5,653</div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text">
-                    <img src="./assets/images/shoes-5.jpg" alt="">
-                    <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
-                    <div class="small-content">
-                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
-                        <div class="heart"><i class="fa-solid fa-heart" style="color:#f97b16"></i>456k</div>
-                        <div class="percent"><i class="fa-solid fa-percent" style="color:#f97b16"></i>5,653</div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text">
-                    <img src="./assets/images/shoes-6.jpg" alt="">
-                    <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
-                    <div class="small-content">
-                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
-                        <div class="heart"><i class="fa-solid fa-heart" style="color:#f97b16"></i>456k</div>
-                        <div class="percent"><i class="fa-solid fa-percent" style="color:#f97b16"></i>5,653</div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="text">
-                    <img src="./assets/images/shoes-7.jpg" alt="">
-                    <p>Tình yêu đâu phải như giấc mộng mà ta vẫn mong </p>
-                    <div class="small-content">
-                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>6.73</div>
+                        <div class="money"><i class="fa-solid fa-dollar-sign"></i>{{product.price}}</div>
                         <div class="heart"><i class="fa-solid fa-heart" style="color:#f97b16"></i>456k</div>
                         <div class="percent"><i class="fa-solid fa-percent" style="color:#f97b16"></i>5,653</div>
                     </div>
@@ -184,7 +141,7 @@
             </div>
             </div>
             <div class="button-area">
-            <h4>Stock available</h4>
+            <h4>Our favourite new shoes</h4>
                 <button type="button" class="prev" appPrev><i class="fa-solid fa-angle-left"></i></button>
                 <button type="button" class="next" appNext><i class="fa-solid fa-angle-right"></i></button>
             </div>
@@ -195,66 +152,25 @@
 
     <div class="item-5 item">
         <div class="top">
-            <h4>Famous Shoes</h4>
-            <a href="">View all<i class="fa-solid fa-right-from-bracket"></i></a>
+            <h4>Best Sellers</h4>
+            <a routerLink="/best-sellers" routerLinkActive="active">View all<i class="fa-solid fa-right-from-bracket"></i></a>
         </div>
         <div class="bottom">
-            <div class="section">
+            <div class="section" *ngFor="let product of bestSellers">
                 <!-- Khối 1 -->
-                <div class="left"><img src="./assets/images/model-1.jpg" alt=""></div>
+                <div class="left" (click)="onProductClick(product.id)"><img src="{{product.thumbnail}}" alt=""></div>
                 <div class="right">
-                    <h5>Nike</h5>
+                    <h5 class="product-description">{{product.name}}</h5>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-regular fa-star"></i>
-                    <div class="price"><span>$</span>7.59</div>
-                    <button>Order</button>
+                    <div class="price">${{product.price}}</div>
+                    <button (click)="onProductClick(product.id)">Order</button>
                 </div>
             </div>
-            <div class="section">
-                <!-- Khối 2 -->
-                <div class="left"><img src="./assets/images/model-1.jpg" alt=""></div>
-                <div class="right">
-                    <h5>Adidas</h5>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <div class="price"><span>$</span>7.59</div>
-                    <button>Order</button>
-                </div>
-            </div>
-            <div class="section">
-                <!-- Khối 3 -->
-                <div class="left"><img src="./assets/images/model-1.jpg" alt=""></div>
-                <div class="right">
-                    <h5>Converse</h5>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <div class="price"><span>$</span>7.59</div>
-                    <button>Order</button>
-                </div>
-            </div>
-            <div class="section">
-                <!-- Khối 4 -->
-                <div class="left"><img src="./assets/images/model-1.jpg" alt=""></div>
-                <div class="right">
-                    <h5>Vans</h5>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <div class="price"><span>$</span>7.59</div>
-                    <button>Order</button>
-                </div>
-            </div>
+            
         </div>
     </div>
 

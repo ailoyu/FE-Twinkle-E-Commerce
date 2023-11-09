@@ -32,7 +32,7 @@
     background-image: url('/assets/images/nicexu.png');
     background-size: cover;
     position: absolute;
-    cursor: none; /* Tắt con trỏ mặc định của Windows */
+    // cursor: none; /* Tắt con trỏ mặc định của Windows */
     pointer-events: none;
     z-index: 9999;
     will-change: transform;

@@ -1,5 +1,8 @@
 // import { Component } from '@angular/core';
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CategoryService } from 'src/app/service/category.service';
+import { ProductService } from 'src/app/service/product.service';
 
 
 
@@ -14,6 +17,80 @@ interface carouselImage {
   styleUrls: ['./admin-panel.component.scss']
 })
 export class AdminPanelComponent implements OnInit{
+
+  categories: any[] =  [];
+  bestSellers: any[] = [];
+  newProducts: any[] = [];
+
+  constructor(
+    private categoryService: CategoryService,
+    private productService: ProductService,
+    private router: Router
+  ){
+    this.getAllBestSellers();
+    this.getNewProducts();
+  }
+
+  getNewProducts(){
+    this.productService.getNewProducts().subscribe({
+      next: (response: any) => {
+        debugger
+        this.newProducts = response;
+        // for (let i = 0; i < this.products.length && i < this.imagesnicexu.length; i++) {
+        //   this.imagesnicexu[i].imageSrc = this.products[i].thumbnail;
+        // }
+      },
+      complete: () => {
+
+      },
+      error:(error: any) => {
+
+      }
+    })
+  }
+
+  onProductClick(productId: number) {
+    debugger
+    // Điều hướng đến trang detail-product với productId là tham số
+    this.router.navigate(['/detail-product', productId]);
+  }
+
+  getAllBestSellers(){
+    this.productService.getAllBestSellers().subscribe({
+      next: (response: any) => {
+        debugger
+        this.bestSellers = response;
+        // for (let i = 0; i < this.products.length && i < this.imagesnicexu.length; i++) {
+        //   this.imagesnicexu[i].imageSrc = this.products[i].thumbnail;
+        // }
+      },
+      complete: () => {
+
+      },
+      error:(error: any) => {
+
+      }
+    });
+  }
+
+
+  getCategories(){
+    this.categoryService.getCategories().subscribe({
+      next: (categories: any[]) => {
+        debugger 
+        this.categories = categories;
+      },
+      complete: () => {
+        debugger;
+      },
+      error: (error: any) => {
+        debugger;
+        console.error("Lỗi bắt dữ liệu thể loại", error);
+      }
+    });
+  }
+
+  
   
   @Input() images: carouselImage[] = []
   @Input() indicators = true;
@@ -24,6 +101,7 @@ export class AdminPanelComponent implements OnInit{
   selectedIndex = 0;
 
   ngOnInit(): void {
+    this.getCategories();
     if(this.autoSlide) {
       this.autoSlideImages();
     }
@@ -82,5 +160,7 @@ export class AdminPanelComponent implements OnInit{
       imageAlt: 'person2',
     },
   ]
+
+  // imagesnicexu: {imageSrc: string, imageAlt: string}[] = [];
 }
 
