@@ -9,18 +9,6 @@ import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  {
-  // title = 'ngrxdemo';
 
-  // constructor(){}
-  // ngOnInit(){}
-
-  // @ViewChild('cursor') refCursor:any;
-  // @HostListener('document:mousemove', ['$event'])
-  // onMouseMove(event:any){
-  //   console.log('width' + event.pageX);
-  //   console.log('height' + event.pageY);
-  //   this.refCursor.nativeElement.style.left = event.pageX -25 + "px";
-  //   this.refCursor.nativeElement.style.left = event.pageY + "px";
-  // }
 }
 

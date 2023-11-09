@@ -160,7 +160,5 @@ export class AdminPanelComponent implements OnInit{
       imageAlt: 'person2',
     },
   ]
-
-  // imagesnicexu: {imageSrc: string, imageAlt: string}[] = [];
 }
 

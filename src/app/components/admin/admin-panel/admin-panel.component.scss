@@ -4,11 +4,9 @@
 
 
 .item {
-    // background-color: #232323;
     // background-color: blue;
     // border: 1px solid grey;
     min-height: 50px;
-    // font-weight: bold;
     border-radius: 30px;
 }
 
@@ -35,9 +33,9 @@
     margin-right: 20px;
     grid-template-areas: 
     "sidebar banner banner"
-    "sidebar category checkout"
-    "sidebar available checkout"
-    "sidebar famous checkout";
+    "sidebar category img-animation-1"
+    "sidebar available img-animation-1"
+    "sidebar famous img-animation-2";
 }
 
 .item-1 {
@@ -356,9 +354,13 @@
     margin-top: 15px;
 }
 
+.item-4 .slider-main .item .text h5 {
+    margin-top: 18px;
+}
+
 .item-4 .slider-main .item .text img {
     width: 220px;
-    height: 110px;
+    height: 130px;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -532,9 +534,14 @@
 
 
 .item-6 {
-    grid-area: checkout;
+    grid-area: img-animation-1;
     margin-top: 25px;
     background-color: blue;
+    position: relative;
+}
+
+.item-7 {
+    grid-area: img-animation-2;
 }
 
 
