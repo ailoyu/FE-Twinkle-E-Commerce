@@ -56,6 +56,6 @@ export class HomeComponent implements OnInit{
     setTimeout(() => {
       // Hide loading animation after the operation is complete
       this.loadingService.hide();
-    }, 1500); // Adjust the time according to your needs
+    }, 9000); // Adjust the time according to your needs
   }
 }

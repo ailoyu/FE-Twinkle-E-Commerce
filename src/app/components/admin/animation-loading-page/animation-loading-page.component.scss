@@ -4,23 +4,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #edf1f4;
-    height: 400px;
-    width: 50%;
-    margin-left: 25%;
-    border-radius: 30px;
+    height: 110vh;
+    width: 100%;
+    background: rgba(128, 128, 128, 0.3);
+    margin: -120px 0px 0px!important;
+    padding: 0px!important;
     z-index: 700;
-    margin-top: 130px;
+}
+
+.overlay::before {
+    content:"";
+    position: absolute;
+    height: 400px;
+    left: 25%;
+    width: 50%;
+    top: 26%;
+    border-radius: 30px;
+    background: #edf1f4;
 }
 
 
-.loading {
+.section-loader .loading {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.section-loader .text {
+.section-loader .loading .text {
     background: linear-gradient(90deg, #00dbde, #fc00ff);
     font-size: 40px;
     text-transform: uppercase;
@@ -30,15 +40,12 @@
     position: relative;
 }
 
-.loader {
+.section-loader .loading .loader {
     display: flex;
     flex-direction: row;
 }
 
-
-
-
-.loader div {
+.section-loader .loading .loader div {
     position: relative;
     width: 40px;
     height: 200px;
@@ -53,7 +60,7 @@
                 inset 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.loader div::before {
+.section-loader .loading .loader div::before {
     content:"";
     position: absolute;
     top: 0;
@@ -68,7 +75,7 @@
                 inset 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.loader div::after {
+.section-loader .loading .loader div::after {
     content:"";
     position: absolute;
     top: 0;
