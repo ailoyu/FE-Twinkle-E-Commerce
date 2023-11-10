@@ -18,6 +18,6 @@ export class AppComponent  implements OnInit {
       this.loadingService.hide();
       // Mark initial load as complete
       this.loadingService.setInitialLoadComplete();
-    }, 1500); // Adjust the time according to your needs
+    }, 2000); // Adjust the time according to your needs
   }
 }
