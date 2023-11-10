@@ -20,5 +20,6 @@ export class AnimatedCursorsComponent {
     this.refCursor.nativeElement.style.left = event.pageX  + "px";
     this.refCursor.nativeElement.style.top = event.pageY  + "px";
   }
+  
 }
 
