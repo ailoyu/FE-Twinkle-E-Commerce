@@ -1,6 +1,5 @@
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
-
-
+import { Component, OnInit } from '@angular/core';
+import { LoadingService } from 'src/app/service/loading.service';
 
 
 @Component({
@@ -8,7 +7,17 @@ import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
+export class AppComponent  implements OnInit {
+  constructor(private loadingService: LoadingService) {}
 
+  ngOnInit() {
+    // Trigger initial load
+    this.loadingService.show();
+    // Simulate an API call or any asynchronous operation
+    setTimeout(() => {
+      this.loadingService.hide();
+      // Mark initial load as complete
+      this.loadingService.setInitialLoadComplete();
+    }, 1500); // Adjust the time according to your needs
+  }
 }
-

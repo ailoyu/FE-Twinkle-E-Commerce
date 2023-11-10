@@ -37,25 +37,34 @@ export class HomeComponent implements OnInit{
     public loadingService: LoadingService, // Change private to public
   ) {}
 
-  // ngOnInit(): void {
-    
-  // }
-
   onProductClick(productId: number) {
     debugger
     // Điều hướng đến trang detail-product với productId là tham số
     this.router.navigate(['/detail-product', productId]);
   }
 
-  // code test phần animation-loading-page mỗi khi load trang home
+  // Start: code test phần animation-loading-page mỗi khi load trang home và không hiển thị lại loading-animation khi chuyển qua lại các item header
   ngOnInit(): void {
-    // Show loading animation when the component initializes
-    this.loadingService.show();
+    // Check if it's the initial load
+    this.loadingService.initialLoad$.subscribe((initialLoad) => {
+      if (initialLoad) {
+        // This block will execute only on the initial load
+        // ... your initial load logic here ...
+      }
+    });
 
-    // Simulate an API call or any asynchronous operation
-    setTimeout(() => {
-      // Hide loading animation after the operation is complete
-      this.loadingService.hide();
-    }, 1500); // Adjust the time according to your needs
+    // Subscribe to router events to detect navigation
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Check if it's not the initial load
+        this.loadingService.initialLoad$.subscribe((initialLoad) => {
+          if (!initialLoad) {
+            // This block will execute on subsequent navigations
+            // ... your navigation-specific logic here ...
+          }
+        });
+      }
+    });
   }
+  // End: code test phần animation-loading-page mỗi khi load trang home và không hiển thị lại loading-animation khi chuyển qua lại các item header
 }
