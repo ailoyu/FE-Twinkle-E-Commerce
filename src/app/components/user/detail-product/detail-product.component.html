@@ -52,7 +52,7 @@
                 <section class="radio-section">
                     <div class="radio-list">
                         <div class="radio-item" *ngFor="let size of product?.sizes; let i = index">
-                            <input type="radio" name="radio" [attr.id]="'radio' + i">
+                            <input type="radio" name="radio" [attr.id]="'radio' + i" [value]="size" [(ngModel)]="selectedSize" >
                             <label [attr.for]="'radio' + i">{{size}}</label>
                         </div>
                     </div>  

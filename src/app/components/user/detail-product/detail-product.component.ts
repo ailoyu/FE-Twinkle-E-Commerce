@@ -18,6 +18,7 @@ export class DetailProductComponent implements OnInit{
   productId: number = 0;
   currentImageIndex: number = 0;
   quantity: number = 1;
+  selectedSize: number = 0;
 
   constructor(
     private productService :ProductService,
@@ -119,8 +120,13 @@ export class DetailProductComponent implements OnInit{
   addToCart(): void {
     debugger
     if(this.product){
-      this.cartService.addToCart(this.productId, this.quantity);
-      alert("Đã thêm " + this.quantity + " sản phẩm này vào giỏ hàng thành công!");
+      if(this.selectedSize !== 0){
+        this.cartService.addToCart(this.productId, this.quantity, this.selectedSize);
+        alert("Đã thêm " + this.quantity + " sản phẩm này vào giỏ hàng thành công!");
+      } else {
+        alert("Vui lòng chọn size!")
+      }
+      
     } else {
       // Xử lý khi product là null
       console.error('Không thể thêm sản phẩm vào giỏ hàng vì product là null');
@@ -140,9 +146,15 @@ export class DetailProductComponent implements OnInit{
 
   buyNow(): void {
     // Thực hiện xử lý khi người dùng muốn mua ngay
+    debugger
     if(this.product){
-      this.cartService.addToCart(this.productId, this.quantity);
-      this.router.navigate(['/order']);
+      if(this.selectedSize !== 0){
+        this.cartService.addToCart(this.productId, this.quantity, this.selectedSize);
+        this.router.navigate(['/order']);
+      } else {
+        alert("Vui lòng chọn size!")
+      }
+      
     } else {
       // Xử lý khi product là null
       console.error('Không thể thêm sản phẩm vào giỏ hàng vì product là null');
