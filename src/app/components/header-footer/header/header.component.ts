@@ -40,16 +40,18 @@ import { VNPayService } from 'src/app/service/vnpay.service';
 export class HeaderComponent implements OnInit {
   // Test coding for show/hide navigation when scrolling mouse
   navbarfixed:boolean = false;
-  // fixed: boolean = true;
+  scrollDirection: string = 'none';
+
 
   @HostListener('window:scroll', ['$event'])
-onscroll(event: Event) {
-  if (window.scrollY > 1500) {
-    this.navbarfixed = false;
-  } else {
-    this.navbarfixed = true;
-  }
-}
+    onscroll(event: Event) {
+      if (window.scrollY > 1500) {
+        this.navbarfixed = false;
+      } else {
+        this.navbarfixed = true;
+      }
+    }
+
 
 private lastScrollTop = 0;
 

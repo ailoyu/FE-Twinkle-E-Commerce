@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+// Test 1
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+// End test 1
 import { NavigationEnd, Router } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
 import { Category } from 'src/app/model/category';
@@ -13,8 +15,13 @@ import { ProviderService } from 'src/app/service/provider.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit{
-
+export class ProductsComponent implements OnInit, AfterViewInit{
+  // Test 1
+  ngAfterViewInit() {
+      // Ensure that the loading animation is triggered after the component is fully initialized
+      this.loadingService.manualShowWithDuration(this.loadingService.subsequentLoadDuration, true);
+  }
+  // End test 1
 
   showFilter = false;
 
@@ -43,17 +50,13 @@ export class ProductsComponent implements OnInit{
     ){}
 
   ngOnInit() {
-      this.getProducts(this.keyword, this.selectedCategoryId, this.selectedSize, this.orderBy, this.selectedPriceRate, this.selectedProvider, this.currentPage, this.itemsPerPage);
-      this.getCategories();
-      this.getAvailableSizes();
-      this.getAllProviders();
-      // Check if it's the initial load
-    this.loadingService.initialLoad$.subscribe((initialLoad) => {
-      if (initialLoad) {
-        // This block will execute only on the initial load
-        // ... your initial load logic here ...
-      }
-    });
+    // Test 1
+    this.loadingService.clearLocalStorage();
+    this.loadingService.manualShowWithDuration(this.loadingService.subsequentLoadDuration, true);
+    // End test 1
+
+    
+    
 
     // Subscribe to router events to detect navigation
     this.router.events.subscribe((event) => {
@@ -67,7 +70,29 @@ export class ProductsComponent implements OnInit{
         });
       }
     });
-  }
+
+      this.getProducts(
+      this.keyword,
+      this.selectedCategoryId,
+      this.selectedSize,
+      this.orderBy,
+      this.selectedPriceRate,
+      this.selectedProvider,
+      this.currentPage,
+      this.itemsPerPage);
+
+      this.getCategories();
+      this.getAvailableSizes();
+      this.getAllProviders();
+      // Check if it's the initial load
+    this.loadingService.initialLoad$.subscribe((initialLoad) => {
+      if (initialLoad) {
+        // This block will execute only on the initial load
+        // ... your initial load logic here ...
+      }
+    });
+
+}
   
   getAllProviders(){
     this.providerService.getAllProviders().subscribe({
@@ -168,15 +193,11 @@ export class ProductsComponent implements OnInit{
     
     return new Array(endPage - startPage + 1).fill(0).map((_, index) => startPage + index);
   }
-   // Hàm xử lý sự kiện khi sản phẩm được bấm vào
-   onProductClick(productId: number) {
+  // Hàm xử lý sự kiện khi sản phẩm được bấm vào
+  onProductClick(productId: number) {
     debugger
     // Điều hướng đến trang detail-product với productId là tham số
     this.router.navigate(['/detail-product', productId]);
   }
 
-
-  
-
-  
 }

@@ -52,6 +52,7 @@ import { SalesAnalyticsComponent } from './components/admin/sales-analytics/sale
 import { AnimationLoadingPageComponent } from './components/admin/animation-loading-page/animation-loading-page.component';
 // animation-loading-service
 import { LoadingService } from 'src/app/service/loading.service';
+import { NewArrivalsComponent } from 'src/app/components/user/new-arrivals/new-arrivals.component';
 
 
 
@@ -90,6 +91,7 @@ import { LoadingService } from 'src/app/service/loading.service';
     AdminEditCustomerComponent,
     SalesAnalyticsComponent,
     AnimationLoadingPageComponent,
+    NewArrivalsComponent,
   ],
   imports: [
     ReactiveFormsModule,

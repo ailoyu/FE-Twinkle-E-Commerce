@@ -1,3 +1,72 @@
+.button-animation {
+  position: absolute;
+  margin-top: 154px;
+  // top: 92%;
+  // top: 12%;
+  left: 66%;
+  z-index: 302;
+}
+
+.button-animation .block .a:hover {
+  color: #ff5722;
+
+}
+
+.block {
+  position: relative;
+  margin: 10% auto 0;
+  width: 182px;
+  height: 50px;
+  background: linear-gradient(0deg, black, rgb(44, 43, 43));
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.block:hover {
+  font-weight: bold;
+  color: #ff5722;
+  width: 192px;
+  height: 60px;
+}
+
+.block::before, .block::after {
+  content:"";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  border-radius: 25px;
+  z-index: -1;
+  animation: animate-box-shadow 20s linear infinite;
+}
+
+@keyframes animate-box-shadow
+{
+  0%
+  {
+    background-position: 0 0;
+  }
+  50%
+  {
+    background-position: 400% 0;
+  }
+  100%
+  {
+    background-position: 0 0;
+  }
+}
+
+.block::after {
+  filter: blur(40px);
+}
+
 .fixed {
   position: fixed;
   top: 0;
@@ -16,14 +85,6 @@
   border-radius: 0px 0px 30px 30px;
   background: radial-gradient(929px at 0.6% 1.3%, rgb(248, 251, 10) 0%, rgb(248, 47, 47) 82.6%)!important;
 }
-
-.fixed .navbar .container .navbar-brand {
-  margin-bottom: 120px;
-}
-.nofixed .navbar .container .navbar-brand {
-  margin-bottom: 120px; /* Điều chỉnh khoảng cách tùy theo nhu cầu */
-}
-
 
 
 // .navbar {
@@ -70,6 +131,7 @@ ul {
     li {
       padding: 1rem;
       cursor: pointer;
+      position: relative;
     }
 
     i {

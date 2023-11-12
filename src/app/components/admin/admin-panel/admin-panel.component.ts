@@ -1,8 +1,9 @@
 // import { Component } from '@angular/core';
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { CategoryService } from 'src/app/service/category.service';
-import { ProductService } from 'src/app/service/product.service';
+import { Component, OnInit } from '@angular/core';
+import {Chart} from 'chart.js';
+import { DataAnalytics } from 'src/app/service/data-analytics.service';
+import html2canvas from 'html2canvas';
+import {jsPDF} from 'jspdf'; // Import jsPDF
 
 
 
@@ -16,149 +17,311 @@ interface carouselImage {
   templateUrl: './admin-panel.component.html',
   styleUrls: ['./admin-panel.component.scss']
 })
-export class AdminPanelComponent implements OnInit{
+export class AdminPanelComponent implements OnInit  {
+  title = 'chartDemo';
 
-  categories: any[] =  [];
-  bestSellers: any[] = [];
-  newProducts: any[] = [];
+  barChart: any;
+  pieChart: any;
+
+  // exportChart(chartId: string, fileName: string) {
+  //   const chartContainer = document.getElementById(chartId);
+  //   if (chartContainer) {
+  //     html2canvas(chartContainer).then((canvas) => {
+  //       const dataUrl = canvas.toDataURL('image/png');
+  //       const a = document.createElement('a');
+  //       a.href = dataUrl;
+  //       a.download = `${fileName}.png`;
+  //       a.click();
+  //     });
+  //   }
+  // }
+
+  exportAllChartsPDF() {
+    const chartsToExport = [
+      'pieChart',
+      'pieChart2',
+      'pieChart3',
+      'pieChart4',
+      'barChart3',
+      'barChart2',
+      'barChart',
+    ];
+  
+    const pdf = new jsPDF('l', 'mm', 'a4'); // Create a new jsPDF instance
+    let currentY = 10;
+    const pageHeight = pdf.internal.pageSize.height;
+  
+    for (const chartId of chartsToExport) {
+      const chartContainer = document.getElementById(chartId);
+  
+      if (chartContainer) {
+        html2canvas(chartContainer).then((canvas) => {
+          const imgData = canvas.toDataURL('image/png');
+          const imgWidth = 190; // Define the width of the image in the PDF
+          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+  
+          if (currentY + imgHeight > pageHeight) {
+            pdf.addPage(); // Add a new page if the content exceeds the current page
+            currentY = 10;
+          }
+  
+          pdf.addImage(imgData, 'PNG', 10, currentY, imgWidth, imgHeight);
+          currentY += imgHeight + 10;
+  
+          if (chartId === chartsToExport[chartsToExport.length - 1]) {
+            pdf.save('all_charts.pdf'); // Save the PDF once all charts are added
+          }
+        });
+      }
+    }
+  }
+
+  
+  
+  
+  
+
 
   constructor(
-    private categoryService: CategoryService,
-    private productService: ProductService,
-    private router: Router
-  ){
-    this.getAllBestSellers();
-    this.getNewProducts();
-  }
+    private dataAnalytics: DataAnalytics
+  ) { }
 
-  getNewProducts(){
-    this.productService.getNewProducts().subscribe({
-      next: (response: any) => {
-        debugger
-        this.newProducts = response;
-        // for (let i = 0; i < this.products.length && i < this.imagesnicexu.length; i++) {
-        //   this.imagesnicexu[i].imageSrc = this.products[i].thumbnail;
-        // }
-      },
-      complete: () => {
+  ngOnInit() 
+  {
+    this.dataAnalytics.getCategoryStatistics().subscribe((data) => {
+      debugger
+      const labels = data.map((item) => `${item[0]} (${item[1]} pair of shoes)`);
 
-      },
-      error:(error: any) => {
+      const percentages = data.map((item) => item[2]);
 
-      }
-    })
-  }
+      const backgroundColors = this.generateRandomColors(data.length);
 
-  onProductClick(productId: number) {
-    debugger
-    // Điều hướng đến trang detail-product với productId là tham số
-    this.router.navigate(['/detail-product', productId]);
-  }
-
-  getAllBestSellers(){
-    this.productService.getAllBestSellers().subscribe({
-      next: (response: any) => {
-        debugger
-        this.bestSellers = response;
-        // for (let i = 0; i < this.products.length && i < this.imagesnicexu.length; i++) {
-        //   this.imagesnicexu[i].imageSrc = this.products[i].thumbnail;
-        // }
-      },
-      complete: () => {
-
-      },
-      error:(error: any) => {
-
-      }
+      this.pieChart = new Chart('pieChart', {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: percentages,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
     });
-  }
+    this.dataAnalytics.getProviderStatistics().subscribe((data) => {
+      debugger
+      const labels = data.map((item) => `${item[0]} (${item[1]} pair of shoes)`);
+      const percentages = data.map((item) => item[2]);
 
+      const backgroundColors = this.generateRandomColors(data.length);
 
-  getCategories(){
-    this.categoryService.getCategories().subscribe({
-      next: (categories: any[]) => {
-        debugger 
-        this.categories = categories;
-      },
-      complete: () => {
-        debugger;
-      },
-      error: (error: any) => {
-        debugger;
-        console.error("Lỗi bắt dữ liệu thể loại", error);
-      }
+      this.pieChart = new Chart('pieChart2', {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: percentages,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
     });
+    this.dataAnalytics.getOrderStatusStatistic().subscribe((data) => {
+      debugger
+      const labels = data.map((item) => `${item[0]} (${item[1]} đơn)`);
+      const percentages = data.map((item) => item[2]);
+
+      const backgroundColors = this.generateRandomColors(data.length);
+
+      this.pieChart = new Chart('pieChart3', {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: percentages,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
+    });
+    this.dataAnalytics.getPriceStatistics().subscribe((data) => {
+      debugger
+      const labels = data.map((item) => `${item[0]} (${item[1]} pair of shoes)`);
+      const percentages = data.map((item) => item[2]);
+
+      const backgroundColors = this.generateRandomColors(data.length);
+
+      this.pieChart = new Chart('pieChart4', {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: percentages,
+              backgroundColor: backgroundColors,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
+    });
+    this.dataAnalytics.getRevenue().subscribe((data) => {
+      debugger
+      console.log(data)
+      const date  = data.map((item) => item.date);
+      const giaGoc = data.map((item) => item.value1);
+      const doanhThu = data.map((item) => item.value2);
+      const loiNhuan = data.map((item) => item.value3);
+      
+      
+      
+    
+      const barChart = new Chart('barChart3', { 
+        type: 'bar',
+        data: {
+          labels: date,
+          datasets: [
+            {
+              label: 'Giá gốc',
+              data: giaGoc,
+              backgroundColor: '#FA8072',
+              borderColor: '#FA8072',
+              borderWidth: 1,
+            },
+            {
+              label: 'Doanh thu',
+              data: doanhThu,
+              backgroundColor: '#0196FD',
+              borderColor: '#0196FD',
+              borderWidth: 1,
+            },
+            // {
+            //   label: 'Lợi nhuận',
+            //   data: loiNhuan2,
+            //   backgroundColor: '#ff9a3c',
+            //   borderColor: '#ff9a3c',
+            //   borderWidth: 1,
+            //   stack: 'Stack 0'
+            // },
+            {
+              label: 'Lợi nhuận',
+              data: loiNhuan,
+              backgroundColor: '#ff9a3c',
+              borderColor: '#ff9a3c',
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    });
+    this.dataAnalytics.getSizesStatistic().subscribe((data) => {
+      debugger
+      console.log(data)
+      const products = data.map((item) => `Size ${item[0]} (${item[2]}%)`);
+      const quantities = data.map((item) => item[1]);
+      const barChart = new Chart('barChart2', {
+        type: 'bar',
+        data: {
+          labels: products,
+          datasets: [
+            {
+              label: 'Quantity of size',
+              data: quantities,
+              backgroundColor: '#0196FD',
+              borderColor: '#0196FD',
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    });
+    this.dataAnalytics.getQuantityOfEachProductStatistics().subscribe((data) => {
+      debugger
+      console.log(data)
+      const products = data.map((item) => `${item[0]}: ${item[1]}`);
+      const quantities = data.map((item) => item[2]);
+      const barChart = new Chart('barChart', {
+        type: 'bar',
+        data: {
+          labels: products,
+          datasets: [
+            {
+              label: 'Quantity of product',
+              data: quantities,
+              backgroundColor: '#ff9a3c',
+              borderColor: '#ff9a3c',
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    });
+    
+
+    
   }
 
-  
-  
-  @Input() images: carouselImage[] = []
-  @Input() indicators = true;
-  @Input() controls = true;
-  @Input() autoSlide = false;
-  @Input() slideInterval = 3000; // Default to 3 seconds
 
-  selectedIndex = 0;
-
-  ngOnInit(): void {
-    this.getCategories();
-    if(this.autoSlide) {
-      this.autoSlideImages();
+  generateRandomColors(numColors: number) {
+    const colors = [];
+    for (let i = 0; i < numColors; i++) {
+      const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+      colors.push(randomColor);
     }
+    return colors;
   }
-
-
-  // Changes slide in every 3 seconds
-  autoSlideImages(): void {
-    setInterval(() => {
-      this.onNextClick();
-    }, this.slideInterval);
-  }
-
-  // sets index of image on dot/indicator click
-  selectImage(index: number): void {
-    this.selectedIndex = index;
-  }
-
-  onPrevClick(): void {
-    if(this.selectedIndex === 0) {
-      this.selectedIndex = this.imagesnicexu.length - 1;
-    } else {
-      this.selectedIndex--;
-    }
-  }
-
-  onNextClick(): void {
-    if(this.selectedIndex === this.imagesnicexu.length -1) {
-      this.selectedIndex = 0;
-    } else {
-      this.selectedIndex++;
-    }
-  }
-
-  title = 'carousel';
-
-  imagesnicexu = [
-    {
-      imageSrc:
-        'https://images.unsplash.com/photo-1460627390041-532a28402358?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-      imageAlt: 'nature1',
-    },
-    {
-      imageSrc:
-        'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-      imageAlt: 'nature2',
-    },
-    {
-      imageSrc:
-        'https://images.unsplash.com/photo-1640844444545-66e19eb6f549?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80',
-      imageAlt: 'person1',
-    },
-    {
-      imageSrc:
-        'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-      imageAlt: 'person2',
-    },
-  ]
 }
 

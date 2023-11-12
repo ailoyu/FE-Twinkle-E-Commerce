@@ -6,12 +6,7 @@ import { Product } from 'src/app/model/product';
 import { CategoryService } from 'src/app/service/category.service';
 import { ProductService } from 'src/app/service/product.service';
 import { MatDialog } from '@angular/material/dialog';
-// import { LoadingService } from 'path-to-your-loading-service';
 import { LoadingService } from 'src/app/service/loading.service';
-
-
-
-
 
 
 @Component({
@@ -19,7 +14,7 @@ import { LoadingService } from 'src/app/service/loading.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   // apiPrefix: string = "http://localhost:4200/";
   apiPrefix: string = "https://twinklee.netlify.app/";
 
@@ -43,28 +38,34 @@ export class HomeComponent implements OnInit{
     this.router.navigate(['/detail-product', productId]);
   }
 
-  // Start: code test phần animation-loading-page mỗi khi load trang home và không hiển thị lại loading-animation khi chuyển qua lại các item header
+
   ngOnInit(): void {
     // Check if it's the initial load
-    this.loadingService.initialLoad$.subscribe((initialLoad) => {
-      if (initialLoad) {
-        // This block will execute only on the initial load
-        // ... your initial load logic here ...
-      }
-    });
+    // this.loadingService.initialLoad$.subscribe((initialLoad) => {
+    //   if (initialLoad) {
+    //     // This block will execute only on the initial load
+    //     // ... your initial load logic here ...
+    //   }
+    // });
 
-    // Subscribe to router events to detect navigation
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        // Check if it's not the initial load
-        this.loadingService.initialLoad$.subscribe((initialLoad) => {
-          if (!initialLoad) {
-            // This block will execute on subsequent navigations
-            // ... your navigation-specific logic here ...
-          }
-        });
-      }
-    });
+    // // Subscribe to router events to detect navigation
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     // Check if it's not the initial load
+    //     this.loadingService.initialLoad$.subscribe((initialLoad) => {
+    //       if (!initialLoad) {
+    //         // This block will execute on subsequent navigations
+    //         // ... your navigation-specific logic here ...
+    //       }
+    //     });
+    //   }
+    // });
+
+
+    // Test 1
+    // this.loadingService.manualShowWithDuration(this.loadingService.initialLoadDuration, true);
+    // Test 2
+    
+
   }
-  // End: code test phần animation-loading-page mỗi khi load trang home và không hiển thị lại loading-animation khi chuyển qua lại các item header
 }

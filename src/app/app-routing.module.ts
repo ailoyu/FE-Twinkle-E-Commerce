@@ -26,6 +26,7 @@ import { AdminPanelComponent } from './components/admin/admin-panel/admin-panel.
 import { AdminListCustomersComponent } from './components/admin/admin-list-customers/admin-list-customers.component';
 import { AdminEditCustomerComponent } from './components/admin/admin-edit-customer/admin-edit-customer.component';
 import { SalesAnalyticsComponent } from './components/admin/sales-analytics/sales-analytics.component';
+import { NewArrivalsComponent } from './components/user/new-arrivals/new-arrivals.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -34,6 +35,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent }, 
   { path: 'register', component: RegisterComponent }, 
   { path: 'order', component: OrderComponent }, 
+  { path: 'new-arrivals', component:
+  NewArrivalsComponent},
   { path: 'order-detail', component: OrderDetailComponent}, 
   { path: 'detail-product/:id', component: DetailProductComponent }, // Route cho DetailProductComponent
   { path: 'order-history', component: OrderHistoryComponent, canActivate:[LoginAuthGuard]},
