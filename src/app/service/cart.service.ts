@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { EventEmitter, Injectable } from "@angular/core";
 import { ProductService } from "./product.service";
 import { environment } from "../environments/environment";
 import { Product } from "../model/product";
@@ -40,12 +40,15 @@ export class CartService {
     }
     console.log(this.cart);
     // Sau khi thay đổi giỏ hàng xong, lưu vào localStorage
+    this.cartUpdated.emit();
     this.saveCartLocalStorage();
     }
 
     getCart(): Map<number, { quantity: number; size: number }[]> {
         return this.cart;
     }
+
+    cartUpdated = new EventEmitter<void>();
 
     getCartNumber(): number {
         // Assuming this.cart is of type Map<number, { quantity: number; size: number }[]>
@@ -60,7 +63,7 @@ export class CartService {
                 totalItems += item.quantity;
             }
         }
-    
+        
         return totalItems;
     }
 

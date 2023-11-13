@@ -78,16 +78,11 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     debugger
-    // this.loginResponse$ = this.tokenService.displayUserInformation();
-
-    // this.loginResponse$?.subscribe(response => {
-    //   this.loginResponse = { ...response };
-    //   debugger
-    // console.log(this.loginResponse);
-    // });
-
-
     this.loginResponse = this.userService.getUserResponseFromLocalStorage();
+    this.cartService.cartUpdated.subscribe(() => {
+      // Update the cart item count
+      this.getCartNumber();
+    });
     this.getCartNumber();
     
   }
