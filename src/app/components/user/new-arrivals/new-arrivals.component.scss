@@ -28,7 +28,7 @@
 .section {
     display: grid;
     grid-template-columns: 300px 800px auto;
-    grid-template-rows: 450px 300px 374px 110px 542px;
+    grid-template-rows: 550px 300px 374px 110px 542px;
     column-gap: 40px;
     row-gap: 10px;
     margin-right: 20px;
@@ -51,7 +51,7 @@
 }
 
 .item-1 .animation-img .card-content {
-    height: 452px;
+    height: 550px;
 }
 
 .item-1 .animation-img .card-content .bg-image {

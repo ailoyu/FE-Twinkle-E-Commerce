@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/service/category.service';
 import { ProductService } from 'src/app/service/product.service';
+import { ElementRef, Renderer2 } from '@angular/core';
 
 
 
@@ -9,7 +10,9 @@ interface carouselImage {
   imageSrc: string;
   imageAlt: string;
   slideInterval?: number;
-  // objectPosition?: string; // Add this property
+  objectPosition?: string; // Add this property
+  contentType?: 'image' | 'video'; // Add this property
+  videoSrc?: string; // Add this property to store video source
 }
 
 @Component({
@@ -26,8 +29,11 @@ export class NewArrivalsComponent implements OnInit{
   constructor(
     private categoryService: CategoryService,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private el: ElementRef,
+    private renderer: Renderer2
   ){
+
     this.getAllBestSellers();
     this.getNewProducts();
   }
@@ -151,28 +157,55 @@ export class NewArrivalsComponent implements OnInit{
   }
 
   title = 'carousel';
-
   imagesnicexu: carouselImage[] = [
     {
-      imageSrc: './assets/images/vans.gif',
-      imageAlt: 'vans1',
-      slideInterval: 5000, // Set individual interval for this image
+      imageSrc: './assets/videos/nike.mp4',
+      imageAlt: 'nike1',
+      slideInterval: 8000, // Set individual interval for this image
+      objectPosition: '0px 60px',
+      contentType: 'video',
+      videoSrc: './assets/videos/nike.mp4', // Set the video source
     },
     {
-      imageSrc: './assets/images/adidas.gif',
-      imageAlt: 'adidas2',
-      slideInterval: 9000, // Set individual interval for this image
+      imageSrc: './assets/videos/converse.mp4',
+      imageAlt: 'converse2',
+      slideInterval: 10000, // Set individual interval for this image
+      // objectPosition: '0px -40px',
+      contentType: 'video',
+      videoSrc: './assets/videos/converse.mp4', // Set the video source
     },
     {
-      imageSrc: './assets/images/nike.gif',
-      imageAlt: 'nike3',
-      slideInterval: 4000, // Set individual interval for this image
+      imageSrc: './assets/videos/adidas.mp4',
+      imageAlt: 'adidas3',
+      slideInterval: 10000, // Set individual interval for this image
+      // objectPosition: '0px -40px',
+      contentType: 'video',
+      videoSrc: './assets/videos/adidas.mp4', // Set the video source
     },
     {
-      imageSrc: './assets/images/converse.gif',
-      imageAlt: 'converse4',
-      slideInterval: 3000, // Set individual interval for this image
-      // objectPosition: '0px 20px',
+      imageSrc: './assets/videos/puma.mp4',
+      imageAlt: 'puma4',
+      slideInterval: 15000, // Set individual interval for this image
+      // objectPosition: '0px -40px',
+      contentType: 'video',
+      videoSrc: './assets/videos/puma.mp4', // Set the video source
+    },
+    {
+      imageSrc: './assets/videos/vans.mp4',
+      imageAlt: 'vans5',
+      slideInterval: 7700, // Set individual interval for this image
+      // objectPosition: '0px -40px',
+      contentType: 'video',
+      videoSrc: './assets/videos/vans.mp4', // Set the video source
     },
   ];
+
+  playVideo(index: number): void {
+    const video = this.el.nativeElement.querySelectorAll('video')[index];
+    if (video) {
+      this.renderer.setProperty(video, 'muted', true); // Set muted property
+      this.renderer.setProperty(video, 'autoplay', true); // Set autoplay property
+      video.play();
+    }
+  }
 }

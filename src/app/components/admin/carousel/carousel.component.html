@@ -6,7 +6,7 @@
     class="fade">
 
     <ng-container *ngFor="let item of images; let i = index">
-        <ng-container *ngIf="item.contentType === 'image'; else videoSlide">
+        <ng-container *ngIf="item.contentType === 'image'">
           <img
             *ngIf="selectedIndex === i"
             [src]="item.imageSrc"
@@ -16,17 +16,18 @@
             [style.object-position]="item.objectPosition"
           />
         </ng-container>
-        <ng-container *ngIf="item.contentType === 'video'; else videoSlide">
-          <video
-            *ngIf="selectedIndex === i"
-            width="100%"
-            height="100%"
-            controls
-            [src]="item.videoSrc"
-            type="video/mp4"
-          >
-            Your browser does not support the video tag.
-          </video>
+        <ng-container *ngIf="item.contentType === 'video'">
+          <div (click)="playVideo(i)">
+            <video class="animation-video"
+              *ngIf="selectedIndex === i"
+              autoplay
+              [muted]="true"
+              [src]="item.videoSrc"
+              type="video/mp4"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </ng-container>
       </ng-container>
 
