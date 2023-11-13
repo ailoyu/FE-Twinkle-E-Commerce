@@ -44,7 +44,24 @@ export class CartService {
     }
 
     getCart(): Map<number, { quantity: number; size: number }[]> {
-    return this.cart;
+        return this.cart;
+    }
+
+    getCartNumber(): number {
+        // Assuming this.cart is of type Map<number, { quantity: number; size: number }[]>
+        debugger
+        let totalItems = 0;
+    
+        // Iterate through each entry in the cart
+        for (const [, items] of this.cart) {
+            // Iterate through each item in the array
+            for (const item of items) {
+                // Add the quantity of each item to the total
+                totalItems += item.quantity;
+            }
+        }
+    
+        return totalItems;
     }
 
     // lưu giỏ hàng vào localStorage
