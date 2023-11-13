@@ -64,7 +64,6 @@ export class HeaderComponent implements OnInit {
   constructor(private tokenService: TokenService,
     private userService: UserService,
     private cartService: CartService,
-    private vnPayService: VNPayService,
     private router: Router){
     }
     
@@ -89,6 +88,7 @@ export class HeaderComponent implements OnInit {
 
 
     this.loginResponse = this.userService.getUserResponseFromLocalStorage();
+    this.getCartNumber();
     
   }
 
@@ -116,15 +116,10 @@ export class HeaderComponent implements OnInit {
     location.reload();
   }
 
-  payment() {
-    this.vnPayService.getPayment(10000, 2).subscribe({
-      next: (response: string) => {
-        debugger
-        window.location.href = response;
-      },
-      error: (error) => {
-        debugger
-      },
-    });
+  cartNumber: number = 0;
+
+  getCartNumber(){
+    this.cartNumber = this.cartService.getCartNumber();
   }
+  
 }
