@@ -8,7 +8,10 @@ import { ProductService } from 'src/app/service/product.service';
 interface carouselImage {
   imageSrc: string;
   imageAlt: string;
+  slideInterval?: number;
+  // objectPosition?: string; // Add this property
 }
+
 @Component({
   selector: 'app-new-arrivals',
   templateUrl: './new-arrivals.component.html',
@@ -90,72 +93,86 @@ export class NewArrivalsComponent implements OnInit{
 
   
   
-  @Input() images: carouselImage[] = []
+  @Input() images: carouselImage[] = [];
   @Input() indicators = true;
   @Input() controls = true;
   @Input() autoSlide = false;
-  @Input() slideInterval = 3000; // Default to 3 seconds
 
   selectedIndex = 0;
+  private autoSlideInterval: any;
 
   ngOnInit(): void {
-    this.getCategories();
-    if(this.autoSlide) {
+    if (this.autoSlide) {
       this.autoSlideImages();
     }
   }
 
-
-  // Changes slide in every 3 seconds
   autoSlideImages(): void {
-    setInterval(() => {
+    this.autoSlideInterval = setInterval(() => {
       this.onNextClick();
-    }, this.slideInterval);
+    }, this.getCurrentSlideInterval());
   }
 
-  // sets index of image on dot/indicator click
   selectImage(index: number): void {
     this.selectedIndex = index;
+    clearInterval(this.autoSlideInterval);
+    if (this.autoSlide) {
+      this.autoSlideImages();
+    }
   }
 
   onPrevClick(): void {
-    if(this.selectedIndex === 0) {
-      this.selectedIndex = this.imagesnicexu.length - 1;
+    if (this.selectedIndex === 0) {
+      this.selectedIndex = this.images.length - 1;
     } else {
       this.selectedIndex--;
+    }
+    clearInterval(this.autoSlideInterval);
+    if (this.autoSlide) {
+      this.autoSlideImages();
     }
   }
 
   onNextClick(): void {
-    if(this.selectedIndex === this.imagesnicexu.length -1) {
+    if (this.selectedIndex === this.images.length - 1) {
       this.selectedIndex = 0;
     } else {
       this.selectedIndex++;
     }
+    clearInterval(this.autoSlideInterval);
+    if (this.autoSlide) {
+      this.autoSlideImages();
+    }
+  }
+
+  getCurrentSlideInterval(): number {
+    const currentImage = this.images[this.selectedIndex];
+    return currentImage?.slideInterval || 6000; // Default to 6 seconds if not specified
   }
 
   title = 'carousel';
 
-  imagesnicexu = [
+  imagesnicexu: carouselImage[] = [
     {
-      imageSrc:
-        'https://images.unsplash.com/photo-1460627390041-532a28402358?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-      imageAlt: 'nature1',
+      imageSrc: './assets/images/vans.gif',
+      imageAlt: 'vans1',
+      slideInterval: 5000, // Set individual interval for this image
     },
     {
-      imageSrc:
-        'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-      imageAlt: 'nature2',
+      imageSrc: './assets/images/adidas.gif',
+      imageAlt: 'adidas2',
+      slideInterval: 9000, // Set individual interval for this image
     },
     {
-      imageSrc:
-        'https://images.unsplash.com/photo-1640844444545-66e19eb6f549?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80',
-      imageAlt: 'person1',
+      imageSrc: './assets/images/nike.gif',
+      imageAlt: 'nike3',
+      slideInterval: 4000, // Set individual interval for this image
     },
     {
-      imageSrc:
-        'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-      imageAlt: 'person2',
+      imageSrc: './assets/images/converse.gif',
+      imageAlt: 'converse4',
+      slideInterval: 3000, // Set individual interval for this image
+      // objectPosition: '0px 20px',
     },
-  ]
+  ];
 }
