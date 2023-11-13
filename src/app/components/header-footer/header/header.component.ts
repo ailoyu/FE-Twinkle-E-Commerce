@@ -34,41 +34,31 @@ import { VNPayService } from 'src/app/service/vnpay.service';
     ])
   ]
 })
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class HeaderComponent implements OnInit {
   // Test coding for show/hide navigation when scrolling mouse
   navbarfixed:boolean = false;
-  scrollDirection: string = 'none';
+  private lastScrollTop = 0;
 
 
   @HostListener('window:scroll', ['$event'])
-    onscroll(event: Event) {
-      if (window.scrollY > 1500) {
+  onScroll(event: Event) {
+    const st = window.scrollY;
+    if (st < this.lastScrollTop) {
+      // Scroll up
+      this.navbarfixed = true;
+    } else {
+      // Scroll down
+      if (st > 700) {
         this.navbarfixed = false;
-      } else {
-        this.navbarfixed = true;
       }
     }
-
-
-private lastScrollTop = 0;
-
-@HostListener('window:scroll', ['$event'])
-onScroll(event: Event) {
-  const st = window.scrollY;
-  if (st < this.lastScrollTop) {
-    // Scroll up
-    this.navbarfixed = true;
-  } else {
-    // Scroll down
-    if (st > 800) {
-      this.navbarfixed = false;
-    }
+    this.lastScrollTop = st;
   }
-  this.lastScrollTop = st;
-}
 
 
   constructor(private tokenService: TokenService,
