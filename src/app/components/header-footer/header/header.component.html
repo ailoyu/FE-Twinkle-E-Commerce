@@ -43,8 +43,8 @@
               <i class="fas fa-info-circle icon"></i>
               About us
             </a>
-            
-        </li>
+          </li>
+
         <ng-container *ngIf="loginResponse">
           <li>
               <div class="dropdown tags"  [attr.data-gloss]="loginResponse.fullname">
@@ -61,17 +61,25 @@
                   <li (click)="signOut()">Sign out</li>
                 </ul>
               </div>
-            </li>
-          </ng-container>
-          <ng-container *ngIf="!loginResponse">
-            
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/login" routerLinkActive="active">Sign in</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/register" routerLinkActive="active">Sign up</a>
-              </li>                          
-            </ng-container>
+          </li>
+        </ng-container>
+
+        <ng-container *ngIf="!loginResponse">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">Sign in</a>
+          </li>
+          <li class="nav-item sign-up">
+            <a class="nav-link" routerLink="/register" routerLinkActive="active">Sign up</a>
+          </li>                          
+        </ng-container>
+
+          <li class="nav-item check-in">
+            <a class="nav-link" routerLinkActive="active" routerLink="/products">
+              <i class="fa-solid fa-bag-shopping">
+                <span>526</span>
+              </i>
+            </a>
+          </li>
       </ul>
       </div>
     </div>
