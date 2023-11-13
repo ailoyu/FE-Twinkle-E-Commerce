@@ -40,6 +40,7 @@
             <table>
             <tr>
                 <th scope="col" class="text-start">Sản phẩm</th>
+                <th scope="col">Size</th>
                 <th scope="col">Số lượng</th>
                 <th scope="col">Đơn giá</th>
                 <th scope="col">Tổng giá</th>
@@ -51,6 +52,7 @@
                         <span class="product-name">{{orderDetail.product.name}}</span>
                     </div>
                 </td>
+                <td>{{orderDetail.size}}</td>
                 <td>{{orderDetail.numberOfProducts}}</td>
                 <td>${{orderDetail.productPrice | number:'1.2-2'}}</td>
                 <td>${{orderDetail.productPrice * orderDetail.numberOfProducts | number:'1.2-2'}}</td>
