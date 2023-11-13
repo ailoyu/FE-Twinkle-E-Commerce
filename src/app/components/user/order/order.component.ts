@@ -13,6 +13,7 @@ import { validate, ValidationError } from 'class-validator';
 import { TokenService } from 'src/app/service/token.service';
 import { LoginResponse } from 'src/app/responses/user/login.response';
 import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -24,7 +25,6 @@ export class OrderComponent implements OnInit{
   
 
 
-  cartItems: { product: Product, quantity: number }[] = [];
   couponCode: string = ''; // Mã giảm giá
   totalAmount: number = 0; // Tổng tiền
 
@@ -68,12 +68,11 @@ export class OrderComponent implements OnInit{
   loginResponse!: LoginResponse | null;
 
 
+  cartItems: { product: Product, quantity: number, size: number }[] = [];
+  
 
   ngOnInit(): void {
     // Lấy danh sách sản phẩm từ giỏ hàng hiện tại
-  
-    
-    
     const cart = this.cartService.getCart();
     const productIds = Array.from(cart.keys()); // lấy id sản phẩm trong giỏ hàng (Map)
 
@@ -81,14 +80,17 @@ export class OrderComponent implements OnInit{
     this.productService.getProductsByIds(productIds).subscribe({
       next: (products) => {            
         debugger
-        // Lấy thông tin sản phẩm và số lượng từ danh sách sản phẩm và giỏ hàng
-        this.cartItems = productIds.map((productId) => {
+        this.cartItems = productIds.flatMap((productId) => {
           debugger
           const product = products.find((p) => p.id === productId);
-          return {
+          const cartEntries = cart.get(productId) || []; // Get all entries for the product ID
+    
+          // Map each entry to the desired format
+          return cartEntries.map(entry => ({
             product: product!,
-            quantity: cart.get(productId)!
-          };
+            quantity: entry.quantity,
+            size: entry.size
+          }));
         });
         console.log('haha');
       },
@@ -100,8 +102,9 @@ export class OrderComponent implements OnInit{
         debugger;
         console.error('Error fetching detail:', error);
       }
-    });        
+    });
   }
+
 
 
   
@@ -147,6 +150,7 @@ export class OrderComponent implements OnInit{
   }  
 
   mappingFormDataUser(user_id: number) {
+    debugger
     // Map dữ liệu từ orderForm -> orderData
     this.orderData.user_id = user_id;
     this.orderData = {
@@ -155,7 +159,8 @@ export class OrderComponent implements OnInit{
     };
     this.orderData.cart_items = this.cartItems.map(cartItem => ({
       product_id: cartItem.product.id,
-      quantity: cartItem.quantity
+      quantity: cartItem.quantity,
+      size: cartItem.size
     }));
     this.orderData.total_money = this.totalAmount;
     this.orderService.placeOrder(this.orderData).subscribe({

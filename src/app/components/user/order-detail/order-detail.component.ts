@@ -18,7 +18,7 @@ export class OrderDetailComponent {
     private productService: ProductService,
     private router: Router){}
 
-  cartItems: { product: Product, quantity: number }[] = [];
+    cartItems: { product: Product, quantity: number, size: number }[] = [];
 
 
   ngOnInit(): void {
@@ -33,17 +33,17 @@ export class OrderDetailComponent {
     this.productService.getProductsByIds(productIds).subscribe({
       next: (products) => {            
         debugger
-        // Lấy thông tin sản phẩm và số lượng từ danh sách sản phẩm và giỏ hàng
-        this.cartItems = productIds.map((productId) => {
+        this.cartItems = productIds.flatMap((productId) => {
           debugger
           const product = products.find((p) => p.id === productId);
-          // if (product) {
-          //   product.thumbnail = `${environment.apiBaseUrl}/products/images/${product.thumbnail}`;
-          // }          
-          return {
+          const cartEntries = cart.get(productId) || []; // Get all entries for the product ID
+    
+          // Map each entry to the desired format
+          return cartEntries.map(entry => ({
             product: product!,
-            quantity: cart.get(productId)!
-          };
+            quantity: entry.quantity,
+            size: entry.size
+          }));
         });
         console.log('haha');
       },

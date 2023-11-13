@@ -10,6 +10,7 @@
             <thead>
                 <tr>
                     <th scope="col" class="text-start">Shoes</th>
+                    <th scope="col">Size</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
                     <th scope="col">Subtotal</th>
@@ -26,6 +27,7 @@
                             <span class="product-name">{{ item.product.name }}</span>
                         </div>
                     </td>
+                    <td>{{ item.size }}</td>
                     <td>{{ item.quantity }}</td>
                     <td>${{ item.product.price | number:'1.2-2'   }}</td>
                     <td>${{ (item.product.price * item.quantity) | number:'1.2-2'   }}</td>
