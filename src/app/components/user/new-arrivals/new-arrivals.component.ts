@@ -160,40 +160,40 @@ export class NewArrivalsComponent implements OnInit{
   title = 'carousel';
   imagesnicexu: CarouselImage[] = [
     {
-      imageSrc: './assets/videos/nike.mp4',
+      imageSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945720/jl6ygdzl7pmohck9smpn.mp4',
       imageAlt: 'nike1',
       slideInterval: 8000, // Set individual interval for this image
       // objectPosition: '0px 0px', // Only effect with background images and images
       contentType: 'video',
-      videoSrc: './assets/videos/nike.mp4', // Set the video source
+      videoSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945720/jl6ygdzl7pmohck9smpn.mp4', // Set the video source
     },
     {
-      imageSrc: './assets/videos/converse.mp4',
+      imageSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945727/hnwj6gjphlfeymkq8cs7.mp4',
       imageAlt: 'converse2',
       slideInterval: 10000, // Set individual interval for this image
       contentType: 'video',
-      videoSrc: './assets/videos/converse.mp4', // Set the video source
+      videoSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945727/hnwj6gjphlfeymkq8cs7.mp4', // Set the video source
     },
     {
-      imageSrc: './assets/videos/adidas.mp4',
+      imageSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945727/vmljuayjh21jiser47sx.mp4',
       imageAlt: 'adidas3',
       slideInterval: 10000, // Set individual interval for this image
       contentType: 'video',
-      videoSrc: './assets/videos/adidas.mp4', // Set the video source
+      videoSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945727/vmljuayjh21jiser47sx.mp4', // Set the video source
     },
     {
-      imageSrc: './assets/videos/puma.mp4',
+      imageSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945712/h5pakbyeagve2ytefzs2.mp4',
       imageAlt: 'puma4',
       slideInterval: 15000, // Set individual interval for this image
       contentType: 'video',
-      videoSrc: './assets/videos/puma.mp4', // Set the video source
+      videoSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945712/h5pakbyeagve2ytefzs2.mp4', // Set the video source
     },
     {
-      imageSrc: './assets/videos/vans.mp4',
+      imageSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945713/dd9qtdjmaffhpjkdyafx.mp4',
       imageAlt: 'vans5',
       slideInterval: 7700, // Set individual interval for this image
       contentType: 'video',
-      videoSrc: './assets/videos/vans.mp4', // Set the video source
+      videoSrc: 'https://res.cloudinary.com/dxctlgwec/video/upload/v1699945713/dd9qtdjmaffhpjkdyafx.mp4', // Set the video source
     },
   ];
 
