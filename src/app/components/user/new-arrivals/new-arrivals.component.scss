@@ -1,6 +1,6 @@
 .section {
-    height: 251vh;
-    margin-top: 180px;
+    height: 256vh;
+    margin-top: 200px;
 }
 
 
@@ -854,8 +854,6 @@ img {
 }
 
 
-
-
                                         // item-10
 .item-10 {
     grid-area: img-animation-5-left;
@@ -864,5 +862,32 @@ img {
 
 .item-10 .animation-img {
     margin-top: -72px;
+}
+
+.twinkle{
+    animation: slide-in 0.5s ease-in-out, fade-in 0.5s ease-in-out;
+}
+
+@keyframes slide-in
+{
+    0% 
+    {
+    transform: translateX(-100%);
+    }
+    100%
+    {
+    transform: translateX(0);
+    }
+}
+
+@keyframes fade-in {
+    0%
+    {
+    opacity: 0;
+    }
+    100%
+    {
+    opacity: 1;
+    }
 }
 

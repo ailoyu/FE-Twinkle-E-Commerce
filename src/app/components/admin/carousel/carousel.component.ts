@@ -82,7 +82,7 @@ export class CarouselComponent implements OnInit {
       imageSrc: './assets/videos/nike.mp4',
       imageAlt: 'nike1',
       slideInterval: 8000, // Set individual interval for this image
-      // objectPosition: '0px 60px',
+      // objectPosition: '0px 0px', // Only effect with background images and images      
       contentType: 'video',
       videoSrc: './assets/videos/nike.mp4', // Set the video source
     },
@@ -125,6 +125,12 @@ export class CarouselComponent implements OnInit {
     if (video) {
       this.renderer.setProperty(video, 'muted', true); // Set muted property
       this.renderer.setProperty(video, 'autoplay', true); // Set autoplay property
+
+      // Apply custom styles
+      this.renderer.setStyle(video, 'display', 'block');
+      this.renderer.setStyle(video, 'margin-top', '400px');
+      this.renderer.setStyle(video, 'margin-bottom', '20px');
+
       video.play();
     }
   }

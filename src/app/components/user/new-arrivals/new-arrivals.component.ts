@@ -6,7 +6,7 @@ import { ElementRef, Renderer2 } from '@angular/core';
 
 
 
-interface carouselImage {
+interface CarouselImage {
   imageSrc: string;
   imageAlt: string;
   slideInterval?: number;
@@ -99,7 +99,7 @@ export class NewArrivalsComponent implements OnInit{
 
   
   
-  @Input() images: carouselImage[] = [];
+  @Input() images: CarouselImage[] = [];
   @Input() indicators = true;
   @Input() controls = true;
   @Input() autoSlide = false;
@@ -157,12 +157,12 @@ export class NewArrivalsComponent implements OnInit{
   }
 
   title = 'carousel';
-  imagesnicexu: carouselImage[] = [
+  imagesnicexu: CarouselImage[] = [
     {
       imageSrc: './assets/videos/nike.mp4',
       imageAlt: 'nike1',
       slideInterval: 8000, // Set individual interval for this image
-      objectPosition: '0px 60px',
+      // objectPosition: '0px 0px', // Only effect with background images and images
       contentType: 'video',
       videoSrc: './assets/videos/nike.mp4', // Set the video source
     },
@@ -170,7 +170,6 @@ export class NewArrivalsComponent implements OnInit{
       imageSrc: './assets/videos/converse.mp4',
       imageAlt: 'converse2',
       slideInterval: 10000, // Set individual interval for this image
-      // objectPosition: '0px -40px',
       contentType: 'video',
       videoSrc: './assets/videos/converse.mp4', // Set the video source
     },
@@ -178,7 +177,6 @@ export class NewArrivalsComponent implements OnInit{
       imageSrc: './assets/videos/adidas.mp4',
       imageAlt: 'adidas3',
       slideInterval: 10000, // Set individual interval for this image
-      // objectPosition: '0px -40px',
       contentType: 'video',
       videoSrc: './assets/videos/adidas.mp4', // Set the video source
     },
@@ -186,7 +184,6 @@ export class NewArrivalsComponent implements OnInit{
       imageSrc: './assets/videos/puma.mp4',
       imageAlt: 'puma4',
       slideInterval: 15000, // Set individual interval for this image
-      // objectPosition: '0px -40px',
       contentType: 'video',
       videoSrc: './assets/videos/puma.mp4', // Set the video source
     },
@@ -194,7 +191,6 @@ export class NewArrivalsComponent implements OnInit{
       imageSrc: './assets/videos/vans.mp4',
       imageAlt: 'vans5',
       slideInterval: 7700, // Set individual interval for this image
-      // objectPosition: '0px -40px',
       contentType: 'video',
       videoSrc: './assets/videos/vans.mp4', // Set the video source
     },
@@ -205,6 +201,12 @@ export class NewArrivalsComponent implements OnInit{
     if (video) {
       this.renderer.setProperty(video, 'muted', true); // Set muted property
       this.renderer.setProperty(video, 'autoplay', true); // Set autoplay property
+
+       // Apply custom styles
+      this.renderer.setStyle(video, 'display', 'block');
+      this.renderer.setStyle(video, 'margin-top', '400px');
+      this.renderer.setStyle(video, 'margin-bottom', '20px');
+
       video.play();
     }
   }
