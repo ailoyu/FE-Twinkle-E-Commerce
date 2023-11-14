@@ -108,6 +108,7 @@ export class NewArrivalsComponent implements OnInit{
   private autoSlideInterval: any;
 
   ngOnInit(): void {
+    this.getCategories();
     if (this.autoSlide) {
       this.autoSlideImages();
     }
