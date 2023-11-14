@@ -3,23 +3,26 @@
   background-color: #83580b;
   padding: 20px;
   animation: slide-in 0.5s ease-in-out;
-  height: 3282px;
-  // height: auto;
+  height: auto;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   font-weight: bold;
   overflow: hidden;
-  position: relative;
+  position: sticky;
+  top: 126px;
+  z-index: 100;
+  transition: 2s linear;
+  transition-delay: 0.5s;
 }
 
 .dashboard-sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
-  //test
-  // position: fixed;
-  // max-height: calc(3282px - 40px);
-  // overflow-y: auto;
+  // margin-top: 20px;
+  position: sticky;
+  z-index: 50;
+  transition: 2s linear;
+  transition-delay: 0.5s;
 }
 
 .dashboard-sidebar li {

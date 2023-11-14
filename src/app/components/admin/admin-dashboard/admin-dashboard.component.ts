@@ -47,7 +47,7 @@ export class AdminDashboardComponent {
     if (currentRoute.includes('/admin/panel')) {
       this.heightService.setHeight(3282);
     } else if (currentRoute.includes('/admin/order-confirm/pending')) {
-      this.heightService.setHeight(800);
+      this.heightService.setHeight(2000);
     } else if (currentRoute.includes('/admin/list-categories')) {
       this.heightService.setHeight(7000);
     } else if (currentRoute.includes('/admin/list-customers')) {
