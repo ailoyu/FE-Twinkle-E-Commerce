@@ -66,7 +66,6 @@ export class AdminListCategoriesComponent {
     this.categoryService.saveCategory(this.category)?.subscribe({
       next: (category) => {
         debugger
-        alert("Thêm thể loại thành công");
         this.showInput = false;
         location.reload();
       },
@@ -75,7 +74,7 @@ export class AdminListCategoriesComponent {
       },
       error: (error: any) => {
         debugger;
-        alert("Thêm thể loại thất bại");
+        alert("Adding category failed");
         this.showInput = false;
         location.reload();
       }

@@ -4,24 +4,24 @@
     <ul>
       <li routerLink="/admin/panel" routerLinkActive="active-link">
         <div class="menu-item">
-          <i class="fa fa-pie-chart"></i><a>Trang quản trị</a>
+          <i class="fa fa-pie-chart"></i><a>Dashboard</a>
         </div>
       </li>
       <li  routerLink="/admin/order-confirm/pending"routerLinkActive="active-link">
         <div class="menu-item">
-          <i class="fa-solid fa-cart-shopping"></i><a>Quản lý đơn hàng</a>
+          <i class="fa-solid fa-cart-shopping"></i><a>Orders Management</a>
         </div>
       </li>
 
       <li routerLink="/admin/list-categories" routerLinkActive="active-link">
         <div class="menu-item">
-          <i class="fa-solid fa-gift"></i><a>Quản lý thể loại</a>
+          <i class="fa-solid fa-gift"></i><a>Categories Management</a>
         </div>
       </li>
 
       <li routerLink="/admin/list-customers" routerLinkActive="active-link">
         <div class="menu-item">
-          <i class="fa-regular fa-user"></i><a>Quản lý khách hàng</a>
+          <i class="fa-regular fa-user"></i><a>Customers Management</a>
         </div>
       </li>
 
@@ -29,11 +29,11 @@
         <li (click)="toggleSubMenu1()" routerLinkActive="active">
           <div class="menu-item  manage-products">
             <div class="logo">
-              <i class="fa-solid fa-ghost"></i><a>+ Quản lý tài khoản</a>
+              <i class="fa-solid fa-ghost"></i><a>+ Accounts Management</a>
             </div>
             <ul *ngIf="subMenuVisible1">
-              <li routerLink="/admin/list-users" routerLinkActive="active-link-child"><a>- Chỉnh sửa tài khoản</a></li>
-              <li routerLink="/admin/edit-users" routerLinkActive="active-link-child"><a>- Thêm mới tài khoản</a></li>
+              <li routerLink="/admin/list-users" routerLinkActive="active-link-child"><a>- Edit accounts</a></li>
+              <li routerLink="/admin/edit-users" routerLinkActive="active-link-child"><a>- Create an admin account</a></li>
             </ul>
           </div>
         </li>
@@ -42,11 +42,11 @@
       <li (click)="toggleSubMenu2()" routerLinkActive="active">
         <div class="menu-item  manage-products">
           <div class="logo">
-            <i class="fa-solid fa-truck-fast"></i><a>+ Quản lý nhà cung cấp</a>
+            <i class="fa-solid fa-truck-fast"></i><a>+ Providers Management</a>
           </div>
           <ul *ngIf="subMenuVisible2">
-            <li><a routerLink="/admin/list-providers" routerLinkActive="active-link-child">- Chỉnh sửa nhà cung cấp</a></li>
-            <li><a routerLink="/admin/edit-providers" routerLinkActive="active-link-child">- Thêm mới nhà cung cấp</a></li>
+            <li><a routerLink="/admin/list-providers" routerLinkActive="active-link-child">- Edit providers</a></li>
+            <li><a routerLink="/admin/edit-providers" routerLinkActive="active-link-child">- Create a new provider</a></li>
           </ul>
         </div>
       </li>
@@ -54,11 +54,11 @@
       <li (click)="toggleSubMenu()" routerLinkActive="active" >
         <div class="menu-item manage-products">
           <div class="logo">
-            <i class="fa-solid fa-inbox"></i><a>+ Quản lý sản phẩm</a>
+            <i class="fa-solid fa-inbox"></i><a>+ Products Management</a>
           </div>
           <ul *ngIf="subMenuVisible">
-            <li><a routerLink="/admin/list-products" routerLinkActive="active-link-child">- Chỉnh sửa sản phẩm</a></li>
-            <li><a routerLink="/admin/edit-products" routerLinkActive="active-link-child">- Thêm mới sản phẩm</a></li>
+            <li><a routerLink="/admin/list-products" routerLinkActive="active-link-child">- Edit products</a></li>
+            <li><a routerLink="/admin/edit-products" routerLinkActive="active-link-child">- Create a new product</a></li>
           </ul>
         </div>
       </li>

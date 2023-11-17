@@ -82,7 +82,7 @@ export class AdminEditUserComponent {
       next: (response: any) => {
         debugger
         // Xử lý kết quả trả về khi ĐĂNG KÝ THÀNH CÔNG
-        alert("Đăng ký thành công!")
+        alert("Successful registration!")
         location.reload();  
       },
       complete: () => {
@@ -90,7 +90,7 @@ export class AdminEditUserComponent {
       },
       error: (error: any) => {          
         // Xử lý khi ĐĂNG KÝ KO THÀNH CÔNG
-        alert(`Ko thể đăng ký thành công: ${error.error.message}`);       
+        alert(`Unable to register successfully: ${error.error.message}`);  
         this.isLoading = false;
       }
     })

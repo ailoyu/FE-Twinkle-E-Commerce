@@ -188,8 +188,6 @@ export class AdminListCustomersComponent {
     console.log(this.selectedIds);
     this.userService.deleteUsers(this.selectedIds)?.subscribe({
       next: (user) => {
-        
-        alert("Xóa users thành công");
         location.reload();
       },
       complete: () => {
@@ -198,7 +196,7 @@ export class AdminListCustomersComponent {
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Xóa users thất bại");
+        alert("Delete users failed");
       }
     });
   }

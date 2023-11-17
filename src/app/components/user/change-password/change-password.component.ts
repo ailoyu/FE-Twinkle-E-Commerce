@@ -51,7 +51,7 @@ export class ChangePasswordComponent {
       this.userService.changePassword(loginDTO)?.subscribe({
         next: (response: any) => {
           debugger
-          alert("Thay đổi mật khẩu thành công!")
+          alert("Password changed successfully!")
           location.reload();
         },
         complete: () => {
@@ -59,7 +59,7 @@ export class ChangePasswordComponent {
         },
         error: (error: any) => {          
           debugger
-          alert(`Thay đổi mật khẩu thất bại: ${error.error.message}`);       
+          alert(`Change password failed: ${error.error.message}`);  
         }
       })
 

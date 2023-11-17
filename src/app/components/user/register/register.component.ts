@@ -77,7 +77,7 @@ export class RegisterComponent {
       next: (response: any) => {
         debugger
         // Xử lý kết quả trả về khi ĐĂNG KÝ THÀNH CÔNG
-        alert("Đăng ký thành công!")
+        alert("Successful registration!")
         this.router.navigate(['/login']);          
       },
       complete: () => {
@@ -85,7 +85,7 @@ export class RegisterComponent {
       },
       error: (error: any) => {          
         // Xử lý khi ĐĂNG KÝ KO THÀNH CÔNG
-        alert(`Ko thể đăng ký thành công: ${error.error.message}`);       
+        alert(`Unable to register successfully: ${error.error.message}`);   
         this.isLoading = false;
       }
     })

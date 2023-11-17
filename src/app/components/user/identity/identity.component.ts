@@ -109,7 +109,6 @@ export class IdentityComponent implements OnInit{
       next: (response: any) => {
         debugger
         // Xử lý kết quả trả về khi ĐĂNG KÝ THÀNH CÔNG
-        alert("Cập nhật thành công!")
         this.isLoading = false;
         // Chuyển từ response -> loginResponse
         this.loginResponse = this.userService.getUserResponseFromLocalStorage();
@@ -128,7 +127,7 @@ export class IdentityComponent implements OnInit{
       },
       error: (error: any) => {          
         // Xử lý khi ĐĂNG KÝ KO THÀNH CÔNG
-        alert(`Ko thể đăng ký thành công: ${error.error.message}`);     
+        alert(`Update user failed: ${error.error.message}`);     
         this.isLoading = false;  
         location.reload();
       }

@@ -193,7 +193,6 @@ export class AdminListProductsComponent {
     this.productService.deleteProducts(this.selectedIds)?.subscribe({
       next: (product) => {
         
-        alert("Xóa sản phẩm thành công");
         location.reload();
       },
       complete: () => {
@@ -202,7 +201,7 @@ export class AdminListProductsComponent {
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Xóa sản phẩm thất bại");
+        alert("Failure to delete product");
       }
     });
   }

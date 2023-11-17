@@ -6,9 +6,9 @@
   
   <div class="admin-products twinkle" style="margin-top: 100px;">
     <form [formGroup]="productForm">
-      <h1>Chỉnh sửa sản phẩm</h1>
+      <h1>Edit products</h1>
       <div class="form-group">
-        <label for="name">Nhà cung cấp:</label>
+        <label for="name">Provider:</label>
         <select formControlName="provider_id" class="form-control access-right">
           <option [value]="0" disabled>-- Select an option --</option>
           <option *ngFor="let provider of providers" [value]="provider.id">
@@ -21,7 +21,7 @@
         </div>
       </div>
         <div class="form-group">
-          <label for="name">Tên sản phẩm:</label>
+          <label for="name">Product name:</label>
           <input type="text" id="productName" name="productName" 
           required
           formControlName="name" 
@@ -29,11 +29,11 @@
           <div 
           *ngIf="productForm.get('name')!.invalid && productForm.get('name')!.touched" 
           style="color: red;">
-          Vui lòng nhập tên sản phẩm!
+          Please enter product name!
           </div>
         </div>
         <div class="form-group">
-          <label for="description">Mô tả sản phẩm:</label>
+          <label for="description">Product Description:</label>
           <textarea id="description" name="description" required
           formControlName="description" 
           [class.is-invalid]="productForm.get('description')!.invalid && productForm.get('description')!.touched">
@@ -41,22 +41,22 @@
           <div 
           *ngIf="productForm.get('description')!.invalid && productForm.get('description')!.touched" 
           style="color: red;">
-          Vui lòng nhập mô tả sản phẩm!
+          Please enter product description!
           </div>
         </div>
         <div class="form-group">
-          <label for="price">Giá:</label>
+          <label for="price">Price:</label>
           <input type="number" id="price" name="price" required
           formControlName="price" 
           [class.is-invalid]="productForm.get('price')!.invalid && productForm.get('price')!.touched">
           <div 
           *ngIf="productForm.get('price')!.invalid && productForm.get('price')!.touched" 
           style="color: red;">
-          Vui lòng nhập giá của sản phẩm!
+          Please enter the product's price!
           </div>
         </div>
                   <div class="form-group">
-                    <label for="name">Thể loại:</label>
+                    <label for="name">Category:</label>
                     <select formControlName="category_id" class="form-control access-right">
                       <option [value]="0" disabled>-- Select an option --</option>
                       <option *ngFor="let category of categories" [value]="category.id">
@@ -65,7 +65,7 @@
                     <div *ngIf="productForm.get('category_id')?.errors?.['required'] && productForm.get('category_id')!.touched" 
                       
                       style="color: red;">
-                      Vui lòng chọn thể loại sản phẩm!
+                      Please select a product category!
                     </div>
                   </div>
                   
@@ -79,7 +79,7 @@
                         <thead>
                             <tr>
                                 <th><label>Size</label></th>
-                                <th><label>Số lượng trong kho</label></th>
+                                <th><label>Quantity in stock</label></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -92,20 +92,20 @@
                                   <input type="number" [value]="quantity[i]" placeholder="Quantity">
                                 </td>
                                 <td>
-                                    <button class="btn btn-gradient" (click)="removeSize(i)">Xóa</button>
+                                    <button class="btn btn-gradient" (click)="removeSize(i)">Remove</button>
                                 </td>
 
                             </tr>
 
                         </tbody>
                     </table>
-                    <button class="btn btn-gradient" (click)="addSize()" style="width: 300px;">Thêm Size từ nhà cung cấp</button>
+                    <button class="btn btn-gradient" (click)="addSize()" style="width: 300px;">Add Size from provider</button>
                 </div>
                   
 
 
                   <div class="form-group">
-                    <label for="image">Thêm hình ảnh sản phẩm:</label>
+                    <label for="image">More product images:</label>
                     <input type="file" id="image" name="image" (change)="onFileChange($event)" multiple style="color: wheat;">
                   </div>
                   
@@ -119,7 +119,7 @@
                   type="button" 
                   (click)="saveProduct()"
                   [disabled]="isLoading"
-                  class="login-button">Lưu sản phẩm
+                  class="login-button">Save product
                     <div *ngIf="isLoading" class="loading-circle"></div>
                   </button>
                 
@@ -127,7 +127,7 @@
                           type="button" 
                           (click)="updateProduct()"
                           [disabled]="isLoading"
-                          class="login-button">Cập nhật sản phẩm
+                          class="login-button">Product updates
                     <div *ngIf="isLoading" class="loading-circle"></div>
                   </button>
           

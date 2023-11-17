@@ -5,7 +5,7 @@
   <app-admin-dashboard></app-admin-dashboard>
 <div class="container twinkle" style="margin-top: 100px;">
     <div class="confirmation-container" style="text-align: center;">
-        <h1>Danh sách tài khoản</h1>
+        <h1>List of accounts</h1>
         <div class="search-box">
             <input type="text" class="form-control search-input" 
             placeholder="Tìm tên người dùng" 
@@ -17,12 +17,12 @@
             
             <select class="form-control product-category"
                 [(ngModel)]="selectedRoleId">
-                <option [value]="0" disabled>Tìm theo chức vụ</option>
+                <option [value]="0" disabled>Search by role</option>
                 <option *ngFor="let role of roles" [value]="role.id">
                     {{role.name}}</option>
             </select>
 
-            <button class="btn btn-primary ml-2" (click)="searchUsers()">Tìm kiếm</button>
+            <button class="btn btn-primary ml-2" (click)="searchUsers()">Search</button>
         </div>
     </div>
     <div class="row">
@@ -32,10 +32,10 @@
                 <th>
                   <input type="checkbox" (click)="toggleAllCheckboxes()" id="checkAll" class="styled-checkbox">
                 </th>
-                <th scope="col" class="text-start">Tên người dùng</th>
-                <th scope="col">Số điện thoại</th>
-                <th scope="col">Chức vụ</th>
-                <th scope="col">Địa chỉ</th>
+                <th scope="col" class="text-start">User name</th>
+                <th scope="col">Phone number</th>
+                <th scope="col">Role</th>
+                <th scope="col">Address</th>
                 <th scope="col">Status</th>
               </tr>
             </thead>
@@ -65,8 +65,8 @@
           
         
         <div class="text-center mt-3">
-           <button class="btn btn-gradient" type="button"><a routerLink="/admin/edit-users" routerLinkActive="active">Thêm user</a></button>
-           <button class="btn btn-gradient" type="button" (click)="deleteSelectedProducts()" style="width: 300px;">Kích hoạt/Vô hiệu hóa người dùng</button>
+           <button class="btn btn-gradient" type="button"><a routerLink="/admin/edit-users" routerLinkActive="active">Add user</a></button>
+           <button class="btn btn-gradient" type="button" (click)="deleteSelectedProducts()" style="width: 300px;">Activate/Inactivate users</button>
         </div> 
     </div>  
     

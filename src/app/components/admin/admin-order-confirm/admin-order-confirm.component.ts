@@ -127,13 +127,13 @@ export class AdminOrderConfirmComponent implements OnInit{
         debugger
         switch(response.status){
           case 'Đang vận chuyển':
-            alert("Xác nhận đơn hàng thành công!");
+            alert("Order confirmation successful!");
             break;
           case 'Đã giao hàng':
-            alert("Giao đơn hàng thành công!");
+            alert("Order delivered successfully!");
             break;
           case 'Đã hủy':
-            alert("Hủy đơn hàng thành công!");
+            alert("Order canceled successfully!");
             break;
           default:
             // Code to be executed if none of the cases match
@@ -146,7 +146,7 @@ export class AdminOrderConfirmComponent implements OnInit{
       },
       error: (error: any) => {
         debugger
-        alert("Xác nhận đơn hàng thất bại!");
+        alert("Order confirmation failed!");
       }
     });
   }
@@ -165,7 +165,7 @@ export class AdminOrderConfirmComponent implements OnInit{
     this.orderSerivce.deleteOrders(this.selectedIds)?.subscribe({
       next: (product) => {
         
-        alert("Xóa đơn hàng thành công!");
+        alert("Order deleted successfully!");
         location.reload();
       },
       complete: () => {
@@ -174,7 +174,7 @@ export class AdminOrderConfirmComponent implements OnInit{
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Xóa đơn hàng thất bại!");
+        alert("Order deleted successfully!");
       }
     });
   }

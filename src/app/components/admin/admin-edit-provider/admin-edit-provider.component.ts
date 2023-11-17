@@ -123,7 +123,6 @@ export class AdminEditProviderComponent {
     this.providerService.saveProvider(this.provider)?.subscribe({
       next: (response : any) => {
         debugger
-        alert("Thêm nhà cung cấp thành công");
         this.router.navigate(['/admin/edit-providers', response.provider.id]);
         this.isLoading = false;
       },
@@ -133,7 +132,7 @@ export class AdminEditProviderComponent {
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Thêm nhà cung cấp thất bại");
+        alert("Add provider failed");
         this.isLoading = false;
       }
     });
@@ -155,7 +154,7 @@ export class AdminEditProviderComponent {
     this.providerService.updateProduct(this.provider)?.subscribe({
       next: (response) => {
         
-        alert("Cập nhật nhà cung cấp thành công");
+        location.reload();
         this.isLoading = false;
       },
       complete: () => {
@@ -164,7 +163,7 @@ export class AdminEditProviderComponent {
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Cập nhật nhà cung cấp thất bại");
+        alert("Provider update failed");
         this.isLoading = false;
       }
     });

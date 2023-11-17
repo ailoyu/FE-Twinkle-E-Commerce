@@ -138,7 +138,7 @@ export class AdminListProvidersComponent {
     this.providerService.deleteProviders(this.selectedIds)?.subscribe({
       next: (provider: any) => {
         
-        alert("Xóa thương hiệu thành công");
+        
         location.reload();
       },
       complete: () => {
@@ -147,7 +147,7 @@ export class AdminListProvidersComponent {
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Xóa thương hiệu thất bại");
+        alert("Provider deletion failed");
       }
     });
   }

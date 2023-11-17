@@ -168,14 +168,13 @@ export class OrderComponent implements OnInit{
         debugger   
         // this.cartService.clearCart();    
         if(this.orderData.payment_method === "Chuyển Khoản"){
-          this.isLoading = false;
-          alert('Đặt hàng thành công! Chuyển tới trang thanh toán VNPAY');          
+          this.isLoading = false;          
           var paymentMethodUrl = response.payment_method;
           window.open(paymentMethodUrl, '_blank');
           this.router.navigate(['/'])
         } else {
           this.isLoading = false;
-          alert('Đặt hàng thành công!');
+          alert('Order successful!');
           this.router.navigate(['/order-detail'])
         }
         
@@ -188,7 +187,7 @@ export class OrderComponent implements OnInit{
       },
       error: (error: any) => {
         debugger;
-        alert('Đặt hàng thất bại '+ error.error);             
+        alert('Order failed '+ error.error);      
         console.error('Lỗi khi đặt hàng:', error);
         this.isLoading = false;
       }

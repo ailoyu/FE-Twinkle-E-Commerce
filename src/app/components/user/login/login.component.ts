@@ -95,7 +95,6 @@ export class LoginComponent {
           this.tokenService.setToken(token);
           this.userService.saveUserResponseToLocalStorage(response);
         }
-        alert("Đăng nhập thành công");
         this.router.navigate(['/home']);          
       },
       complete: () => {
@@ -105,7 +104,7 @@ export class LoginComponent {
       error: (error: any) => {          
         // Xử lý khi ĐĂNG KÝ KO THÀNH CÔNG
         console.log(`Đăng nhập không thành công ` + error.error.message);
-        alert(`Đăng nhập không thành công (`+ error.error.message + ')');     
+        alert(`Login failed (`+ error.error.message + ')'); 
         this.isLoading = false;     
       }
     })

@@ -242,7 +242,6 @@ deleteImage(image: { file: File, base64: string }) {
     this.productService.saveProduct(this.product)?.subscribe({
       next: (response) => {
         debugger
-        alert("Thêm sản phẩm thành công");
         this.router.navigate(['/admin/edit-products', response.input_orders.detailInputOrders[0].product.id]);
         this.isLoading = false;
       },
@@ -252,7 +251,7 @@ deleteImage(image: { file: File, base64: string }) {
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Thêm sản phẩm thất bại");
+        alert("Adding failed products");
         this.isLoading = false;
       }
     });
@@ -283,7 +282,6 @@ deleteImage(image: { file: File, base64: string }) {
     this.productService.updateProduct(this.product)?.subscribe({
       next: (response : any) => {
         debugger
-        alert("Cập nhật sản phẩm thành công");
         location.reload();
         this.isLoading = false;
       },
@@ -293,7 +291,7 @@ deleteImage(image: { file: File, base64: string }) {
       error: (error: any) => {
         debugger;
         console.error('Error fetching detail:', error);
-        alert("Cập nhật sản phẩm thất bại");
+        alert("Product update failed");
         this.isLoading = false;
       }
     });

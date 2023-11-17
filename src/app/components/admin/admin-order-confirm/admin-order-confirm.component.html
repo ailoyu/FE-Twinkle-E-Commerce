@@ -5,24 +5,24 @@
     <app-admin-dashboard></app-admin-dashboard>
     <div class="container twinkle">
         <div class="confirmation-container">
-            <h1>Quản lý các đơn hàng</h1>
-            <p>Dưới đây là thông tin chi tiết về các đơn hàng của khách hàng</p>     
+            <h1>Order Mangement</h1>
+            <p>Below is detailed information about customer orders</p>     
         </div>
         <div *ngIf="getCancelledOrder.length > 0">
             <th><input type="checkbox" onClick="toggle(this)" (click)="toggleAllCheckboxes()" id="checkAll" class="styled-checkbox"></th>
         </div>
         <ul class="nav nav-tabs">
             <li class="nav-item" routerLink="/admin/order-confirm/pending" routerLinkActive="active" >
-            <a class="nav-link" >Đang xử lý</a>
+            <a class="nav-link" >Pending</a>
             </li>
             <li class="nav-item" routerLink="/admin/order-confirm/shipping" routerLinkActive="active">
-            <a class="nav-link">Đang vận chuyển</a>
+            <a class="nav-link">Shipping</a>
             </li>
             <li class="nav-item" routerLink="/admin/order-confirm/delivered" routerLinkActive="active">
-            <a class="nav-link">Đã giao hàng</a>
+            <a class="nav-link">Delivered</a>
             </li>
             <li class="nav-item" routerLink="/admin/order-confirm/cancelled" routerLinkActive="active">
-            <a class="nav-link">Hủy đơn hàng</a>
+            <a class="nav-link">Cancelled</a>
             </li>
         </ul>
         
@@ -38,38 +38,38 @@
                 <thead>
                     <tr (click)="toggleBodyAndFooter(order.id)" style="cursor: pointer;">
                         <div style="background-color: rgb(101, 102, 172)">
-                            <th scope="col" class="text-start-first">Đơn hàng có Order ID: {{order.id}}</th>
-                            <th scope="col" class="text-start-second">Ngày đặt hàng: {{order.orderDate}}</th>
-                            <th scope="col" class="text-start-third">Ngày giao hàng: {{order.shippingDate}}</th>
+                            <th scope="col" class="text-start-first">Orders have an Order ID: {{order.id}}</th>
+                            <th scope="col" class="text-start-second">Order date: {{order.orderDate}}</th>
+                            <th scope="col" class="text-start-third">Delivery date: {{order.shippingDate}}</th>
                         </div>
                     </tr>
                 </thead>
                 <tbody *ngIf="selectedOrder === order.id">
                     <div style="color: white;">
-                        <h2>Thông tin người nhận</h2>
-                        <p><span>Tên người nhận:</span> {{order.fullName}}</p>
+                        <h2>Customer's information</h2>
+                        <p><span>Customer name:</span> {{order.fullName}}</p>
                         <p><span>Email:</span> {{order.email}}</p>
-                        <p><span>Số điện thoại:</span> {{order.phoneNumber}}</p>
-                        <p><span>Địa chỉ:</span> {{order.address}}</p>
-                        <p><span>Ghi chú:</span> {{order.note}}</p>
-                        <p><span>Phương thức thanh toán:</span> {{order.paymentMethod}}</p>
-                        <p><span>Phương thức vận chuyển:</span> {{order.shippingMethod}}</p>
-                        <p><span>Tình trạng hiện tại:</span> {{order.status}}</p>
+                        <p><span>Phone number:</span> {{order.phoneNumber}}</p>
+                        <p><span>Address:</span> {{order.address}}</p>
+                        <p><span>Note:</span> {{order.note}}</p>
+                        <p><span>Payment method:</span> {{order.paymentMethod}}</p>
+                        <p><span>Shipping method:</span> {{order.shippingMethod}}</p>
+                        <p><span>Status:</span> {{order.status}}</p>
                         <div class="buttons-container">
-                            <button class="btn btn-gradient confirm-btn" *ngIf="order.status === 'Đang xử lý'" (click)="confirmOrder(order.id, 'Đang vận chuyển')">Xác nhận đơn hàng</button>
-                            <button class="btn btn-gradient cancel-btn" *ngIf="order.status === 'Đang xử lý'" (click)="confirmOrder(order.id, 'Đã hủy')">Hủy đơn hàng</button>
-                            <button class="btn btn-gradient confirm-btn" *ngIf="order.status === 'Đang vận chuyển'" (click)="confirmOrder(order.id, 'Đã giao hàng')">Đã giao hàng</button>
+                            <button class="btn btn-gradient confirm-btn" *ngIf="order.status === 'Đang xử lý'" (click)="confirmOrder(order.id, 'Đang vận chuyển')">Confirm order</button>
+                            <button class="btn btn-gradient cancel-btn" *ngIf="order.status === 'Đang xử lý'" (click)="confirmOrder(order.id, 'Đã hủy')">Cancel order</button>
+                            <button class="btn btn-gradient confirm-btn" *ngIf="order.status === 'Đang vận chuyển'" (click)="confirmOrder(order.id, 'Đã giao hàng')">Delivered successfully</button>
                         </div>        
                     </div>
                     <hr>
-                    <h2>Sản phẩm đã đặt hàng</h2>
+                    <h2>Product ordered</h2>
                     <table>
                     <tr>
-                        <th scope="col" class="text-start">Sản phẩm</th>
+                        <th scope="col" class="text-start">Product</th>
                         <th scope="col">Size</th>
-                        <th scope="col">Số lượng</th>
-                        <th scope="col">Đơn giá</th>
-                        <th scope="col">Tổng giá</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit price</th>
+                        <th scope="col">Total price</th>
                     </tr>
                     <tr *ngFor="let orderDetail of order.orderDetails">
                         <td>
@@ -88,7 +88,7 @@
                 <tfoot *ngIf="selectedOrder === order.id">
                     <tr>
                         <td colspan="4" class="text-end">
-                            <h4 class="header-text">Tổng Đơn Hàng: ${{order.totalMoney | number:'1.2-2'}}</h4>
+                            <h4 class="header-text">Total Order: ${{order.totalMoney | number:'1.2-2'}}</h4>
                         </td>
                     </tr>
                 </tfoot>
@@ -96,7 +96,7 @@
         </div>
         </div>    
         <div class="button-container" *ngIf="getCancelledOrder.length > 0">
-            <button class="btn btn-gradient" type="button" (click)="deleteSelectedOrders()">Xóa đơn hàng</button>
+            <button class="btn btn-gradient" type="button" (click)="deleteSelectedOrders()">Remove order</button>
         </div>
     </div>
 </div>

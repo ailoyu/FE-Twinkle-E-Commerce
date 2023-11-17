@@ -5,7 +5,7 @@
   <app-admin-dashboard></app-admin-dashboard>
 <div class="container twinkle" style="margin-top: 100px;">
     <div class="confirmation-container" style="text-align: center;">
-        <h1>Danh sách sản phẩm</h1>
+        <h1>List of products</h1>
         <div class="search-box">
           <input type="text" class="form-control search-input" 
           placeholder="Search" 
@@ -54,11 +54,11 @@
                 <th>
                   <input type="checkbox" (click)="toggleAllCheckboxes()" id="checkAll" class="styled-checkbox">
                 </th>
-                <th scope="col" class="text-start">Sản phẩm</th>
-                <th scope="col">Mô tả sản phẩm</th>
-                <th scope="col">Số lượng trong kho</th>
-                <th scope="col">Giá sản phẩm</th>
-                <th scope="col">Thể loại</th>
+                <th scope="col" class="text-start">Product name</th>
+                <th scope="col">Product Description</th>
+                <th scope="col">Quantity in stock</th>
+                <th scope="col">Product price</th>
+                <th scope="col">Category</th>
               </tr>
             </thead>
             <tbody>
@@ -85,8 +85,8 @@
           
         
         <div class="text-center mt-3">
-           <button class="btn btn-gradient" type="button"><a routerLink="/admin/edit-products" routerLinkActive="active">Thêm mới sản phẩm</a></button>
-           <button class="btn btn-gradient" type="button" (click)="deleteSelectedProducts()">Xóa sản phẩm</button>
+           <button class="btn btn-gradient" type="button"><a routerLink="/admin/edit-products" routerLinkActive="active">Add new product</a></button>
+           <button class="btn btn-gradient" type="button" (click)="deleteSelectedProducts()">Remove products</button>
         </div> 
     </div>  
     

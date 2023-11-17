@@ -7,9 +7,9 @@
   
   <div class="admin-products twinkle" style="margin-top: 100px;">
     <form [formGroup]="productForm">
-      <h1>Chỉnh sửa nhà cung cấp</h1>
+      <h1>Edit providers</h1>
         <div class="form-group">
-          <label for="name">Tên nhà cung cấp:</label>
+          <label for="name">Provider Name:</label>
           <input type="text" id="productName" name="productName" 
           required
           formControlName="name" 
@@ -17,11 +17,11 @@
           <div 
           *ngIf="productForm.get('name')!.invalid && productForm.get('name')!.touched" 
           class="invalid-feedback">
-          Vui lòng nhập tên nhà cung cấp
+          Please enter provider name
           </div>
         </div>
         <div class="form-group">
-          <label for="name">Số điện thoại của nhà cung cấp:</label>
+          <label for="name">Provider phone number:</label>
           <input type="text" id="productName" name="productName" 
           required
           formControlName="phoneNumber" 
@@ -29,11 +29,11 @@
           <div 
           *ngIf="productForm.get('phoneNumber')!.invalid && productForm.get('phoneNumber')!.touched" 
           class="invalid-feedback">
-          Vui lòng nhập số điện thoại của nhà cung cấp
+          Please enter the provider's phone number
           </div>
         </div>
         <div class="form-group">
-          <label for="name">Email:</label>
+          <label for="name">Provider's Email:</label>
           <input type="text" id="productName" name="productName" 
           required
           formControlName="email" 
@@ -41,11 +41,11 @@
           <div 
           *ngIf="productForm.get('email')!.invalid && productForm.get('email')!.touched" 
           class="invalid-feedback">
-          Vui lòng nhập email của nhà cung cấp!
+          Please enter provider email!
           </div>
         </div>
         <div class="form-group">
-          <label for="name">Địa chỉ:</label>
+          <label for="name">Address:</label>
           <input type="text" id="productName" name="productName" 
           required
           formControlName="address" 
@@ -53,7 +53,7 @@
           <div 
           *ngIf="productForm.get('address')!.invalid && productForm.get('address')!.touched" 
           class="invalid-feedback">
-          Vui lòng nhập địa chỉ của nhà cung cấp!
+          Please enter the provider's address!
           </div>
         </div>
         <div class="form-group">
@@ -65,18 +65,18 @@
           <div 
           *ngIf="productForm.get('website')!.invalid && productForm.get('website')!.touched" 
           class="invalid-feedback">
-          Vui lòng nhập website của nhà cung cấp!
+          Please enter the provider's website!
           </div>
         </div>
         <div class="form-group">
-          <label for="description">Mô tả:</label>
+          <label for="description">Provider description:</label>
           <input type="text" id="description" name="description" required
           formControlName="description" 
           [class.is-invalid]="productForm.get('description')!.invalid && productForm.get('description')!.touched">
           <div 
           *ngIf="productForm.get('description')!.invalid && productForm.get('description')!.touched" 
           class="invalid-feedback">
-          Vui lòng nhập mô tả!
+          Please enter provider description!
           </div>
         </div>                     
                   
@@ -87,7 +87,7 @@
         type="button" 
         (click)="saveProduct()"
         [disabled]="isLoading"
-        class="login-button">Lưu nhà cung cấp
+        class="login-button">Save provider
           <div *ngIf="isLoading" class="loading-circle"></div>
         </button>
       
@@ -95,7 +95,7 @@
                 type="button" 
                 (click)="updateProduct()"
                 [disabled]="isLoading"
-                class="login-button">Cập nhật nhà cung cấp
+                class="login-button">Update supplier
           <div *ngIf="isLoading" class="loading-circle"></div>
         </button>
 
